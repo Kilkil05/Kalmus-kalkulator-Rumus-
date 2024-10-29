@@ -4,14 +4,29 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-image: url(freepik__candid-image-photography-natural-textures-highly-r__64638.jpeg);
 }
+a {
+    text-decoration: none;
+}
 footer {
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 100%;
+    width: 100vw;
     color: white;
     text-align: left;
     padding: 10px;
+}
+nav{
+    cursor: pointer;
+    color: white;
+}
+.home {
+    font-family: poppins;
+    font-size: 1.5rem;
+    color: white;
+}
+.home:hover {
+    color: blue;
 }
 .judul {
     font-family: kanit;
@@ -24,6 +39,29 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+/* menu */
+.penyederhanaanAkar-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.teks {
+    color: rgb(255, 255, 255);
+    font-family: poppins;
+    font-size: 1.6rem;
+    text-align: center;
+    border-radius: 1rem;
+    padding: 0.2rem;
+    text-decoration: none;
+}
 .akar {
     display: flex;
     flex-direction: column;
@@ -31,6 +69,9 @@ footer {
     align-items: center;
     font-family: poppins;
     width: 50rem;
+}
+.akar-preview {
+    font-size: 2rem;
 }
 .perintah {
     translate: 0 -2rem;
@@ -80,6 +121,9 @@ input::-webkit-inner-spin-button {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+    html {
+        font-size: 100%;
+    }
     #output {
         font-size: 1.4rem;
     }
@@ -98,8 +142,4 @@ input::-webkit-inner-spin-button {
 @media only screen and (min-width: 992px) {}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    html {
-        font-size: 125%;
-    }
-}
+@media only screen and (min-width: 1200px) {}
