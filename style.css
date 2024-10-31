@@ -38,6 +38,13 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+}
+.menu {
+    gap: 2rem;
+}
+.perintah {
+    font-family: poppins;
 }
 
 /* menu */
@@ -61,20 +68,23 @@ nav{
     border-radius: 1rem;
     padding: 0.2rem;
     text-decoration: none;
+    height: 3rem;
 }
+
+/* akar */
 .akar {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: poppins;
-    width: 50rem;
 }
 .akar-preview {
     font-size: 2rem;
 }
 .perintah {
     translate: 0 -2rem;
+    text-align: center;
 }
 .akar-png {
     translate: -3rem;
@@ -111,9 +121,158 @@ input::-webkit-inner-spin-button {
     font-size: 1rem;
 }
 
+/* diskon */
+.diskon-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.diskon-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+.pembatas {
+    height: 10rem;
+    width: 0.5rem;
+    background-color: white;
+}
+.diskon-conten {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.diskon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
+#inputharga {
+    font-size: 1.5rem;
+    height: 50;
+    width: 250;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+}
+#inputdiskon {
+    font-size: 1.5rem;
+    height: 50;
+    width: 250;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+.inputdiskon-div {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+#hasil-diskon {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+}
+.diskon-output {
+    line-height: 3rem;
+    text-align: center;
+    margin-top: 3rem;
+}
 
 
 
+
+
+
+
+/* penyederhanaan rasio */
+.rasio-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.rasio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
+.rasio-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row
+}
+.pembanding {
+    width: 5rem;
+    text-align: center;
+    translate: 0 2.5rem;
+    font-size: 2rem;
+}
+.rasio-conten {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#inputkiri {
+    font-size: 1.5rem;
+    height: 50;
+    width: 250;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+#inputkanan {
+    font-size: 1.5rem;
+    height: 50;
+    width: 250;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+#hasil-rasio {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+}
 
 
 

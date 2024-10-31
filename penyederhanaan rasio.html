@@ -1,7 +1,7 @@
 <html>
     <head>
-        <title>Kalmus</title>
         <script src="index.js"></script>
+        <title>Penyederhanaan Rasio</title>
         <link rel="stylesheet" href="style.css">
         <script src="https://unpkg.com/feather-icons"></script>
 
@@ -19,31 +19,41 @@
         <nav>
             <a class="home" href="Index.html"><i data-feather="arrow-left"></i>Back</a>
         </nav>
-        <h1 class="judul">Kalkulator Rumus</h1>
-        <div class="container menu">
-            <div class="penyederhanaanAkar">
-                <a href="Penyederhanaan Akar.html"><div class="penyederhanaanAkar-container">
-                    <img src="asset/penyederhanaan akar.png" alt="akar-logo" width="100px">
-                    <h1 class="teks">Penyederhanaan Akar</h1>
-                </div></a>
-                <script>
-                    feather.replace();
-                </script>
+        <h1 class="judul">Kalkulator Rumus<br>
+            <h2 class="perintah">Penyederhanaan Rasio</h2></h1>
+        <div class="container">
+            <div class="rasio">
+                <div class="rasio-menu">
+                    <div class="rasio-conten">
+                        <h1>Angka kiri</h1>
+                        <div class="input-angka-kiri-div">
+                            <input id="inputkiri" type="number" placeholder="Masukkan angka">
+                        </div>
+                    </div>
+
+                    <div class="pembanding"><h1>:</h1></div>
+
+                    <div class="rasio-conten">
+                        <h1>Angka kanan</h1>
+                        <div class="input-angka-kanan-div">
+                            <input id="inputkanan" type="number" placeholder="Masukkan angka">
+                        </div>
+                    </div>
+                </div>
+
+                <button id="hasil-rasio" onclick="diskon()">Hasil</button>
+                <div class="rasio-output">
+                    <h2 id="output-rasio3"></h2>
+                    <h3 id="output-rasio1"></h3>
+                    <h3 id="output-rasio2"></h3>
+                </div>
+                
 
             </div>
-            <div class="diskon">
-                <a href="diskon.html"><div class="diskon-container">
-                    <img src="asset/diskon.png" alt="diskon-logo" width="100px">
-                    <h1 class="teks">Harga Diskon</h1>
-                </div></a>
-            </div>
+            <script>
+                feather.replace();
+            </script>
 
-            <div class="penyederhanaan-rasio">
-                <a href="penyederhanaan rasio.html"><div class="rasio-container">
-                    <img src="asset/rasio.png" alt="diskon-logo" width="100px">
-                    <h1 class="teks">Penyederhanaan Rasio</h1>
-                </div></a>
-            </div>
             <footer>
                 <a href="https://github.com/Kilkil05"><img src="pngwing.com (32).png" alt="github" width="50px"></a>
                 <a href="https://www.instagram.com/wasekloer.id/"><img src="image.png" alt="instagram" width="50px"></a>
