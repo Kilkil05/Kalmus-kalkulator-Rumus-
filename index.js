@@ -62,5 +62,29 @@ function diskon() {
 
 }
 
+function gcd(a, b) {
+    if (a === 0) {
+        return b
+    }
+    return gcd(b % a, a)
+}
 
+function penyederhanaanRasio() {
+    let inputAngkaKiri = document.getElementById('inputkiri')
+    let inputAngkaKanan = document.getElementById('inputkanan')
+    let angkaKiri = parseFloat(inputAngkaKiri.value)
+    let angkaKanan = parseFloat(inputAngkaKanan.value)
+    let output1 = document.getElementById('output-rasio1')
+    let output2 = document.getElementById('output-rasio2')
+    let output3 = document.getElementById('output-rasio3')
 
+    var hasil = gcd(angkaKiri, angkaKanan)
+    var jumlahAngkaKiri = angkaKiri / hasil
+    var jumlahAngkaKanan = angkaKanan / hasil
+    
+
+    console.log(hasil)
+
+    output1.innerHTML = "<h3> Hasil penyederhaan :"
+    output3.innerHTML = "<h1>" + jumlahAngkaKiri + " : " + jumlahAngkaKanan
+}

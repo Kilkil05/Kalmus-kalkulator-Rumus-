@@ -113,6 +113,7 @@ input::-webkit-inner-spin-button {
     background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
     color: rgb(0, 0, 0);
     font-weight: 800;
+    z-index: 999;
 }
 #output {
     max-width: 40rem;
@@ -193,6 +194,7 @@ input::-webkit-inner-spin-button {
     background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
     color: rgb(0, 0, 0);
     font-weight: 800;
+    z-index: 999;
 }
 .diskon-output {
     line-height: 3rem;
@@ -272,6 +274,10 @@ input::-webkit-inner-spin-button {
     background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
     color: rgb(0, 0, 0);
     font-weight: 800;
+    z-index: 999;
+}
+.rasio-output {
+    text-align: center;
 }
 
 
