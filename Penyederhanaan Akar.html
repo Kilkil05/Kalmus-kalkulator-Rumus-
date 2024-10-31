@@ -26,7 +26,16 @@
                 <img class="akar-png" src="akar.png" alt="akar" width="350px">
                 <input id="inputakar" type="number" placeholder="Masukkan Nilai">
                 <button id="hasil" onclick="penyederhanaanAkar()">Hasil</button>
-                <h3 id="output"></h3>
+                <div class="akar-output">
+                    <h3 id="output"></h3>
+                    <h2 id="output-penjelasan" onclick="showText()"></h2>
+                    <div id="output-hide">
+                        <img class="pin-png" src="asset/pin.png" alt="" width="50px">
+                        <h3 id="output-akar1"></h3>
+                        <h3 id="output-akar2"></h3>
+                    </div>
+                </div>
+   
             </div>
             <script>
                 feather.replace();

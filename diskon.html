@@ -17,7 +17,7 @@
     </head>
     <body>
         <nav>
-            <a class="home" href="index.html"><i data-feather="arrow-left"></i>Back</a>
+            <a class="home" href="Index.html"><i data-feather="arrow-left"></i>Back</a>
         </nav>
         <h1 class="judul">Kalkulator Rumus<br>
             <h2 class="perintah">Mencari Harga Diskon</h2></h1>
@@ -42,12 +42,17 @@
                         </div>
                     </div>
                 </div>
-
+            
                 <button id="hasil-diskon" onclick="diskon()">Hasil</button>
                 <div class="diskon-output">
                     <h2 id="output-diskon3"></h2>
-                    <h3 id="output-diskon1"></h3>
-                    <h3 id="output-diskon2"></h3>
+                    <h2 id="output-penjelasan" onclick="showText()"></h2>
+                    <div id="output-hide">
+                        <img class="pin-png" src="asset/pin.png" alt="" width="50px">
+                        <h3 id="output-diskon1"></h3>
+                        <h3 id="output-diskon2"></h3>
+                    </div>
+
                 </div>
                 
 

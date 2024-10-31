@@ -22,8 +22,9 @@ nav{
 }
 .home {
     font-family: poppins;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: white;
+
 }
 .home:hover {
     color: blue;
@@ -115,8 +116,13 @@ input::-webkit-inner-spin-button {
     font-weight: 800;
     z-index: 999;
 }
+.akar-output {
+    line-height: 3rem;
+    text-align: center;
+    margin-top: 3rem;
+
+}
 #output {
-    max-width: 40rem;
     text-align: center;
     font-weight: 200;
     font-size: 1rem;
@@ -201,8 +207,34 @@ input::-webkit-inner-spin-button {
     text-align: center;
     margin-top: 3rem;
 }
+#output-penjelasan {
+    cursor: pointer;
+    color: rgb(255, 251, 0);
+    background-color: rgba(152, 1, 172, 0.555);
+    border-radius: 1rem;
+    width: 20rem;
+    justify-self: center;
+}
+#output-penjelasan:hover {
+    color: rgb(255, 255, 255);
+}
 
+#output-hide {
+    visibility: hidden;
+    background-color: rgba(255, 255, 255, 0.774);
+    color: black;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
 
+}
+.pin-png {
+    align-self: flex-end;
+    margin-top: 0;
+}
 
 
 

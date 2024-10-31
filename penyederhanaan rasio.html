@@ -17,7 +17,7 @@
     </head>
     <body>
         <nav>
-            <a class="home" href="index.html"><i data-feather="arrow-left"></i>Back</a>
+            <a class="home" href="Index.html"><i data-feather="arrow-left"></i>Back</a>
         </nav>
         <h1 class="judul">Kalkulator Rumus<br>
             <h2 class="perintah">Penyederhanaan Rasio</h2></h1>
@@ -43,9 +43,15 @@
 
                 <button id="hasil-rasio" onclick="penyederhanaanRasio()">Hasil</button>
                 <div class="rasio-output">
-                    <h3 id="output-rasio1"></h3>
+                    <h3 id="output-rasio4"></h3>
                     <h2 id="output-rasio3"></h2>
-                    <h3 id="output-rasio2"></h3>
+                    <h2 id="output-penjelasan" onclick="showText()"></h2>
+                    <div id="output-hide">
+                        <img class="pin-png" src="asset/pin.png" alt="" width="50px">
+                        <h3 id="output-rasio1"></h3>
+                        <h3 id="output-rasio2"></h3>
+                    </div>
+
                 </div>
                 
 
