@@ -182,6 +182,7 @@ function hideCampuran() {
 
 }
 
+
 function penyederhanaanPecahanBiasa() {
     let inputAngkaAtas = document.getElementById('inputatas')
     let inputAngkaBawah = document.getElementById('inputbawah')
@@ -221,7 +222,8 @@ function penyederhanaanPecahanBiasa() {
     console.log(hasil2)
     console.log(hasil3)
     
-    
+
+
     divider.style.display = "block"
     output3.innerHTML = "<h2>Hasil penyederhanaan adalah :"
     outputPenjelasan.innerHTML = "Lihat Penjelasan"
@@ -229,7 +231,7 @@ function penyederhanaanPecahanBiasa() {
                         "<br> lalu kita bagi pembilang dan penyebut dengan " + hasil + " <br>" + angkaAtas + " : " + hasil + " = " + jumlahAngkaAtas +
                         "<br>" + angkaBawah + " : " + hasil + " = " + jumlahAngkaBawah + "<br> dan kita berhasil mendapat nilai sederhana dari <sup>" + angkaAtas +
                          "</sup> &frasl; <sub>" +angkaBawah + "</sub> yaitu = <sup>" + jumlahAngkaAtas + "</sup> &frasl; <sub>" + jumlahAngkaBawah + "</sub>"
-    if (angkaAtas == 0 || angkaBawah == 0) { //jika pembilang dan penyebut 0 maka akan tidak terdefinisi
+    if (angkaAtas == 0 || angkaBawah == 0 ) { //jika pembilang dan penyebut 0 maka akan tidak terdefinisi
         outputAtas.innerHTML = "tidak terdefinisi"
         outputBawah.innerHTML = "tidak terdefinisi"
         output1.innerHTML = "Pecahan <sup>" + angkaAtas +"</sup> &frasl; <sub>" +angkaBawah + "</sub> tidak terdefinisi karena mempunyai nilai nol (0). Dalam matematika,"+
