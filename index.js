@@ -218,11 +218,6 @@ function penyederhanaanPecahanBiasa() {
 
     var hasil4 = hasil3 * jumlahAngkaBawah // perkalian penyebut dan bilangan bulat
 
-    console.log(hasil1)
-    console.log(hasil2)
-    console.log(hasil3)
-    
-
 
     divider.style.display = "block"
     output3.innerHTML = "<h2>Hasil penyederhanaan adalah :"
@@ -231,12 +226,18 @@ function penyederhanaanPecahanBiasa() {
                         "<br> lalu kita bagi pembilang dan penyebut dengan " + hasil + " <br>" + angkaAtas + " : " + hasil + " = " + jumlahAngkaAtas +
                         "<br>" + angkaBawah + " : " + hasil + " = " + jumlahAngkaBawah + "<br> dan kita berhasil mendapat nilai sederhana dari <sup>" + angkaAtas +
                          "</sup> &frasl; <sub>" +angkaBawah + "</sub> yaitu = <sup>" + jumlahAngkaAtas + "</sup> &frasl; <sub>" + jumlahAngkaBawah + "</sub>"
-    if (angkaAtas == 0 || angkaBawah == 0 ) { //jika pembilang dan penyebut 0 maka akan tidak terdefinisi
+    if (angkaBawah == 0 ) { //jika pembilang dan penyebut 0 maka akan tidak terdefinisi
         outputAtas.innerHTML = "tidak terdefinisi"
         outputBawah.innerHTML = "tidak terdefinisi"
-        output1.innerHTML = "Pecahan <sup>" + angkaAtas +"</sup> &frasl; <sub>" +angkaBawah + "</sub> tidak terdefinisi karena mempunyai nilai nol (0). Dalam matematika,"+
-        " Suatu pecahan dikatakan tak terdefinisi/tak tentu jika penyebutnya sama dengan 0 . Tidak peduli seberapa rumitnya n dan d , kapan pun d (penyebut)"+
+        output1.innerHTML = "<h3>Pecahan <sup>" + angkaAtas +"</sup> &frasl; <sub>" +angkaBawah + "</sub> tidak terdefinisi karena mempunyai nilai nol (0) sebagai penyebut. Dalam matematika,"+
+        " Suatu pecahan dikatakan tak terdefinisi/tak tentu jika penyebutnya sama dengan 0 . Tidak peduli seberapa rumitnya, kapan pun penyebut"+
         " sama dengan 0, pecahan keseluruhan menjadi tidak terdefinisi."
+    }
+    else if(angkaAtas == 0) {
+        outputAtas.innerHTML = jumlahAngkaAtas
+        outputBawah.innerHTML = jumlahAngkaBawah
+        output1.innerHTML = `<h3>Pecahan <sup>${angkaAtas}</sup> &frasl; <sub>${angkaBawah}</sub> memiliki hasil = 0 <br>karena dalam pecahan bila terdapat 0 sebagai pembilang maka nilainya adalah 0 mau berapapun penyebut hasilnya akan tetap 0. 
+                            Ini karena membagi nol menjadi beberapa bagian tetap menghasilkan nol. Misalnya, jika Anda memiliki nol apel dan Anda memutuskan untuk membagikannya kepada lima teman, setiap teman tetap menerima nol apel.`
     }
     else {
         outputAtas.innerHTML = jumlahAngkaAtas
@@ -245,7 +246,7 @@ function penyederhanaanPecahanBiasa() {
 
 
 
-    if (hasil1 != 0 && hasil3 != 0 ) { // jika modulus dan bilangan bulat tidak 0 maka akan muncul penyederhanaan campuran
+    if (hasil1 != 0 && hasil3 != 0 && !isNaN(hasil1) ) { // jika modulus dan bilangan bulat tidak 0 maka akan muncul penyederhanaan campuran
         divider1.style.display = "block"
         output4.innerHTML = "<h2> Atau jika disederhanakan menjadi pecahan campuran :"
         outputAtasCampuran.innerHTML = hasil1
@@ -263,6 +264,13 @@ function penyederhanaanPecahanBiasa() {
                          "<br> kita tidak perlu mencari penyebut karena dalam penyederhanaan pecahan campuran penyebut tetap / tidak berubah" +
                          "<br>Jadi hasil penyederhanaan adalah = " + hasil3 +" <sup>" + hasil1 + "</sup> &frasl; <sub>" + jumlahAngkaBawah + "</sub>"
 
+    }
+    else if (isNaN(angkaBawah)){
+        divider1.style.display = "none"
+        output4.innerHTML = ""
+        outputAtasCampuran.innerHTML = ""
+        outputBawahCampuran.innerHTML = ""
+        outpunCampuran.innerHTML = ""
     }
     else if (angkaAtas === 0 || angkaBawah === 0) { //jika angka pembilang / penyebut 0 maka akan disembunyikan
         divider1.style.display = "none"
@@ -282,6 +290,134 @@ function penyederhanaanPecahanBiasa() {
 
     output5.innerHTML = "<h2>Atau : " + hasilOperasi
 }
+
+
+function penyederhanaanPecahanCampuran() {
+    let inputAngkaAtas = document.getElementById('inputatas')
+    let inputAngkaBawah = document.getElementById('inputbawah')
+    let inputCampuran = document.getElementById('inputcampuran')
+    let angkaAtas = parseFloat(inputAngkaAtas.value)
+    let angkaBawah = parseFloat(inputAngkaBawah.value)
+    let angkaCampuran = parseFloat(inputCampuran.value)
+    let output1 = document.getElementById('output-pecahan1')
+    let output2 = document.getElementById('output-pecahan2')
+    let output3 = document.getElementById('output-pecahan3')
+    let output4 = document.getElementById('output-pecahan4')
+    let output5 = document.getElementById('output-pecahan5')
+    let outputPecahan = document.getElementById('pecahan-hasil')
+    let outputAtas = document.getElementById('angkaatas')
+    let outputBawah = document.getElementById('angkabawah')
+    let outputAtasCampuran = document.getElementById('angkaatascampuran')
+    let outputBawahCampuran = document.getElementById('angkabawahcampuran')
+    let outpunCampuran = document.getElementById('angkacampuran')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+    let divider = document.getElementById('divider')
+    let divider1 = document.getElementById('divider1')
+
+    let convertBiasa = angkaCampuran * angkaBawah + angkaAtas //mengubah campuran ke pecahan biasa
+    let convertAngkaAtas = convertBiasa // initialisasi convert sebagai pembilang
+    let convertAngkaBawah = angkaBawah // penyebut
+
+    var hasil = gcd(convertAngkaAtas, convertAngkaBawah) //modulus mencari fpb
+    var jumlahAngkaAtas = convertAngkaAtas / hasil
+    var jumlahAngkaBawah = convertAngkaBawah / hasil
+
+    var hasilOperasi = jumlahAngkaAtas / jumlahAngkaBawah
+
+    var hasil1 = jumlahAngkaAtas % jumlahAngkaBawah //modulus pembilang dan penyebut digunakan untuk mereprentasikan nilai sederhana pembilang
+    var hasil2 = jumlahAngkaAtas - hasil1 // berfungsi untuk mengurangi pembilang asli dengan hasil modulus agar bisa dibagi dengan penyebut
+    var hasil3 = hasil2 / jumlahAngkaBawah // reprentasi dari bilangan bulat pada campuran
+
+    var hasil4 = hasil3 * jumlahAngkaBawah // perkalian penyebut dan bilangan bulat
+    
+
+    divider.style.display = "block"
+    output3.innerHTML = "<h2>Hasil penyederhanaan adalah :"
+    outputPenjelasan.innerHTML = "Lihat Penjelasan"
+
+    if (angkaBawah == 0 ) { //jika pembilang dan penyebut 0 maka akan tidak terdefinisi
+        outputAtas.innerHTML = "tidak terdefinisi"
+        outputBawah.innerHTML = "tidak terdefinisi"
+        output1.innerHTML = "<h3>Pecahan "+angkaCampuran+" <sup>" + angkaAtas +"</sup> &frasl; <sub>" +angkaBawah + "</sub> tidak terdefinisi karena mempunyai nilai nol (0) sebagai penyebut. Dalam matematika,"+
+        " Suatu pecahan dikatakan tak terdefinisi/tak tentu jika penyebutnya sama dengan 0 . Tidak peduli seberapa rumitnya, kapan pun penyebut"+
+        " sama dengan 0, pecahan keseluruhan menjadi tidak terdefinisi."
+    }
+    else if(angkaAtas == 0) {
+        outputAtas.innerHTML = jumlahAngkaAtas
+        outputBawah.innerHTML = jumlahAngkaBawah
+        output1.innerHTML = `<h3>Pecahan <sup>${angkaAtas}</sup> &frasl; <sub>${angkaBawah}</sub> memiliki hasil = 0 <br>karena dalam pecahan bila terdapat 0 sebagai pembilang maka nilainya adalah 0 mau berapapun penyebut hasilnya akan tetap 0. 
+                            Ini karena membagi nol menjadi beberapa bagian tetap menghasilkan nol. Misalnya, jika Anda memiliki nol apel dan Anda memutuskan untuk membagikannya kepada lima teman, setiap teman tetap menerima nol apel.`
+    }
+    else {
+        outputAtas.innerHTML = jumlahAngkaAtas
+        outputBawah.innerHTML = jumlahAngkaBawah
+    }
+
+
+
+
+    if (angkaBawah == 0 ) { //jika pembilang dan penyebut 0 maka akan tidak terdefinisi
+        outputAtas.innerHTML = "tidak terdefinisi"
+        outputBawah.innerHTML = "tidak terdefinisi"
+
+    }
+    else if(angkaAtas == 0) {
+        outputAtas.innerHTML = jumlahAngkaAtas
+        outputBawah.innerHTML = jumlahAngkaBawah
+    }
+    else {
+        outputAtas.innerHTML = jumlahAngkaAtas
+        outputBawah.innerHTML = jumlahAngkaBawah
+    }
+
+    if (hasil1 != 0 && hasil3 != 0 && !isNaN(hasil1) ) { // jika modulus dan bilangan bulat tidak 0 maka akan muncul penyederhanaan campuran
+        divider1.style.display = "block"
+        output4.innerHTML = "<h2> Atau jika disederhanakan menjadi pecahan campuran :"
+        outputAtasCampuran.innerHTML = hasil1
+        outputBawahCampuran.innerHTML = jumlahAngkaBawah
+        outpunCampuran.innerHTML = hasil3
+        output1.innerHTML = "<h3>Pertama ubah pecahan campuran menjadi pecahan biasa. Kita cari pembilang dengan cara penyebut ("+angkaBawah+") x bilangan ("+angkaCampuran+") x pembilang awal ("+angkaAtas+") = " + convertAngkaAtas + 
+                        "<br>"+ convertAngkaAtas +" merupakan pembilang dan penyebut kita tidak perlu mencari karena dalam penyederhanaan pecahan penyebut akan tetap sama, Dan kita mendapat hasil  = <sup>" + convertAngkaAtas + "</sup> &frasl; <sub>" + convertAngkaBawah + "</sub>" +
+                        "<br> lalu kita mencari FPB (faktor persekutuan terbesar) dari " + convertAngkaAtas + " dan " + convertAngkaBawah+ "<br> FPB  dari " + convertAngkaAtas + " dan " + convertAngkaBawah +" adalah = " + hasil +
+                        "<br> lalu kita bagi pembilang dan penyebut dengan " + hasil + " <br>" + convertAngkaAtas + " : " + hasil + " = " + jumlahAngkaAtas +
+                        "<br>" + convertAngkaBawah + " : " + hasil + " = " + jumlahAngkaBawah + "<br> dan kita berhasil mendapat nilai sederhana dari <sup>" + convertAngkaAtas +
+                         "</sup> &frasl; <sub>" +convertAngkaBawah + "</sub> yaitu = <sup>" + jumlahAngkaAtas + "</sup> &frasl; <sub>" + jumlahAngkaBawah + "</sub>." +
+                         "<br> <sup>" + jumlahAngkaAtas + "</sup> &frasl; <sub>" + jumlahAngkaBawah + "</sub> bisa kita sederhanakan lagi menjadi pecahan campuran dengan cara mencari <br>angka yang jika dikalikan dengan penyebut (" + jumlahAngkaBawah +
+                         ") hasilnya mendekati dan tidak melebihi pembilang (" + jumlahAngkaAtas + ") <br>Angka yang tepat dengan kriteria diatas adalah = " +hasil3 + "<br>Karena jika "+ hasil3 + " x " + jumlahAngkaBawah + " hasilnya adalah = " + hasil4 +
+                         " (" + hasil4 + " adalah angka paling mendekati " +jumlahAngkaAtas + " dan tidak melebihi "+jumlahAngkaAtas+") <br>Kita kunci "+ hasil3 +" sebagai bilangan bulat<br>Lalu kita mencari pembilang campuran dengan cara mengkali (x) bilangan bulat yaitu " +
+                         hasil3 + " dengan penyebut yaitu "+ jumlahAngkaBawah + "<br>" + hasil3 + " x " + jumlahAngkaBawah + " Hasilnya = " + hasil4 +
+                         "<br>Selanjutnya kita kurangi (-) pembilang yaitu " + jumlahAngkaAtas + " dengan "+ hasil4 + "<br>" + jumlahAngkaAtas + " - " +hasil4 + " = " + hasil1 +
+                         "<br> kita tidak perlu mencari penyebut karena dalam penyederhanaan pecahan campuran penyebut tetap / tidak berubah" +
+                         "<br>Jadi hasil penyederhanaan adalah = " + hasil3 +" <sup>" + hasil1 + "</sup> &frasl; <sub>" + jumlahAngkaBawah + "</sub>"
+
+    }
+    else if (isNaN(angkaBawah)){
+        divider1.style.display = "none"
+        output4.innerHTML = ""
+        outputAtasCampuran.innerHTML = ""
+        outputBawahCampuran.innerHTML = ""
+        outpunCampuran.innerHTML = ""
+    }
+    else if (angkaAtas === 0 || angkaBawah === 0) { //jika angka pembilang / penyebut 0 maka akan disembunyikan
+        divider1.style.display = "none"
+        output4.innerHTML = ""
+        outputAtasCampuran.innerHTML = ""
+        outputBawahCampuran.innerHTML = ""
+        outpunCampuran.innerHTML = ""
+
+    }
+    else { // jika if = 0 maka akan menyembunyikan campuran
+        divider1.style.display = "none"
+        output4.innerHTML = ""
+        outputAtasCampuran.innerHTML = ""
+        outputBawahCampuran.innerHTML = ""
+        outpunCampuran.innerHTML = ""
+    }
+
+    output5.innerHTML = "<h2>Atau : " + hasilOperasi
+}
+//kurang menulis output default dan output jika pembilang 0
+
 
 
 
