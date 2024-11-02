@@ -25,6 +25,10 @@ nav{
     font-family: poppins;
     font-size: 2rem;
     color: white;
+    background: linear-gradient(to bottom, rgba(255, 208, 0, 0.5), rgb(243, 158, 0.5));
+    border-radius: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 1rem;
 
 }
 .home:hover {
@@ -109,9 +113,8 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 #hasil {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-family: poppins;
-    width: 100;
     background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
     color: rgb(0, 0, 0);
     font-weight: 800;
@@ -230,6 +233,7 @@ input::-webkit-inner-spin-button {
     align-items: center;
     flex-direction: column;
     padding: 1rem;
+    text-align: left;
 
 }
 .pin-png {
@@ -451,6 +455,9 @@ input::-webkit-inner-spin-button {
     align-items: center;
     font-size: 3.5rem;
 }
+#angkacampuran {
+    font-weight: 500;
+}
 .pecahan-output {
     display: flex;
     flex-direction: column;
@@ -484,13 +491,15 @@ input::-webkit-inner-spin-button {
     padding: 0;
 }
 #divider {
-    width: 3rem;
+    min-width: 3rem;
+    width: 100%;
     background-color: white;
     height: 0.5rem;
     display: none;
 }
 #divider1 {
-    width: 3rem;
+    min-width: 3rem;
+    width: 100%;
     background-color: white;
     height: 0.5rem;
     display: none;
