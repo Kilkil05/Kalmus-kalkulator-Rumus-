@@ -19,6 +19,7 @@ footer {
 nav{
     cursor: pointer;
     color: white;
+    position: fixed;
 }
 .home {
     font-family: poppins;
@@ -264,7 +265,7 @@ input::-webkit-inner-spin-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row
+    flex-direction: row;
 }
 .pembanding {
     width: 5rem;
@@ -311,6 +312,224 @@ input::-webkit-inner-spin-button {
 .rasio-output {
     text-align: center;
 }
+
+
+
+
+/* Penyederhanaan Pecahan */
+.pecahan-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.pembanding-pecahan {
+    width: 7rem;
+    height: 0.5rem;
+    background-color: rgb(255, 255, 255);
+}
+.pecahan-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+#inputatas {
+    font-size: 1.5rem;
+    height: 50;
+    width: 150;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+#inputbawah {
+    font-size: 1.5rem;
+    height: 50;
+    width: 150;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+.pecahan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+    row-gap: 1rem;
+}
+.opsi-campuran {
+    font-family: poppins;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 9rem;
+    margin-bottom: 2rem;
+    margin-top: -2rem;
+    cursor: pointer;
+}
+.campuran {
+    display: flex;
+    flex-direction: row;
+}
+#campuran-opsi-click {
+    color: white;
+    background-color: transparent;
+    border-radius: 1rem;
+    width: 10rem;
+    text-align: center;
+}
+
+#biasa-opsi-click {
+    color: yellow;
+    background-color: rgba(255, 255, 255, 0.349);
+    border-radius: 1rem;
+    width: 5rem;
+    text-align: center;
+}
+
+.pecahan-campuran {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    translate: -3rem;
+}
+#inputcampuran {
+    font-size: 3rem;
+    height: 100;
+    width: 80;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    visibility: hidden;
+}
+#hasil-pecahan-biasa {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+#hasil-pecahan-campuran {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 217, 1), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+    display: none;
+}
+#output-pecahan3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+#pecahan-hasil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+}
+.pecahan-output {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.outputbiasa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.outputcampuran {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.fraction-table {
+    display: flex;
+    text-align: center;
+    border-collapse: collapse;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    gap: 2rem;    
+}
+.fraction-table td {
+    padding: 0;
+}
+#divider {
+    width: 3rem;
+    background-color: white;
+    height: 0.5rem;
+    display: none;
+}
+#divider1 {
+    width: 3rem;
+    background-color: white;
+    height: 0.5rem;
+    display: none;
+}
+#pecahan-hasil-campuran {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+}
+.fraction-table-campuran {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-collapse: collapse;
+    font-size: 2rem;
+    gap: 2rem;  
+}
+.fraction-table-campuran td {
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -5,6 +5,16 @@
         <link rel="stylesheet" href="style.css">
         <script src="https://unpkg.com/feather-icons"></script>
 
+        <script src="autoNumeric.min.js" type="text/javascript"></script>
+        <!-- ...or, you may also directly use a CDN :-->
+        <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.8.1"></script>
+        <!-- ...or -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/autonumeric/4.8.1/autoNumeric.min.js"></script>
+        <!-- ...or -->
+        <script src="https://unpkg.com/autonumeric"></script>
+        <!-- ...or any other CDN. -->
+
+
         <!-- kanit -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +27,7 @@
     </head>
     <body>
         <nav>
-            <a class="home" href="index.html"><i data-feather="arrow-left"></i>Back</a>
+            <a class="home" href="Index.html"><i data-feather="arrow-left"></i>Back</a>
         </nav>
         <h1 class="judul">Kalkulator Rumus<br>
             <h2 class="perintah">Mencari Harga Diskon</h2></h1>
@@ -28,8 +38,17 @@
                         <h1>Harga barang</h1>
                         <div class="inputdiskon-div">
                             <h1>Rp.</h1>
-                            <input id="inputharga" type="number" placeholder="Masukkan Harga">
+                            <input id="inputharga" type="text" placeholder="Masukkan Harga" autocomplete="off">
                         </div>
+                        <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+                        <script>
+                            new AutoNumeric('#inputharga', {
+                                digitGroupSeparator: '.',      // Pemisah ribuan
+                                decimalCharacter: ',',         // Karakter desimal
+                                decimalPlaces: 0,              // Jumlah angka desimal
+                            });
+                        </script>
+                        
                     </div>
 
                     <div class="pembatas"></div>
@@ -37,8 +56,8 @@
                     <div class="diskon-conten">
                         <h1>Diskon</h1>
                         <div class="inputdiskon-div">
-                            <input id="inputdiskon" type="number" placeholder="Masukkan Diskon">
-                            <h1>%</h1>
+                            <input id="inputdiskon" type="number" placeholder="Masukkan Diskon" autocomplete="off">
+                            <h1>%</h1>                    
                         </div>
                     </div>
                 </div>
