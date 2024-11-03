@@ -413,6 +413,71 @@ function penyederhanaanPecahanCampuran() {
 }
 
 
+function hipotenusa() {
+    let inputA = document.getElementById('inputA')
+    let inputB = document.getElementById('inputB')
+    let inputC = document.getElementById('inputC')
+    let nilaiA = parseFloat(inputA.value)
+    let nilaiB = parseFloat(inputB.value)
+    let nilaiC = parseFloat(inputC.value)
+    let output1 = document.getElementById('output-hipotenusa1')
+    let output3 = document.getElementById('output-hipotenusa3')
+    let outputA = document.getElementById('output-hipotenusa-bawah')
+    let outputB = document.getElementById('output-hipotenusa-kiri')
+    let outputC = document.getElementById('output-hipotenusa-kanan')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+    let outputSegitiga = document.getElementById('segitiga-hipotenusa1')
+
+    outputPenjelasan.innerHTML = "Lihat Penjelasan"
+
+    console.log(nilaiA)
+    console.log(nilaiB)
+    console.log(nilaiC )
+
+    if (!isNaN(nilaiA) && !isNaN(nilaiB) && isNaN(nilaiC)) {
+        var hasilC = parseFloat(Math.sqrt(nilaiA ** 2 + nilaiB ** 2).toFixed(2))
+        outputSegitiga.style.display = "block"
+        outputC.style.color = "yellow"
+        outputA.style.color = "white"
+        outputB.style.color = "white"
+        outputA.innerHTML = `a = ${nilaiA}`
+        outputB.innerHTML = `b = ${nilaiB}`
+        outputC.innerHTML = `c = ${hasilC}`
+        output3.innerHTML = `<h2>Hasil nilai c = ${hasilC}`
+    }
+    else if (isNaN(nilaiA) && !isNaN(nilaiB) && !isNaN(nilaiC)) {
+        var hasilA = parseFloat(Math.sqrt(nilaiC ** 2 - nilaiB ** 2).toFixed(2))
+        outputSegitiga.style.display = "block"
+        outputA.style.color = "yellow"
+        outputB.style.color = "white"
+        outputC.style.color = "white"
+        outputA.innerHTML = `a = ${hasilA}`
+        outputB.innerHTML = `b = ${nilaiB}`
+        outputC.innerHTML = `c = ${nilaiC}`
+        output3.innerHTML = `<h2>Hasil nilai a = ${hasilA}`
+    }
+    else if (!isNaN(nilaiA) && isNaN(nilaiB) && !isNaN(nilaiC)) {
+        var hasilB = parseFloat(Math.sqrt(nilaiC ** 2 - nilaiA ** 2).toFixed(2))
+        outputSegitiga.style.display = "block"
+        outputB.style.color = "yellow"
+        outputA.style.color = "white"
+        outputC.style.color = "white"
+        outputA.innerHTML = `a = ${nilaiA}`
+        outputB.innerHTML = `b = ${hasilB}`
+        outputC.innerHTML = `c = ${nilaiC}`
+        output3.innerHTML = `<h2>Hasil nilai b = ${hasilB}`
+    }
+    else {
+        output3.innerHTML = `<h2>Error!! Masukkan dengan benar`
+        outputSegitiga.style.display = "none"
+        outputA.innerHTML = ``
+        outputB.innerHTML = ``
+        outputC.innerHTML = ``
+    }
+
+}
+
+
 
 
 
@@ -424,5 +489,3 @@ function penyederhanaanPecahanCampuran() {
 // const stringsBaru = stringsAsli[0].toUpperCase().concat(stringsAsli.slice(1))
 
 // console.log(stringsBaru)
- var hasil = parseFloat(12 % 0)
- console.log(hasil)

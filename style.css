@@ -218,6 +218,7 @@ input::-webkit-inner-spin-button {
     border-radius: 1rem;
     width: 20rem;
     justify-self: center;
+    text-align: center;
 }
 #output-penjelasan:hover {
     color: rgb(255, 255, 255);
@@ -529,6 +530,135 @@ input::-webkit-inner-spin-button {
     padding: 0;
 }
 
+/* hipotenusa */
+.hipotenusa-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.hipotenusa {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
+.hipotenusa-menu {
+    margin-bottom: 4rem;
+}
+.segitiga-hipotenusa {
+    width: 0;
+    height: 0;
+    border-right: 15rem solid transparent;
+    border-bottom: 15rem solid yellow;
+}
+#segitiga-hipotenusa1{
+    width: 0;
+    height: 0;
+    border-right: 15rem solid transparent;
+    border-bottom: 15rem solid yellow;
+    display: none;
+}
+#inputA {
+    font-size: 1.5rem;
+    height: 50;
+    width: 150;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-top: 2rem;
+}
+#inputB {
+    font-size: 1.5rem;
+    height: 50;
+    width: 150;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-left: -11rem;
+    translate: 0 10rem;
+    
+}
+
+#inputC {
+    font-size: 1.5rem;
+    height: 50;
+    width: 150;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    rotate: 45deg;
+    translate: 8rem 8rem;
+}
+#hasil-hipotenusa {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+    margin-bottom: 5rem;
+}
+.segitiga-hipotenusa-output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.segitiga-hipotenusa-output-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+}
+.hipotenusa-output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+#output-hipotenusa-kiri {
+    translate: -20rem;
+    position: absolute;
+    width: 20rem;
+    direction: rtl;
+    word-wrap: break-word;
+
+}
+#output-hipotenusa-kanan {
+    translate: 8rem 4rem;
+    rotate: 45deg;
+    position: absolute;
+    width: 20rem;
+    word-wrap: break-word;
+}
+.output-hipotenusa-kanan {
+    display: flex;
+    flex-direction: column-reverse;
+}
+#output-hipotenusa-bawah {
+    transform: translateX(-3rem);
+    max-width: 50rem;
+    word-wrap: break-word;
+}
 
 
 
