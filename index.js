@@ -226,12 +226,15 @@ function penyederhanaanPecahanBiasa() {
                         "<br> lalu kita bagi pembilang dan penyebut dengan " + hasil + " <br>" + angkaAtas + " : " + hasil + " = " + jumlahAngkaAtas +
                         "<br>" + angkaBawah + " : " + hasil + " = " + jumlahAngkaBawah + "<br> dan kita berhasil mendapat nilai sederhana dari <sup>" + angkaAtas +
                          "</sup> &frasl; <sub>" +angkaBawah + "</sub> yaitu = <sup>" + jumlahAngkaAtas + "</sup> &frasl; <sub>" + jumlahAngkaBawah + "</sub>"
+    output5.innerHTML = "<h2>Atau : " + hasilOperasi
+
     if (angkaBawah == 0 ) { //jika pembilang dan penyebut 0 maka akan tidak terdefinisi
         outputAtas.innerHTML = "tidak terdefinisi"
         outputBawah.innerHTML = "tidak terdefinisi"
         output1.innerHTML = "<h3>Pecahan <sup>" + angkaAtas +"</sup> &frasl; <sub>" +angkaBawah + "</sub> tidak terdefinisi karena mempunyai nilai nol (0) sebagai penyebut. Dalam matematika,"+
         " Suatu pecahan dikatakan tak terdefinisi/tak tentu jika penyebutnya sama dengan 0 . Tidak peduli seberapa rumitnya, kapan pun penyebut"+
         " sama dengan 0, pecahan keseluruhan menjadi tidak terdefinisi."
+        output5.innerHTML = "<h2>Atau : Tidak Terdefinisi"
     }
     else if(angkaAtas == 0) {
         outputAtas.innerHTML = jumlahAngkaAtas
@@ -288,7 +291,6 @@ function penyederhanaanPecahanBiasa() {
         outpunCampuran.innerHTML = ""
     }
 
-    output5.innerHTML = "<h2>Atau : " + hasilOperasi
 }
 
 
@@ -335,14 +337,24 @@ function penyederhanaanPecahanCampuran() {
     output3.innerHTML = "<h2>Hasil penyederhanaan adalah :"
     outputPenjelasan.innerHTML = "Lihat Penjelasan"
 
+    //output penjelasan default
+    output1.innerHTML = `<h3>Pertama ubah pecahan campuran menjadi pecahan biasa. Kita cari pembilang dengan cara ${angkaBawah} (penyebut) x ${angkaCampuran} (bilangan bulat) + ${angkaAtas} (pembilang awal) = ${convertAngkaAtas}
+                        <br>${convertAngkaAtas} merupakan pembilang. untuk penyebut kita tidak perlu mencari karena dalam penyederhanaan pecahan penyebut akan tetap sama, Dan kita mendapat hasil  = <sup>${convertAngkaAtas}</sup> &frasl; <sub>${convertAngkaBawah}</sub> 
+                        <br><h3>Lalu kita mencari FPB (faktor persekutuan terbesar) dari ${convertAngkaAtas} dan ${convertAngkaBawah}<br>FPB  dari ${convertAngkaAtas} dan ${convertAngkaBawah} adalah = ${hasil}
+                        <br> lalu kita bagi pembilang dan penyebut dengan ${hasil} <br>${convertAngkaAtas} : ${hasil} = ${jumlahAngkaAtas}
+                        <br>${convertAngkaBawah} : ${hasil} = ${jumlahAngkaBawah}<br> dan kita berhasil mendapat nilai sederhana dari <sup>${convertAngkaAtas}
+                        </sup> &frasl; <sub>${convertAngkaBawah}</sub> yaitu = <sup>${jumlahAngkaAtas}</sup> &frasl; <sub>${jumlahAngkaBawah}</sub>`
+    output5.innerHTML = "<h2>Atau : " + hasilOperasi
+    
     if (angkaBawah == 0 ) { //jika pembilang dan penyebut 0 maka akan tidak terdefinisi
         outputAtas.innerHTML = "tidak terdefinisi"
         outputBawah.innerHTML = "tidak terdefinisi"
         output1.innerHTML = "<h3>Pecahan "+angkaCampuran+" <sup>" + angkaAtas +"</sup> &frasl; <sub>" +angkaBawah + "</sub> tidak terdefinisi karena mempunyai nilai nol (0) sebagai penyebut. Dalam matematika,"+
         " Suatu pecahan dikatakan tak terdefinisi/tak tentu jika penyebutnya sama dengan 0 . Tidak peduli seberapa rumitnya, kapan pun penyebut"+
         " sama dengan 0, pecahan keseluruhan menjadi tidak terdefinisi."
+        output5.innerHTML = "<h2>Atau : Tidak Terdefinisi"
     }
-    else if(angkaAtas == 0) {
+    else if(jumlahAngkaAtas == 0) {
         outputAtas.innerHTML = jumlahAngkaAtas
         outputBawah.innerHTML = jumlahAngkaBawah
         output1.innerHTML = `<h3>Pecahan <sup>${angkaAtas}</sup> &frasl; <sub>${angkaBawah}</sub> memiliki hasil = 0 <br>karena dalam pecahan bila terdapat 0 sebagai pembilang maka nilainya adalah 0 mau berapapun penyebut hasilnya akan tetap 0. 
@@ -354,21 +366,6 @@ function penyederhanaanPecahanCampuran() {
     }
 
 
-
-
-    if (angkaBawah == 0 ) { //jika pembilang dan penyebut 0 maka akan tidak terdefinisi
-        outputAtas.innerHTML = "tidak terdefinisi"
-        outputBawah.innerHTML = "tidak terdefinisi"
-
-    }
-    else if(angkaAtas == 0) {
-        outputAtas.innerHTML = jumlahAngkaAtas
-        outputBawah.innerHTML = jumlahAngkaBawah
-    }
-    else {
-        outputAtas.innerHTML = jumlahAngkaAtas
-        outputBawah.innerHTML = jumlahAngkaBawah
-    }
 
     if (hasil1 != 0 && hasil3 != 0 && !isNaN(hasil1) ) { // jika modulus dan bilangan bulat tidak 0 maka akan muncul penyederhanaan campuran
         divider1.style.display = "block"
@@ -414,7 +411,7 @@ function penyederhanaanPecahanCampuran() {
         outpunCampuran.innerHTML = ""
     }
 
-    output5.innerHTML = "<h2>Atau : " + hasilOperasi
+
 }
 //kurang menulis output default dan output jika pembilang 0
 

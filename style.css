@@ -546,20 +546,15 @@ input::-webkit-inner-spin-button {
 
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    html {
-        font-size: 100%;
-    }
-    #output {
-        font-size: 1.4rem;
-    }
-    .judul {
-        font-size: 4rem;
-    }
+@media screen and (max-width: 600px) {
+
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media screen and (min-width: 600px) {
+ 
+
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {}
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {}
