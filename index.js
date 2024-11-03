@@ -138,8 +138,8 @@ function penyederhanaanRasio() {
     output4.innerHTML = "<h3> Hasil penyederhaan :"
     output3.innerHTML = "<h1>" + jumlahAngkaKiri + " : " + jumlahAngkaKanan
     outputPenjelasan.innerHTML = "Lihat Penjelasan"
-    output1.innerHTML = "<h3> FPB (faktor persekutuan terbesar) / GCD (Greatest Common Divisor)<br> dari " + angkaKiri + " dan " + angkaKanan + " adalah = "+hasil
-    output2.innerHTML = "<h3> jadi "+ angkaKiri +" : " + hasil + " = " + jumlahAngkaKiri+"<br> Dan " +
+    output1.innerHTML = "<h3> FPB (faktor persekutuan terbesar) / GCD (Greatest Common Divisor)<br> dari " + angkaKiri + " dan " + angkaKanan + " adalah = "+hasil +
+    "<br>jadi "+ angkaKiri +" : " + hasil + " = " + jumlahAngkaKiri+"<br> Dan " +
                         angkaKanan + " : " + hasil + " = " +jumlahAngkaKanan
 
 }
@@ -195,7 +195,6 @@ function penyederhanaanPecahanBiasa() {
     let output3 = document.getElementById('output-pecahan3')
     let output4 = document.getElementById('output-pecahan4')
     let output5 = document.getElementById('output-pecahan5')
-    let outputPecahan = document.getElementById('pecahan-hasil')
     let outputAtas = document.getElementById('angkaatas')
     let outputBawah = document.getElementById('angkabawah')
     let outputAtasCampuran = document.getElementById('angkaatascampuran')
@@ -251,14 +250,14 @@ function penyederhanaanPecahanBiasa() {
 
     if (hasil1 != 0 && hasil3 != 0 && !isNaN(hasil1) ) { // jika modulus dan bilangan bulat tidak 0 maka akan muncul penyederhanaan campuran
         divider1.style.display = "block"
-        output4.innerHTML = "<h2> Atau jika disederhanakan menjadi pecahan campuran :"
+        output4.innerHTML = "<h3> Atau jika disederhanakan menjadi pecahan campuran :"
         outputAtasCampuran.innerHTML = hasil1
         outputBawahCampuran.innerHTML = jumlahAngkaBawah
         outpunCampuran.innerHTML = hasil3
         output1.innerHTML = "<h3>Pertama kita mencari FPB (faktor persekutuan terbesar) dari " + angkaAtas + " dan " + angkaBawah+ "<br> FPB  dari " + angkaAtas + " dan " + angkaBawah +" adalah = " + hasil +
                         "<br> lalu kita bagi pembilang dan penyebut dengan " + hasil + " <br>" + angkaAtas + " : " + hasil + " = " + jumlahAngkaAtas +
                         "<br>" + angkaBawah + " : " + hasil + " = " + jumlahAngkaBawah + "<br> dan kita berhasil mendapat nilai sederhana dari <sup>" + angkaAtas +
-                         "</sup> &frasl; <sub>" +angkaBawah + "</sub> yaitu = <sup>" + jumlahAngkaAtas + "</sup> &frasl; <sub>" + jumlahAngkaBawah + "</sub>." +
+                         "</sup> &frasl; <sub>" +angkaBawah + "</sub> yaitu = <sup>" + jumlahAngkaAtas + "</sup> &frasl; <sub>" + jumlahAngkaBawah + "</sub>" +
                          "<br> <sup>" + jumlahAngkaAtas + "</sup> &frasl; <sub>" + jumlahAngkaBawah + "</sub> bisa kita sederhanakan lagi menjadi pecahan campuran dengan cara mencari <br>angka yang jika dikalikan dengan penyebut (" + jumlahAngkaBawah +
                          ") hasilnya mendekati dan tidak melebihi pembilang (" + jumlahAngkaAtas + ") <br>Angka yang tepat dengan kriteria diatas adalah = " +hasil3 + "<br>Karena jika "+ hasil3 + " x " + jumlahAngkaBawah + " hasilnya adalah = " + hasil4 +
                          " (" + hasil4 + " adalah angka paling mendekati " +jumlahAngkaAtas + " dan tidak melebihi "+jumlahAngkaAtas+") <br>Kita kunci "+ hasil3 +" sebagai bilangan bulat<br>Lalu kita mencari pembilang campuran dengan cara mengkali (x) bilangan bulat yaitu " +
@@ -306,7 +305,6 @@ function penyederhanaanPecahanCampuran() {
     let output3 = document.getElementById('output-pecahan3')
     let output4 = document.getElementById('output-pecahan4')
     let output5 = document.getElementById('output-pecahan5')
-    let outputPecahan = document.getElementById('pecahan-hasil')
     let outputAtas = document.getElementById('angkaatas')
     let outputBawah = document.getElementById('angkabawah')
     let outputAtasCampuran = document.getElementById('angkaatascampuran')
@@ -345,7 +343,7 @@ function penyederhanaanPecahanCampuran() {
                         <br>${convertAngkaBawah} : ${hasil} = ${jumlahAngkaBawah}<br> dan kita berhasil mendapat nilai sederhana dari <sup>${convertAngkaAtas}
                         </sup> &frasl; <sub>${convertAngkaBawah}</sub> yaitu = <sup>${jumlahAngkaAtas}</sup> &frasl; <sub>${jumlahAngkaBawah}</sub>`
     output5.innerHTML = "<h2>Atau : " + hasilOperasi
-    
+
     if (angkaBawah == 0 ) { //jika pembilang dan penyebut 0 maka akan tidak terdefinisi
         outputAtas.innerHTML = "tidak terdefinisi"
         outputBawah.innerHTML = "tidak terdefinisi"
@@ -369,7 +367,7 @@ function penyederhanaanPecahanCampuran() {
 
     if (hasil1 != 0 && hasil3 != 0 && !isNaN(hasil1) ) { // jika modulus dan bilangan bulat tidak 0 maka akan muncul penyederhanaan campuran
         divider1.style.display = "block"
-        output4.innerHTML = "<h2> Atau jika disederhanakan menjadi pecahan campuran :"
+        output4.innerHTML = "<h3> Atau jika disederhanakan menjadi pecahan campuran :"
         outputAtasCampuran.innerHTML = hasil1
         outputBawahCampuran.innerHTML = jumlahAngkaBawah
         outpunCampuran.innerHTML = hasil3
@@ -413,7 +411,6 @@ function penyederhanaanPecahanCampuran() {
 
 
 }
-//kurang menulis output default dan output jika pembilang 0
 
 
 

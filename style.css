@@ -235,6 +235,7 @@ input::-webkit-inner-spin-button {
     padding: 1rem;
     text-align: left;
     max-width: 70rem;
+    font-size: 1rem;
 
 }
 .pin-png {
@@ -458,6 +459,7 @@ input::-webkit-inner-spin-button {
 }
 #angkacampuran {
     font-weight: 500;
+    font-size: 3rem;
 }
 .pecahan-output {
     display: flex;
@@ -465,19 +467,21 @@ input::-webkit-inner-spin-button {
     justify-content: center;
     align-items: center;
     text-align: center;
-
+    flex-wrap: wrap;
+    
 }
 .outputbiasa {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
 }
 .outputcampuran {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    flex-wrap: wrap;
+    column-gap: 2rem;
 }
 .fraction-table {
     display: flex;
@@ -486,7 +490,8 @@ input::-webkit-inner-spin-button {
     justify-content: center;
     align-items: center;
     font-size: 2rem;
-    gap: 2rem;    
+    gap: 2rem;
+    max-width: 2rem; 
 }
 .fraction-table td {
     padding: 0;
