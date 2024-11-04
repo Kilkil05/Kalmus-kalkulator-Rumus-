@@ -430,10 +430,6 @@ function hipotenusa() {
 
     outputPenjelasan.innerHTML = "Lihat Penjelasan"
 
-    console.log(nilaiA)
-    console.log(nilaiB)
-    console.log(nilaiC )
-
     if (!isNaN(nilaiA) && !isNaN(nilaiB) && isNaN(nilaiC)) {
         var hasilC = parseFloat(Math.sqrt(nilaiA ** 2 + nilaiB ** 2).toFixed(2))
         outputSegitiga.style.display = "block"
@@ -443,29 +439,67 @@ function hipotenusa() {
         outputA.innerHTML = `a = ${nilaiA}`
         outputB.innerHTML = `b = ${nilaiB}`
         outputC.innerHTML = `c = ${hasilC}`
-        output3.innerHTML = `<h2>Hasil nilai c = ${hasilC}`
+        output3.innerHTML = `<h2>Hasil nilai hipotenusa = ${hasilC}`
+        output1.innerHTML = `<h3>Rumus mencari nilai hipotenusa menggunakan theorema pythagoras yaitu c<sup>2</sup> = a<sup>2</sup> + b<sup>2</sup>
+                            <br>Pertama kita mencari nilai a<sup>2</sup> = ${nilaiA} x ${nilaiA} = ${nilaiA ** 2}<br>Lalu mencari nilai b<sup>2</sup> =
+                            ${nilaiB} x ${nilaiB} = ${nilaiB ** 2} <br> Lalu jumlahkan nilai a dan b = ${nilaiA ** 2} + ${nilaiB ** 2} = ${nilaiA ** 2 + nilaiB ** 2}
+                            <br>berarti c<sup>2</sup> = ${nilaiA ** 2 + nilaiB ** 2}<br>karena yang dicari adalah c bukan c<sup>2</sup> maka kita hilangkan kuadrat dengan cara mengakarkan ${nilaiA ** 2 + nilaiB ** 2}
+                            <br> Jadi c = √${nilaiA ** 2 + nilaiB ** 2}<br>Berarti c = ${hasilC}`
     }
     else if (isNaN(nilaiA) && !isNaN(nilaiB) && !isNaN(nilaiC)) {
-        var hasilA = parseFloat(Math.sqrt(nilaiC ** 2 - nilaiB ** 2).toFixed(2))
-        outputSegitiga.style.display = "block"
-        outputA.style.color = "yellow"
-        outputB.style.color = "white"
-        outputC.style.color = "white"
-        outputA.innerHTML = `a = ${hasilA}`
-        outputB.innerHTML = `b = ${nilaiB}`
-        outputC.innerHTML = `c = ${nilaiC}`
-        output3.innerHTML = `<h2>Hasil nilai a = ${hasilA}`
+        var hasilA = parseFloat(Math.sqrt(nilaiC ** 2 - nilaiB ** 2).toFixed(2)) // proses hasil
+        if(!isNaN(hasilA)) { // jika nilai hipotenusa > dari panjang
+            outputSegitiga.style.display = "block"
+            outputA.style.color = "yellow"
+            outputB.style.color = "white"
+            outputC.style.color = "white"
+            outputA.innerHTML = `a = ${hasilA}`
+            outputB.innerHTML = `b = ${nilaiB}`
+            outputC.innerHTML = `c = ${nilaiC}`
+            output3.innerHTML = `<h2>Hasil nilai alas = ${hasilA}`
+            output1.innerHTML = `<h3>Rumus mencari nilai a menggunakan theorema pythagoras yaitu a<sup>2</sup> = c<sup>2</sup> - b<sup>2</sup>
+            <br>Pertama kita mencari nilai c<sup>2</sup> = ${nilaiC} x ${nilaiC} = ${nilaiC ** 2}<br>Lalu mencari nilai b<sup>2</sup> =
+            ${nilaiB} x ${nilaiB} = ${nilaiB ** 2} <br> Lalu kurangi nilai c dengan b = ${nilaiC ** 2} - ${nilaiB ** 2} = ${nilaiC ** 2 - nilaiB ** 2}
+            <br>berarti a<sup>2</sup> = ${nilaiC ** 2 - nilaiB ** 2}<br>karena yang dicari adalah a bukan a<sup>2</sup> maka kita hilangkan kuadrat dengan cara mengakarkan ${nilaiC ** 2 - nilaiB ** 2}
+            <br> Jadi a = √${nilaiC ** 2 - nilaiB ** 2}<br>Berarti a = ${hasilA}`
+        } else { //jika hipotenusa < panjang akan error 
+            output3.innerHTML = `<h2>Error!! Nilai hipotenusa harus lebih besar!`
+            outputSegitiga.style.display = "none"
+            outputA.innerHTML = ``
+            outputB.innerHTML = ``
+            outputC.innerHTML = ``
+            output1.innerHTML = `Hipotenusa harus lebih besar! Sisi miring selalu lebih panjang daripada kaki-kaki segitiga siku-siku karena kaki-kaki selalu bertemu pada sudut 90 derajat dalam segitiga siku-siku. Oleh karena itu,
+                                 sisi miring yang menghubungkan ujung-ujung kaki harus cukup panjang untuk menutupi segitiga.`
+        }
+
     }
     else if (!isNaN(nilaiA) && isNaN(nilaiB) && !isNaN(nilaiC)) {
         var hasilB = parseFloat(Math.sqrt(nilaiC ** 2 - nilaiA ** 2).toFixed(2))
-        outputSegitiga.style.display = "block"
-        outputB.style.color = "yellow"
-        outputA.style.color = "white"
-        outputC.style.color = "white"
-        outputA.innerHTML = `a = ${nilaiA}`
-        outputB.innerHTML = `b = ${hasilB}`
-        outputC.innerHTML = `c = ${nilaiC}`
-        output3.innerHTML = `<h2>Hasil nilai b = ${hasilB}`
+        if (!isNaN(hasilB)) {
+            outputSegitiga.style.display = "block"
+            outputB.style.color = "yellow"
+            outputA.style.color = "white"
+            outputC.style.color = "white"
+            outputA.innerHTML = `a = ${nilaiA}`
+            outputB.innerHTML = `b = ${hasilB}`
+            outputC.innerHTML = `c = ${nilaiC}`
+            output3.innerHTML = `<h2>Hasil nilai panjang = ${hasilB}`
+            output1.innerHTML = `<h3>Rumus mencari nilai b menggunakan theorema pythagoras yaitu b<sup>2</sup> = c<sup>2</sup> - a<sup>2</sup>
+            <br>Pertama kita mencari nilai c<sup>2</sup> = ${nilaiC} x ${nilaiC} = ${nilaiC ** 2}<br>Lalu mencari nilai a<sup>2</sup> =
+            ${nilaiA} x ${nilaiA} = ${nilaiA ** 2} <br> Lalu kurangi nilai c dengan a = ${nilaiC ** 2} - ${nilaiA ** 2} = ${nilaiC ** 2 - nilaiA ** 2}
+            <br>berarti b<sup>2</sup> = ${nilaiC ** 2 - nilaiA ** 2}<br>karena yang dicari adalah b bukan b<sup>2</sup> maka kita hilangkan kuadrat dengan cara mengakarkan ${nilaiC ** 2 - nilaiA ** 2}
+            <br> Jadi b = √${nilaiC ** 2 - nilaiA ** 2}<br>Berarti b = ${hasilB}`
+        }
+        else {
+            output3.innerHTML = `<h2>Error!! Nilai hipotenusa harus lebih besar!`
+            outputSegitiga.style.display = "none"
+            outputA.innerHTML = ``
+            outputB.innerHTML = ``
+            outputC.innerHTML = ``
+            output1.innerHTML = `Hipotenusa harus lebih besar! Sisi miring selalu lebih panjang daripada kaki-kaki segitiga siku-siku karena kaki-kaki selalu bertemu pada sudut 90 derajat dalam segitiga siku-siku. Oleh karena itu,
+                                 sisi miring yang menghubungkan ujung-ujung kaki harus cukup panjang untuk menutupi segitiga.`
+        }
+
     }
     else {
         output3.innerHTML = `<h2>Error!! Masukkan dengan benar`
@@ -473,6 +507,8 @@ function hipotenusa() {
         outputA.innerHTML = ``
         outputB.innerHTML = ``
         outputC.innerHTML = ``
+        output1.innerHTML = ``
+        outputPenjelasan.innerHTML = ``
     }
 
 }
@@ -489,3 +525,4 @@ function hipotenusa() {
 // const stringsBaru = stringsAsli[0].toUpperCase().concat(stringsAsli.slice(1))
 
 // console.log(stringsBaru)
+ 
