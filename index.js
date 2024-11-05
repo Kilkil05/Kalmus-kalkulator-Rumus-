@@ -513,16 +513,44 @@ function hipotenusa() {
 
 }
 
+function inputNilai() {
+    let jumlahInput = parseInt(document.getElementById('jumlahbanyakinput').value)
+    let inputContainer = document.getElementById('input-container')
+    let hasilBtn = document.getElementById('hasil-average')
+
+    inputContainer.innerHTML = '' //memformat semua input
+
+    for (let i = 1; i <= jumlahInput; i++) {
+        // label
+        let label = document.createElement('label')
+        label.textContent = `Masukkan nilai ${i}`
+        label.className = "label-input"
+        label.id = `label-input${i}`
+
+        // input
+        let input = document.createElement('input')
+        input.type = 'number'
+        input.name = `input${i}`
+        input.placeholder = `Nilai ${i}`
+        input.className = "input-nilai"
+        input.id = `input-nilai${i}`
+
+        //memasukkan elemen ke container
+        inputContainer.appendChild(label)
+        inputContainer.appendChild(input)
+        inputContainer.appendChild(document.createElement('br'))
+    }
+
+    hasilBtn.style.display = "block"
+
+    
+}
 
 
-
-
-
-
+// yang baca manis 
 
 // const stringsAsli = 'javascript'
 
 // const stringsBaru = stringsAsli[0].toUpperCase().concat(stringsAsli.slice(1))
 
 // console.log(stringsBaru)
- 
