@@ -513,12 +513,17 @@ function hipotenusa() {
 
 }
 
+
+var saveInput = []
+
 function inputNilai() {
     let jumlahInput = parseInt(document.getElementById('jumlahbanyakinput').value)
     let inputContainer = document.getElementById('input-container')
     let hasilBtn = document.getElementById('hasil-average')
+    
 
     inputContainer.innerHTML = '' //memformat semua input
+    saveInput = []
 
     for (let i = 1; i <= jumlahInput; i++) {
         // label
@@ -539,10 +544,30 @@ function inputNilai() {
         inputContainer.appendChild(label)
         inputContainer.appendChild(input)
         inputContainer.appendChild(document.createElement('br'))
+
+        input.addEventListener('input', () => {
+            saveInput[i] = input.value
+        })
+
     }
 
     hasilBtn.style.display = "block"
+    
+}
 
+function outputNilai() {
+    let output = document.getElementById('output-average')
+    let jumlahInput = parseInt(document.getElementById('jumlahbanyakinput').value)
+
+    output.textContent = ''
+
+    for (i = 1; i <= jumlahInput; i++) {
+        let outputTeks = document.createElement('h3')
+        outputTeks.id = `output-teks${i}`
+        outputTeks.textContent = `Nilai ke ${i} = ${saveInput[i]}`
+
+        output.appendChild(outputTeks)
+    }
     
 }
 

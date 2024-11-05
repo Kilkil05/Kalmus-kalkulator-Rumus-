@@ -731,7 +731,14 @@ input::-webkit-inner-spin-button {
     z-index: 2;
     text-align: center;
 }
-
+#output-average {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    width: 50rem;
+}
 
 
 
