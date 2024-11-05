@@ -733,13 +733,22 @@ input::-webkit-inner-spin-button {
 }
 #output-average {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
     gap: 2rem;
     width: 50rem;
 }
-
+.average-output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#output-average3{
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
 
 

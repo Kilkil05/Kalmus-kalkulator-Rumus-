@@ -546,20 +546,32 @@ function inputNilai() {
         inputContainer.appendChild(document.createElement('br'))
 
         input.addEventListener('input', () => {
-            saveInput[i] = input.value
+            saveInput[i] = parseFloat(input.value)
         })
 
     }
 
     hasilBtn.style.display = "block"
+
+    if(isNaN(jumlahInput) || jumlahInput == 0 || jumlahInput < 0) {
+        hasilBtn.style.display = "none"
+    }
     
 }
 
 function outputNilai() {
     let output = document.getElementById('output-average')
     let jumlahInput = parseInt(document.getElementById('jumlahbanyakinput').value)
+    let output1 = document.getElementById('output-average1')
+    let output3 = document.getElementById('output-average3')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
 
     output.textContent = ''
+
+    let jumlahNilai = parseFloat(0)
+    let rata2
+    let max = saveInput[1]
+    let min = saveInput[1]
 
     for (i = 1; i <= jumlahInput; i++) {
         let outputTeks = document.createElement('h3')
@@ -567,8 +579,31 @@ function outputNilai() {
         outputTeks.textContent = `Nilai ke ${i} = ${saveInput[i]}`
 
         output.appendChild(outputTeks)
+
+        if (saveInput[i] > max) {
+            max = saveInput[i]
+        }
+        if (saveInput[i] < min) {
+            min = saveInput[i]
+        }
+
+        jumlahNilai += saveInput[i]
     }
-    
+
+    rata2 = jumlahNilai / jumlahInput
+
+    output3.innerHTML = `<h2>Jumlah Nilai : ${parseFloat(jumlahNilai.toFixed(2))}
+                        <br>Nilai Rata-rata : ${parseFloat(rata2.toFixed(2))}
+                        <br>Nilai Tertinggi : ${max}
+                        <br>Nilai Terendah : ${min}`
+    outputPenjelasan.innerHTML = "Lihat Penjelasan"
+    output1.innerHTML = `<h3>Mencari jumlah<br>Cara mencari jumlah yaitu menjumlahkan semua nilai, jumlah dari semua nilai diatas adalah = ${parseFloat(jumlahNilai.toFixed(2))}
+                        <br><br>Mencari nilai rata - rata<br>Cara mencari nilai rata-rata yaitu jumlah : banyak nilai, jumlah diatas adalah = ${parseFloat(jumlahNilai.toFixed(2))}
+                         dibagi banyak nilai diatas adalah = ${jumlahInput} <br>jadi ${parseFloat(jumlahNilai.toFixed(2))} : ${jumlahInput} = ${parseFloat(rata2.toFixed(2))}
+                         <br><br>Nilai tertinggi dari semua nilai diatas adalah = ${max} <br><br>Nilai terendah dari semua nilai diatas adalah = ${min}`
+
+
+
 }
 
 
