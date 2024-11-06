@@ -612,6 +612,44 @@ function outputNilai() {
 }
 
 
+const codeMorse = {
+    A: ".-",     B: "-...",   C: "-.-.",   D: "-..",    E: ".", 
+    F: "..-.",   G: "--.",    H: "....",   I: "..",     J: ".---", 
+    K: "-.-",    L: ".-..",   M: "--",     N: "-.",     O: "---", 
+    P: ".--.",   Q: "--.-",   R: ".-.",    S: "...",   T: "-", 
+    U: "..-",    V: "...-",   W: ".--",    X: "-..-",   Y: "-.--", 
+    Z: "--..",   0: "-----",  1: ".----",  2: "..---",  3: "...--", 
+    4: "....-",  5: ".....",  6: "-....",  7: "--...",  8: "---..", 
+    9: "----.",  ".": ".-.-.-", ",": "--..--", "?": "..--..", 
+    "'": ".----.", "!": "-.-.--", "/": "-..-.",  "(": "-.--.", 
+    ")": "-.--.-", "&": ".-...", ":": "---...", ";": "-.-.-.", 
+    "=": "-...-", "+": ".-.-.", "-": "-....-", "_": "..--.-", 
+    "$": "...-..-", "@": ".--.-.", " " : "/"
+}
+
+function teksKeMorse(text) {
+    return text.toUpperCase().split("").map(character => {
+        return codeMorse[character] || ""
+    }).join(" ")
+}
+
+function morseKeTeks(morse) {
+    var reverseCode = Object.fromEntries(Object.entries(codeMorse).map(([key, value]) => [value, key]))
+    return morse.split(" ").map(Symbol => {
+        if (Symbol === "") return " "
+        return reverseCode[Symbol] || ""
+    }).join("")
+}
+
+let teks = "aku pintar banget coii"
+let code = ".- -.- ..- / .--. .. -. - .- .-. / -... .- -. --. . - / -.-. --- .. .."
+let teksmorse = teksKeMorse(teks)
+let codeTeksMorse = morseKeTeks(code)
+console.log(teksmorse)
+console.log(codeTeksMorse)
+
+
+
 // yang baca manis 
 
 // const stringsAsli = 'javascript'
