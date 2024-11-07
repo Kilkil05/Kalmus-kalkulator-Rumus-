@@ -26,10 +26,9 @@
                 <h3>Tulis kode morse atau teks untuk diterjemahkan</h3>
                 <textarea id="input-morse" placeholder="Masukkan kode morse atau teks untuk diterjemahkan"></textarea>
 
-                <button id="hasil-morse" onclick="morse()">Hasil</button>
+                <button id="hasil-morse" onclick="translateMorse()">Hasil</button>
                 <div class="morse-output">
-                    <div class="output-morse-container"></div>
-                    <h3 id="output-morse4"></h3>
+                    <div id="output-morse-container"><p id="output-morse4"></p></div>
                     <h2 id="output-morse3"></h2>
                     <h2 id="output-penjelasan" onclick="showText()"></h2>
                     <div id="output-hide">
@@ -39,8 +38,6 @@
                     </div>
 
                 </div>
-                
-
             </div>
             <script>
                 feather.replace();
@@ -51,5 +48,6 @@
                 <a href="https://www.instagram.com/wasekloer.id/"><img src="image.png" alt="instagram" width="50px"></a>
             </footer>
         </div>
+        <script>document.getElementById('input-morse').addEventListener('input', translateMorse)</script>
     </body>
 </html>

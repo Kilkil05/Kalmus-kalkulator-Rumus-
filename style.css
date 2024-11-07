@@ -775,7 +775,7 @@ input::-webkit-inner-spin-button {
 }
 #input-morse {
     font-size: 1.5rem;
-    height: 10rem;
+    height: 20rem;
     width: 50rem;
     background-color: white;
     color: black;
@@ -784,6 +784,7 @@ input::-webkit-inner-spin-button {
     z-index: 2;
     text-align: left;
     word-wrap: break-word;
+    padding: 1rem;
 }
 #hasil-morse {
     font-size: 2.5rem;
@@ -793,7 +794,23 @@ input::-webkit-inner-spin-button {
     font-weight: 800;
     z-index: 999;
 }
-
+.morse-output{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#output-morse-container {
+    font-size: 1.5rem;
+    min-height: 20rem;
+    width: 50rem;
+    background-color: white;
+    color: black;
+    border-radius: 0.5rem;
+    word-wrap: break-word;
+    padding: 1rem;
+    font-family: monospace;
+}
 
 
 

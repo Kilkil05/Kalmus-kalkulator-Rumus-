@@ -627,26 +627,43 @@ const codeMorse = {
     "$": "...-..-", "@": ".--.-.", " " : "/"
 }
 
+
 function teksKeMorse(text) {
     return text.toUpperCase().split("").map(character => {
+    if (character === " ") {
+        return "/";  // Mengganti spasi teks dengan "/"
+    }
         return codeMorse[character] || ""
     }).join(" ")
+
 }
 
 function morseKeTeks(morse) {
     var reverseCode = Object.fromEntries(Object.entries(codeMorse).map(([key, value]) => [value, key]))
+
+    morse = morse.replace(/\//g, " / ")
     return morse.split(" ").map(Symbol => {
+        if (Symbol === "/") return " "
         if (Symbol === "") return " "
         return reverseCode[Symbol] || ""
     }).join("")
+
 }
 
-let teks = "aku pintar banget coii"
-let code = ".- -.- ..- / .--. .. -. - .- .-. / -... .- -. --. . - / -.-. --- .. .."
-let teksmorse = teksKeMorse(teks)
-let codeTeksMorse = morseKeTeks(code)
-console.log(teksmorse)
-console.log(codeTeksMorse)
+function translateMorse() {
+    let kodeMorse = document.getElementById('input-morse').value.trim()
+    let output = document.getElementById('output-morse-container')
+    let kodeMorseConvert
+    
+    console.log(kodeMorse)
+    if (kodeMorse.match(/^[\.\-\s\/]+$/)) {
+        kodeMorseConvert = morseKeTeks(kodeMorse)
+    }else {
+        kodeMorseConvert = teksKeMorse(kodeMorse)
+    }
+    output.innerHTML = kodeMorseConvert
+}
+
 
 
 
