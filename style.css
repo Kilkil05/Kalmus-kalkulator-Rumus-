@@ -21,6 +21,17 @@ nav{
     color: white;
     position: fixed;
 }
+
+select {
+    width: 10rem;
+    padding: 10px;
+    border: 2px solid #007bff; /* Biru */
+    border-radius: 5px;
+    background-color: #f8f9fa; /* Abu terang */
+    color: #333;
+    font-size: 16px;
+    font-family: poppins;
+}
 .home {
     font-family: poppins;
     font-size: 2rem;
@@ -751,6 +762,7 @@ input::-webkit-inner-spin-button {
 }
 
 
+
 /* Kode Morse */
 
 .morse-container {
@@ -812,6 +824,52 @@ input::-webkit-inner-spin-button {
     font-family: monospace;
 }
 
+/* kalkulator zakat */
+.zakat-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.zakat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+    row-gap: 1rem;
+}
+.penghasilan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#jumlah-penghasilan {
+    font-size: 1.5rem;
+    height: 50;
+    width: 400;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: left;
+}
+#konfirmasi-penghasilan{
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
 
 
 
@@ -821,10 +879,19 @@ input::-webkit-inner-spin-button {
 
 
 
-
-
-
-
+/* bangun datar */
+/* .bangunDatar-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+} */
 
 
 

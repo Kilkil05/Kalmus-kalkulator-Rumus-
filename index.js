@@ -664,6 +664,32 @@ function translateMorse() {
     output.innerHTML = kodeMorseConvert
 }
 
+function zakatPenghasilan() {
+    let jumlahPenghasilan = parseFloat(document.getElementById('jumlah-penghasilan').value.replace(/\./g, ""))
+    let output3 = document.getElementById('output-average3')
+
+    let nisabHarta = parseFloat(6859394)
+
+    output3.innerHTML = ""
+
+    if (jumlahPenghasilan >= nisabHarta) {
+        jumlahPenghasilan = jumlahPenghasilan * 0.025
+        jumlahPenghasilanTahun = jumlahPenghasilan * 12
+        output3.innerHTML = `Zakat yang wajib dibayar dalam 1 bulan adalah : Rp.${formatAngka(jumlahPenghasilan)}
+                            <br>Atau dalam 1 tahun wajib membayar : Rp.${formatAngka(jumlahPenghasilanTahun)}`
+    } else if (isNaN(jumlahPenghasilan)) {
+        output3.innerHTML = `Error!! Mohon masukkan penghasilan anda dengan benar`
+    } else {
+        output3.innerHTML = `Anda tidak wajib membayar zakat`
+    }
+}
+
+
+
+
+
+
+
 
 
 
