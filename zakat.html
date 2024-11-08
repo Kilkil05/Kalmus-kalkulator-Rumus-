@@ -58,6 +58,25 @@
                     <button id="konfirmasi-penghasilan" onclick= "zakatPenghasilan()">Konfirmasi</button>
                 </div>
 
+                <div class="hewan-ternak">
+                    <h3>Pilih Hewan Ternak</h3>
+                    <select name="hewan" id="hewan-ternak-select">
+                        <option value="Kambing">Kambing / Domba</option>
+                        <option value="Sapi">Sapi / kerbau</option>
+                        <option value="Unta">Unta</option>
+                    </select>
+                    <div class="kambing">
+                        <h3>Jumlah Kambing yang sudah haul 1 tahun</h3>
+                        <input id="jumlah-kambing" type="number">
+                        <button id="konfirmasi-penghasilan" onclick= "zakatHewanKambing()">Konfirmasi</button>
+                    </div>
+                    <div class="sapi">
+                        <h3>Jumlah Sapi / Kerbau yang sudah haul 1 tahun</h3>
+                        <input id="jumlah-sapi" type="number">
+                        <button id="konfirmasi-penghasilan" onclick= "zakatHewanSapi()">Konfirmasi</button>
+                    </div>
+                    
+                </div>
 
 
 
@@ -65,14 +84,15 @@
 
 
 
-                <div class="average-output">
-                    <h3 id="output-average4"></h3>
-                    <h2 id="output-average3"></h2>
+
+                <div class="zakat-output">
+                    <h3 id="output-zakat4"></h3>
+                    <h2 id="output-zakat3"></h2>
                     <h2 id="output-penjelasan" onclick="showText()"></h2>
                     <div id="output-hide">
                         <img class="pin-png" src="asset/pin.png" alt="" width="50px">
-                        <h3 id="output-average1"></h3>
-                        <h3 id="output-average2"></h3>
+                        <h3 id="output-zakat1"></h3>
+                        <h3 id="output-zakat2"></h3>
                     </div>
 
                 </div>

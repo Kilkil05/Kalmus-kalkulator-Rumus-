@@ -23,7 +23,7 @@ nav{
 }
 
 select {
-    width: 10rem;
+    width: 15rem;
     padding: 10px;
     border: 2px solid #007bff; /* Biru */
     border-radius: 5px;
@@ -850,6 +850,7 @@ input::-webkit-inner-spin-button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 #jumlah-penghasilan {
     font-size: 1.5rem;
@@ -870,9 +871,50 @@ input::-webkit-inner-spin-button {
     font-weight: 800;
     z-index: 999;
 }
-
-
-
+.hewan-ternak {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.kambing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2rem;
+}
+#jumlah-kambing {
+    font-size: 1.5rem;
+    height: 50;
+    width: 400;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.sapi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2rem;
+}
+#jumlah-sapi {
+    font-size: 1.5rem;
+    height: 50;
+    width: 400;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem;
+}
 
 
 
