@@ -769,7 +769,7 @@ function zakatHewanSapi() {
         zakatTabi = 4 + tambahanTabi;
         zakatMusinnah = 3 + tambahanMusinnah;
 
-        outputSapi.innerHTML = `Jumlah Sapi yang wajib dizakatkan adalah ${zakatTabi} ekor sapi tabi (umur 1-2 tahun) dan ${zakatMusinnah} ekor sapi musinnah (umur 2-3 tahun).`;
+        outputSapi.innerHTML = `Jumlah Sapi yang wajib dizakatkan adalah ${zakatTabi} ekor sapi tabi (umur 1-2 tahun) atau ${zakatMusinnah} ekor sapi musinnah (umur 2-3 tahun).`;
     }
 }
 
