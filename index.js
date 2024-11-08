@@ -698,14 +698,17 @@ function zakatHewanKambing() {
         output3.innerHTML = `Anda tidak wajib untuk zakat`
     } else if (jumlahKambing <= 120) {
         zakatKambing = 1
-        output3.innerHTML = `Jumlah Kambing / Domba yang wajib dizakatkan adalah ${zakatKambing} ekor`
+        output3.innerHTML = `Jumlah Kambing yang wajib dizakatkan adalah ${zakatKambing} ekor kambing umur 2 tahun
+                            <br>Atau ${zakatKambing} ekor domba umur 1 tahun`
     } else if (jumlahKambing <= 200) {
         zakatKambing = 2
-        output3.innerHTML = `Jumlah Kambing / Domba yang wajib dizakatkan adalah ${zakatKambing} ekor`
+        output3.innerHTML = `Jumlah Kambing yang wajib dizakatkan adalah ${zakatKambing} ekor kambing umur 2 tahun
+                            <br>Atau ${zakatKambing} ekor domba umur 1 tahun`
     } else if (jumlahKambing > 200) {
         let tambahanZakat = Math.ceil((jumlahKambing - 200) / 100)
         zakatKambing = 2 + tambahanZakat
-        output3.innerHTML = `Jumlah Kambing / Domba yang wajib dizakatkan adalah ${zakatKambing} ekor`
+        output3.innerHTML = `Jumlah Kambing yang wajib dizakatkan adalah ${zakatKambing} ekor kambing umur 2 tahun
+                            <br>Atau ${zakatKambing} ekor domba umur 1 tahun`
     } else {
         output3.innerHTML = `Input tidak valid!! Masukkan dengan benar`
     }
@@ -763,16 +766,25 @@ function zakatHewanSapi() {
         outputSapi.innerHTML = `Jumlah Sapi yang wajib dizakatkan adalah ${zakatMusinnah} ekor sapi musinnah (umur 2-3 tahun) atau ${4} ekor sapi tabi (umur 1-2 tahun).`;
     } else {
         // Jika jumlah sapi lebih dari 129, setiap tambahan 30 sapi bertambah 1 ekor tabi
-        let tambahanTabi = Math.floor((jumlahSapi - 129) / 30);
-        let tambahanMusinnah = Math.floor((jumlahSapi - 129) / 40);
+ 
+        let tambahanTabi = Math.round((jumlahSapi - 129) / 30)
+        let tambahanMusinnah = Math.round((jumlahSapi - 129) / 40)
 
-        zakatTabi = 4 + tambahanTabi;
-        zakatMusinnah = 3 + tambahanMusinnah;
+        zakatTabi = 4 + tambahanTabi
+        zakatMusinnah = 3 + tambahanMusinnah
 
         outputSapi.innerHTML = `Jumlah Sapi yang wajib dizakatkan adalah ${zakatTabi} ekor sapi tabi (umur 1-2 tahun) atau ${zakatMusinnah} ekor sapi musinnah (umur 2-3 tahun).`;
     }
 }
 
+function zakatHewanUnta() {
+    let jumlahUnta = parseFloat(document.getElementById("jumlah-unta").value)
+    let output3 = document.getElementById('output-zakat3')
+
+    if ( jumlahUnta < 5) {
+        output3.innerHTML = `Anda tidak wajib untuk zakat`
+    }
+}
 
 
 
