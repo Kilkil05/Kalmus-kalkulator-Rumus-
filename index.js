@@ -765,24 +765,87 @@ function zakatHewanSapi() {
         zakatMusinnah = 3;
         outputSapi.innerHTML = `Jumlah Sapi yang wajib dizakatkan adalah ${zakatMusinnah} ekor sapi musinnah (umur 2-3 tahun) atau ${4} ekor sapi tabi (umur 1-2 tahun).`;
     } else {
-        // Jika jumlah sapi lebih dari 129, setiap tambahan 30 sapi bertambah 1 ekor tabi
+        let hitungSapi1th = jumlahSapi % 30
+        let hitungSapi2th = jumlahSapi % 40   
+        if (hitungSapi1th == 0 && hitungSapi2th != 0) {
+            zakatSapi = jumlahSapi / 30
+            outputSapi.innerHTML = `Zakat yang wajib dikeluarkan adalah ${zakatSapi} ekor sapi tabi (umur 1-2 tahun)`
+        } else if (hitungSapi2th == 0 && hitungSapi1th != 0) {
+            zakatSapi = jumlahSapi / 40
+            outputSapi.innerHTML = `Zakat yang wajib dikeluarkan adalah ${zakatSapi} ekor sapi musinnah (umur 2-3 tahun)`
+        } else {
+            let zakatSapi1th = Math.floor(jumlahSapi / 30)
+            let zakatSapi2th = Math.floor(jumlahSapi / 40)
+
+            let sisaSapi2th = jumlahSapi % 40
+            let jumlahSisaSapi1th = Math.floor(sisaSapi2th / 30)
+
+            outputSapi.innerHTML = `Zakat yang wajib dikeluarkan adalah ${zakatSapi1th} ekor sapi tabi (umur 1-2 tahun) tahun <br>atau ${zakatSapi2th} ekor sapi musinnah (umur 2-3 tahun)`
+            if (jumlahSisaSapi1th != 0) {
+                 outputSapi.innerHTML = `Zakat yang wajib dikeluarkan adalah ${zakatSapi2th} ekor sapi musinnah (umur 2-3 tahun) <br>dan ${jumlahSisaSapi1th} ekor sapi tabi (umur 1-2 tahun) tahun`
+            }
+        }
+
  
-        let tambahanTabi = Math.round((jumlahSapi - 129) / 30)
-        let tambahanMusinnah = Math.round((jumlahSapi - 129) / 40)
-
-        zakatTabi = 4 + tambahanTabi
-        zakatMusinnah = 3 + tambahanMusinnah
-
-        outputSapi.innerHTML = `Jumlah Sapi yang wajib dizakatkan adalah ${zakatTabi} ekor sapi tabi (umur 1-2 tahun) atau ${zakatMusinnah} ekor sapi musinnah (umur 2-3 tahun).`;
     }
 }
 
 function zakatHewanUnta() {
-    let jumlahUnta = parseFloat(document.getElementById("jumlah-unta").value)
-    let output3 = document.getElementById('output-zakat3')
+    let jumlahUnta = parseFloat(document.getElementById("jumlah-unta").value);
+    let output3 = document.getElementById('output-zakat3');
+    output3.innerHTML = "";
 
-    if ( jumlahUnta < 5) {
-        output3.innerHTML = `Anda tidak wajib untuk zakat`
+    if (isNaN(jumlahUnta) || jumlahUnta < 0) {
+        output3.innerHTML = `Input tidak valid! Masukkan jumlah unta dengan benar.`;
+        return;
+    }
+
+    if (jumlahUnta < 5) {
+        output3.innerHTML = `Anda tidak wajib untuk zakat.`;
+    } else if (jumlahUnta < 10) {
+        output3.innerHTML = `Zakat yang wajib dikeluarkan adalah 1 ekor kambing umur 2 tahun, atau 1 ekor domba umur 1 tahun.`;
+    } else if (jumlahUnta < 15) {
+        output3.innerHTML = `Zakat yang wajib dikeluarkan adalah 2 ekor kambing umur 2 tahun, atau 2 ekor domba umur 1 tahun.`;
+    } else if (jumlahUnta < 20) {
+        output3.innerHTML = `Zakat yang wajib dikeluarkan adalah 3 ekor kambing umur 2 tahun, atau 3 ekor domba umur 1 tahun.`;
+    } else if (jumlahUnta < 25) {
+        output3.innerHTML = `Zakat yang wajib dikeluarkan adalah 4 ekor kambing umur 2 tahun, atau 4 ekor domba umur 1 tahun.`;
+    } else if (jumlahUnta < 36) {
+        output3.innerHTML = `Zakat yang wajib dikeluarkan adalah 1 ekor unta betina umur 1 tahun.`;
+    } else if (jumlahUnta < 46) {
+        output3.innerHTML = `Zakat yang wajib dikeluarkan adalah 1 ekor unta betina umur 2 tahun.`;
+    } else if (jumlahUnta < 61) {
+        output3.innerHTML = `Zakat yang wajib dikeluarkan adalah 1 ekor unta betina umur 3 tahun.`;
+    } else if (jumlahUnta < 76) {
+        output3.innerHTML = `Zakat yang wajib dikeluarkan adalah 1 ekor unta betina umur 4 tahun.`;
+    } else if (jumlahUnta < 91) {
+        output3.innerHTML = `Zakat yang wajib dikeluarkan adalah 2 ekor unta betina umur 2 tahun.`;
+    } else if (jumlahUnta < 121) {
+        output3.innerHTML = `Zakat yang wajib dikeluarkan adalah 2 ekor unta betina umur 3 tahun.`;
+    } else if (jumlahUnta < 140) {
+        output3.innerHTML = `Zakat yang wajib dikeluarkan adalah 3 ekor unta betina umur 2 tahun.`;
+    } else {
+        let hitungUnta50 = jumlahUnta % 50
+        let hitungUnta40 = jumlahUnta % 40
+        if (hitungUnta50 == 0 && hitungUnta40 != 0) {
+            let zakatUnta50 = jumlahUnta / 50
+            output3.innerHTML = `Zakat yang wajib dikeluarkan adalah ${zakatUnta50} ekor unta umur 3 tahun`
+        } else if (hitungUnta40 == 0 && hitungUnta50 != 0) {
+            let zakatUnta40 = jumlahUnta / 40
+            output3.innerHTML = `Zakat yang wajib dikeluarkan adalah ${zakatUnta40} ekor unta umur 2 tahun`
+        } else {
+            let zakatUnta40 = Math.floor(jumlahUnta / 40)
+            let zakatUnta50 = Math.floor(jumlahUnta / 50)
+
+            let sisaUnta50 = jumlahUnta % 50
+            let jumlahSisaUnta40 = Math.floor(sisaUnta50 / 40)
+
+            output3.innerHTML = `Zakat yang wajib dikeluarkan adalah ${zakatUnta40} ekor unta umur 2 tahun atau ${zakatUnta50} ekor unta umur 3 tahun`
+            if (jumlahSisaUnta40 != 0) {
+                 output3.innerHTML = `Zakat yang wajib dikeluarkan adalah ${zakatUnta50} ekor unta umur 3 tahun dan ${jumlahSisaUnta40} ekor unta umur 2 tahun`
+            }
+           
+        }
     }
 }
 
