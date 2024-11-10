@@ -849,6 +849,49 @@ function zakatHewanUnta() {
     }
 }
 
+function zakatHasilPanen() {
+    let jenisPanen = document.getElementById('jenis-panen').value
+    let beratPanen = parseFloat(document.getElementById('input-berat-panen').value.replace(',', '.'))
+    let satuanBerat = document.getElementById('satuan-berat').value
+    let irigasi = document.getElementById('irigasi-select').value
+    let output3 = document.getElementById('output-zakat3');
+
+    let jumlahBerat
+    let nisabPanen = parseFloat(653)
+    let zakatPanen
+    let zakatUang
+
+    output3.innerHTML = ""
+
+    if (satuanBerat === "Kg") {
+        jumlahBerat = beratPanen
+    } else if (satuanBerat === "Kuintal") {
+        jumlahBerat = parseFloat(beratPanen * 100)
+    } else {
+        jumlahBerat = parseFloat(beratPanen * 1000)
+    }
+
+    console.log(jumlahBerat)
+
+    if (irigasi === "berbayar") {
+        zakatPanen = parseFloat(jumlahBerat * 0.05)
+    } else {
+        zakatPanen = parseFloat(jumlahBerat * 0.10)
+    }
+    console.log(zakatPanen)
+
+    if (jumlahBerat >= nisabPanen) {
+        output3.innerHTML = `Zakat yang wajib dibayar adalah ${zakatPanen} Kg dari panen ${jenisPanen}`
+    } else {
+        output3.innerHTML = `Anda tidak wajib zakat`
+    }
+
+    if (isNaN(beratPanen)) {
+        output3.innerHTML = `error! Masukkan input dengan benar`
+    }
+          
+}
+
 
 
 

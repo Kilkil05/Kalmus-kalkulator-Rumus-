@@ -29,14 +29,18 @@
         <nav>
             <a class="home" href="index.html"><i data-feather="arrow-left"></i>Back</a>
         </nav>
-        <h1 class="judul">Kalkulator Rumus<br>
-            <h2 class="perintah">Kalkulator penghitung zakat</h2>
-            <h4 class="perintah1">Note: Kalkulator ini hanya sebagai hitungan awal dan tidak dijadikan acuan sah atau tidaknya zakat. Untuk kepastian lebih lanjut, konsultasikan dengan pihak yang berwenang.</h4>
-        </h1>
+        <div class="judul-content">
+            <h1 class="judul">Kalkulator Rumus<br>
+                <h2 class="perintah">Kalkulator penghitung zakat</h2>
+                <h4 class="perintah1">Note: Kalkulator ini hanya sebagai hitungan awal dan tidak dijadikan acuan sah atau tidaknya zakat. Untuk kepastian lebih lanjut, konsultasikan dengan pihak yang berwenang.</h4>
+            </h1>
+        </div>
+
         <div class="container">
             <div class="zakat">
-                <h3>Pilih Harta</h3>
+                <h3>Pilih harta yang ingin dizakatkan</h3>
                 <select id="zakat-nisab" name="nisab-zakat">
+                    <option value="" disabled selected>Pilih Harta</option>
                     <option value="penghasilan">Penghasilan</option>
                     <option value="Hewan-Ternak">Hewan Ternak</option>
                     <option value="Hasil-panen">Hasil Panen</option>
@@ -61,6 +65,11 @@
                 </div>
 
                 <div class="hewan-ternak">
+                    <h4>Syarat-syarat zakat hewan ternak sebagai berikut :
+                        <br>1. Hewan Ternak Dikembangbiakan untuk Dimanfaatkan Susu, Daging dan Minyaknya.
+                        <br>2. Tergolong Hewan Sa-Imah (hewan ternak yang digembalakan di padang rumput / tempat umum)
+                        <br>3. Telah Mencapai Haul dan Nisabnya.</h4>
+                    <br>
                     <h3>Pilih Hewan Ternak</h3>
                     <select name="hewan" id="hewan-ternak-select">
                         <option value="Kambing">Kambing / Domba</option>
@@ -90,7 +99,32 @@
                         <br>1. Tanaman yang ditanam haruslah tanaman yang ditanam untuk dijual atau untuk dijadikan bahan pokok.
                         <br>2. Tanaman tersebut harus tumbuh dengan sendirinya tanpa perlu disiram atau diberi pupuk secara rutin.
                         <br>3. Tanaman tersebut harus ditanam pada lahan yang dimiliki sendiri dan bukan tanah milik orang lain.</h4>
-                        <br><h3>Pilih Hewan Ternak</h3>
+                        <div class="jenis-panen">
+                            <br><h3>Masukkan jenis panen</h3>
+                            <input id="jenis-panen" type="text" placeholder="contoh: Padi, Jagung, Gandum, dan lain-lain">
+                            <button id="konfirmasi-jenis-panen" >Konfirmasi</button>
+                        </div>
+                        <div class="berat-panen">
+                            <br>
+                            <br><h3>Masukkan berat bersih panen</h3>
+                            <div class="input-berat-panen-div">
+                                <input id="input-berat-panen" type="text" placeholder="masukkan berat bersih">
+                                <select name="satuan-berat" id="satuan-berat">
+                                    <option value="Kg">Kg</option>
+                                    <option value="Kuintal">Kuintal</option>
+                                    <option value="Ton">Ton</option>
+                                </select>
+                            </div>
+                            <br>
+                            <br><h3>Pilih jenis irigasi</h3>
+                            <select name="irigasi-select" id="irigasi-select">
+                                <option value="berbayar">Irigasi Berbayar</option>
+                                <option value="gratis">Irigasi Gratis (air hujan,sungai,dll)</option>
+                            </select>
+                            <button id="konfirmasi-berat-panen" onclick="zakatHasilPanen()">Konfirmasi</button>
+                           
+                        </div>
+
                 </div>
 
 
