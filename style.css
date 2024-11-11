@@ -21,6 +21,10 @@ nav{
     color: white;
     position: fixed;
 }
+p {
+    font-family: poppins;
+    font-weight: 600;
+}
 
 select {
     width: 15rem;
