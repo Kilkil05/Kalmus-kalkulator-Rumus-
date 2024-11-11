@@ -885,9 +885,9 @@ function zakatHasilPanen() {
     console.log(jumlahBerat)
 
     if (irigasi === "berbayar") {
-        zakatPanen = parseFloat(jumlahBerat * 0.05)
+        zakatPanen = parseFloat((jumlahBerat * 0.05).toFixed(2))
     } else {
-        zakatPanen = parseFloat(jumlahBerat * 0.10)
+        zakatPanen = parseFloat((jumlahBerat * 0.10).toFixed(2))
     }
     console.log(zakatPanen)
 
