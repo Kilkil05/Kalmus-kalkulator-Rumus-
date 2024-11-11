@@ -54,12 +54,15 @@
                     </div>
                     <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
                     <script>
-                        new AutoNumeric('#jumlah-penghasilan', {
-                            digitGroupSeparator: '.',      // Pemisah ribuan
-                            decimalCharacter: ',',         // Karakter desimal
-                            decimalPlaces: 0,              // Jumlah angka desimal
-                            maximumValue: '999999999999999999'
+                        document.addEventListener('DOMContentLoaded', function() {
+                            new AutoNumeric('#jumlah-penghasilan', {
+                                digitGroupSeparator: '.',      // Pemisah ribuan
+                                decimalCharacter: ',',         // Karakter desimal
+                                decimalPlaces: 0,              // Jumlah angka desimal
+                                maximumValue: '999999999999999999'
+                            });
                         });
+    
                     </script>
                     <button id="konfirmasi-penghasilan" onclick= "zakatPenghasilan()">Konfirmasi</button>
                 </div>
