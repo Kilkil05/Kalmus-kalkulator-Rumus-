@@ -39,7 +39,7 @@
         <div class="container">
             <div class="zakat">
                 <h3>Pilih harta yang ingin dizakatkan</h3>
-                <select id="zakat-nisab" name="nisab-zakat">
+                <select id="zakat-nisab" name="zakat-nisab">
                     <option value="" disabled selected>Pilih Harta</option>
                     <option value="penghasilan">Penghasilan</option>
                     <option value="Hewan-Ternak">Hewan Ternak</option>
@@ -71,7 +71,8 @@
                         <br>3. Telah Mencapai Haul dan Nisabnya.</h4>
                     <br>
                     <h3>Pilih Hewan Ternak</h3>
-                    <select name="hewan" id="hewan-ternak-select">
+                    <select name="hewan-ternak-select" id="hewan-ternak-select">
+                        <option value="" disabled selected>Pilih Hewan</option>
                         <option value="Kambing">Kambing / Domba</option>
                         <option value="Sapi">Sapi / kerbau</option>
                         <option value="Unta">Unta</option>
@@ -102,7 +103,7 @@
                         <div class="jenis-panen">
                             <br><h3>Masukkan jenis panen</h3>
                             <input id="jenis-panen" type="text" placeholder="contoh: Padi, Jagung, Gandum, dan lain-lain">
-                            <button id="konfirmasi-jenis-panen" >Konfirmasi</button>
+                            <button id="konfirmasi-jenis-panen" onclick="jenisPanenClick()">Konfirmasi</button>
                         </div>
                         <div class="berat-panen">
                             <br>
@@ -127,12 +128,6 @@
 
                 </div>
 
-
-
-
-
-
-
                 <div class="zakat-output">
                     <h3 id="output-zakat4"></h3>
                     <h2 id="output-zakat3"></h2>
@@ -156,5 +151,7 @@
                 <a href="https://www.instagram.com/wasekloer.id/"><img src="image.png" alt="instagram" width="50px"></a>
             </footer>
         </div>
+
     </body>
+    <script src="index.js"></script>
 </html>

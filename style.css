@@ -882,6 +882,7 @@ input::-webkit-inner-spin-button {
     color: rgb(0, 0, 0);
     font-weight: 800;
     z-index: 999;
+    justify-self: center;
 }
 .hewan-ternak {
     display: flex;
@@ -950,7 +951,7 @@ input::-webkit-inner-spin-button {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 #jenis-panen {
     font-size: 1.5rem;
@@ -979,7 +980,7 @@ input::-webkit-inner-spin-button {
     align-items: center;
 }
 .berat-panen {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;

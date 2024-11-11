@@ -15,7 +15,7 @@
 // }
 
 function formatAngka(angka){
-    return new Intl.NumberFormat('id-ID', {minimumFractionDigits: 0}).format(angka) //format angka dengan titik
+    return new Intl.NumberFormat('id-ID', {maximumFractionDigits: 2}).format(angka) //format angka dengan titik
 }
 
 // function formatInputAngka() {
@@ -30,7 +30,7 @@ function formatAngka(angka){
 
 // }
 
-function showText() {
+function showText() { //fungsi menampilkan output penjelasan
     var hiddenText = document.getElementById('output-hide')
     if (hiddenText.style.visibility === "hidden" || hiddenText.style.visibility === "") {
         hiddenText.style.visibility = "visible";
@@ -51,7 +51,7 @@ function penyederhanaanAkar () {
     var akarKuadrat = parseFloat(1)
     let sisa = angka
 
-    for(let i=2; i * i <= angka; i++) {
+    for(let i=2; i * i <= angka; i++) { //mencari kuadrat
         while(sisa % (i * i) == 0) {
             akarKuadrat *= i
             sisa /= (i * i)
@@ -164,6 +164,7 @@ function showCampuran() {
     }
 
 }
+
 function hideCampuran() {
     var hiddenText = document.getElementById('inputcampuran')
     var colorText =  document.getElementById('campuran-opsi-click')
@@ -413,6 +414,8 @@ function penyederhanaanPecahanCampuran() {
 }
 
 
+//hipotenusa
+
 function hipotenusa() {
     let inputA = document.getElementById('inputA')
     let inputB = document.getElementById('inputB')
@@ -514,6 +517,8 @@ function hipotenusa() {
 }
 
 
+//average, sum, max-min
+
 var saveInput = []
 
 function inputNilai() {
@@ -612,6 +617,8 @@ function outputNilai() {
 }
 
 
+//Kode Morse
+
 const codeMorse = {
     A: ".-",     B: "-...",   C: "-.-.",   D: "-..",    E: ".", 
     F: "..-.",   G: "--.",    H: "....",   I: "..",     J: ".---", 
@@ -663,6 +670,10 @@ function translateMorse() {
     }
     output.innerHTML = kodeMorseConvert
 }
+
+
+
+//zakat
 
 function zakatPenghasilan() {
     let jumlahPenghasilan = parseFloat(document.getElementById('jumlah-penghasilan').value.replace(/\./g, ""))
@@ -891,6 +902,56 @@ function zakatHasilPanen() {
     }
           
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    function updateMenuVisibility() {
+        let nisabSelect = document.getElementById('zakat-nisab').value;
+        let output3 = document.getElementById('output-zakat3');
+    
+        document.querySelector('.penghasilan').style.display = "none";
+        document.querySelector('.hewan-ternak').style.display = "none";
+        document.querySelector('.hasil-panen').style.display = "none";
+
+        output3.innerHTML = ''
+    
+        if (nisabSelect === 'penghasilan') {
+            document.querySelector('.penghasilan').style.display = "flex";
+        } else if (nisabSelect === 'Hewan-Ternak') {
+            document.querySelector('.hewan-ternak').style.display = "flex";
+        } else if (nisabSelect === 'Hasil-panen') {
+            document.querySelector('.hasil-panen').style.display = "flex";
+        }
+    }   
+    document.getElementById('zakat-nisab').addEventListener('change', updateMenuVisibility);   
+    updateMenuVisibility()
+
+    function pilihHewanVisibility() {
+        let hewanSelect = document.getElementById('hewan-ternak-select').value
+        let output3 = document.getElementById('output-zakat3');
+        document.querySelector('.kambing').style.display = "none"
+        document.querySelector('.sapi').style.display = "none"
+        document.querySelector('.unta').style.display = "none"
+        
+        output3.innerHTML = ''
+
+        if (hewanSelect === 'Kambing') {
+            document.querySelector('.kambing').style.display = "flex"
+        } else if (hewanSelect === 'Sapi') {
+            document.querySelector('.sapi').style.display = "flex"
+        } else if (hewanSelect === 'Unta') {
+            document.querySelector('.unta').style.display = "flex"
+        }
+    }
+
+
+    document.getElementById('hewan-ternak-select').addEventListener('change', pilihHewanVisibility)
+    pilihHewanVisibility()
+
+})
+
+    function jenisPanenClick() {
+        document.querySelector('.berat-panen').style.display = "flex"
+    }
 
 
 
