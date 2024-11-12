@@ -1015,19 +1015,8 @@ input::-webkit-inner-spin-button {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* bangun datar */
-/* .bangunDatar-container {
+.bangunDatar-container {
     width: 18rem;
     height: 16rem;
     border-radius: 1rem;
@@ -1038,7 +1027,69 @@ input::-webkit-inner-spin-button {
     cursor: pointer;
     border: 5px solid white;
     filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
-} */
+}
+
+
+/* Lingkaran */
+.lingkaran-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.lingkaran {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
+
+.lingkaran-menu {
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+#bentuk-lingkaran{
+    width: 300px;
+    height: 300px;
+    border-radius: 50rem;
+    background-color: yellow;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#keteranganjari2{
+    width: 10;
+    height: 200;
+    background-color: black;
+    border-radius: 50rem;
+    transform: translateX(9rem) translateY(-6rem);
+}
+#keterangandiameter {
+    width: 700;
+    height: 10;
+    background-color: red;
+    
+}
+#input-diameter{
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
 
 
 
