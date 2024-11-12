@@ -1059,8 +1059,6 @@ input::-webkit-inner-spin-button {
     width: 300px;
     height: 300px;
     border-radius: 50rem;
-    background-color: yellow;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1078,7 +1076,7 @@ input::-webkit-inner-spin-button {
     background-color: red;
     
 }
-#input-diameter{
+#input-diameter-lingkaran{
     font-size: 1.5rem;
     height: 50;
     width: 300;
@@ -1090,6 +1088,49 @@ input::-webkit-inner-spin-button {
     text-align: center;
     margin-bottom: 2rem; 
 }
+#input-keliling-lingkaran{
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#hasil-keliling-lingkaran {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+#hasil-luas-lingkaran {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+#hasil-d-r-lingkaran {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+.lingkaran-output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 
 
 

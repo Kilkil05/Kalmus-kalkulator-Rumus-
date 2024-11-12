@@ -956,6 +956,50 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+//Bangun Datar
+
+// Bangun Lingkaran
+
+function kelilingLingkaran() {
+    let diameter = document.getElementById('input-diameter-lingkaran').value
+    let switchJari2 = document.getElementById('option-jari2').value
+    let output3 = document.getElementById('output-lingkaran3')
+    let output1 = document.getElementById('output-lingkaran1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    let rumusConvert
+    let initialisasiDiameter
+
+    output3.innerHTML = ""
+
+    if (isNaN(diameter) || diameter == 0) {
+        output3.innerHTML = `Error! Masukkan nilai dengan benar`
+        output1.innerHTML = ""
+        outputPenjelasan.innerHTML = ""
+        return
+    }
+
+    let keliling
+
+    if (switchJari2 === "Jari2") {
+        keliling = parseFloat((diameter * 2 * 22 / 7).toFixed(2))
+        rumusConvert = `2 x π x ${diameter}`
+        initialisasiDiameter = 'jari-jari'
+    } else if (switchJari2 === "Diameter") {
+        keliling = parseFloat((diameter * 22 / 7).toFixed(2))
+        rumusConvert = `π x ${diameter}`
+        initialisasiDiameter = 'Diameter'
+    }
+
+    output3.innerHTML = `<h2>Keliling Lingkaran : ${keliling}`
+    outputPenjelasan.innerHTML = 'Lihat Penjelasan'
+    output1.innerHTML = `Rumus mencari keliling lingkaran adalah π x d jika diketahui diameternya atau 2 x π x r jika tidak diketahui diameternya<br>nilai ${initialisasiDiameter} diatas adalah ${diameter}<br>
+                        Lalu kita masukkan menjadi ke rumus menjadi ${rumusConvert}<br>Nilai π adalah = 3,14 atau 22/7
+                        <br>Jadi jika dijumlahkan berarti ${rumusConvert.replace('π', '22/7')} <br> Maka hasil keliling adalah k = ${keliling}`
+
+}
+
+
 
 
 

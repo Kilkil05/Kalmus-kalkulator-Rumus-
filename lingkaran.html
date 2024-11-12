@@ -25,27 +25,34 @@
             <div class="lingkaran">
 
                 <p style="font-size: 1.5rem;">Apa yang ingin dicari</p>
-                <select name="opsi-lingkaran" id="opsi-lingkaran">
+                <select name="opsi-lingkaran" id="opsi-lingkaran" style="font-size: 1.6 rem;">
                     <option value="keliling">Keliling</option>
                     <option value="Luas">Luas</option>
-                    <option value="Diameter">Diameter</option>
-                    <option value="Jari2">Jari-Jari</option>
+                    <option value="Diameter">Diameter dan jari-jari</option>
                 </select>
 
                 <div class="lingkaran-menu">
-                    <div id="bentuk-lingkaran">
-                    </div>
+                    <div id="bentuk-lingkaran"><img src="asset/lingkaran-keterangan.png" alt="bentuk-lingkaran" width="100%"></div>
                 </div>
 
                 <div class="input-d-r">
-                    <input id="input-diameter" type="number" placeholder="">
+                    <input id="input-diameter-lingkaran" type="number" placeholder="">
                     <select name="option-jari2" id="option-jari2">
                         <option value="Jari2">r (Jari-Jari)</option>
-                        <option value="diameter">d (Diameter)</option>
+                        <option value="Diameter">d (Diameter)</option>
+                    </select>
+                </div>
+                <div class="input-k-l">
+                    <input id="input-keliling-lingkaran" type="number" placeholder="">
+                    <select name="option-luas" id="option-luas">
+                        <option value="Keliling-lingkaran">Keliling</option>
+                        <option value="Luas-lingkaran">Luas</option>
                     </select>
                 </div>
 
-                <button id="hasil-hipotenusa" onclick="kelilingLingkaran()">Hasil</button>
+                <button id="hasil-keliling-lingkaran" onclick="kelilingLingkaran()">Hasil</button>
+                <button id="hasil-luas-lingkaran" onclick="luasLingkaran()">Hasil</button>
+                <button id="hasil-d-r-lingkaran" onclick="diameterJari2Lingkaran()">Hasil</button>
                 <div class="lingkaran-output">
                     <h2 id="output-lingkaran3"></h2>
                     <h2 id="output-penjelasan" onclick="showText()"></h2>
