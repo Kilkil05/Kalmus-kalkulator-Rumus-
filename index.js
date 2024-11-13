@@ -947,6 +947,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('hewan-ternak-select').addEventListener('change', pilihHewanVisibility)
     pilihHewanVisibility()
 
+
 })
 
     function jenisPanenClick() {
@@ -980,24 +981,213 @@ function kelilingLingkaran() {
     }
 
     let keliling
+    let kelilingPi1
+    let kelilingPi2
+    let pi = 3.14
+    let initialisasiPi
 
     if (switchJari2 === "Jari2") {
-        keliling = parseFloat((diameter * 2 * 22 / 7).toFixed(2))
+        kelilingPi1 = parseFloat((diameter * 2 * pi).toFixed(2))
+        kelilingPi2 = parseFloat((diameter * 2 * 22/7).toFixed(2))
         rumusConvert = `2 x π x ${diameter}`
         initialisasiDiameter = 'jari-jari'
+
+        if (Number.isInteger(kelilingPi1)) {
+            keliling = kelilingPi1
+            initialisasiPi = '3,14'
+        } else if (Number.isInteger(kelilingPi2)) {
+            keliling = kelilingPi2
+            initialisasiPi = '22/7'
+        } else {
+            keliling = kelilingPi1
+            initialisasiPi = '3,14'
+        }
     } else if (switchJari2 === "Diameter") {
-        keliling = parseFloat((diameter * 22 / 7).toFixed(2))
+        kelilingPi1 = parseFloat((diameter * pi).toFixed(2))
+        kelilingPi2 = parseFloat((diameter * 22/7).toFixed(2))
         rumusConvert = `π x ${diameter}`
         initialisasiDiameter = 'Diameter'
+
+        if (Number.isInteger(kelilingPi1)) {
+            keliling = kelilingPi1
+            initialisasiPi = '3,14'
+        } else if (Number.isInteger(kelilingPi2)) {
+            keliling = kelilingPi2
+            initialisasiPi = '22/7'
+        } else {
+            keliling = kelilingPi1
+            initialisasiPi = '3,14'
+        }
     }
 
     output3.innerHTML = `<h2>Keliling Lingkaran : ${keliling}`
     outputPenjelasan.innerHTML = 'Lihat Penjelasan'
     output1.innerHTML = `Rumus mencari keliling lingkaran adalah π x d jika diketahui diameternya atau 2 x π x r jika tidak diketahui diameternya<br>nilai ${initialisasiDiameter} diatas adalah ${diameter}<br>
                         Lalu kita masukkan menjadi ke rumus menjadi ${rumusConvert}<br>Nilai π adalah = 3,14 atau 22/7
-                        <br>Jadi jika dijumlahkan berarti ${rumusConvert.replace('π', '22/7')} <br> Maka hasil keliling adalah k = ${keliling}`
+                        <br>Jadi jika dijumlahkan berarti ${rumusConvert.replace('π', initialisasiPi)} <br> Maka hasil keliling adalah k = ${keliling}`
 
 }
+
+function luasLingkaran() {
+    let diameter = document.getElementById('input-diameter-lingkaran').value
+    let switchJari2 = document.getElementById('option-jari2').value
+    let output3 = document.getElementById('output-lingkaran3')
+    let output1 = document.getElementById('output-lingkaran1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    let rumusConvert
+    let initialisasiDiameter
+
+    output3.innerHTML = ""
+
+    if (isNaN(diameter) || diameter == 0) {
+        output3.innerHTML = `Error! Masukkan nilai dengan benar`
+        output1.innerHTML = ""
+        outputPenjelasan.innerHTML = ""
+        return
+    }
+
+    let luas
+    let luasPi2
+    let pi = 3.14
+    let initialisasiPi
+
+    console.log(pi)
+
+    if (switchJari2 === "Jari2") {
+        luasPi1 = parseFloat(((diameter * diameter) * pi).toFixed(2))
+        luasPi2 = parseFloat(((diameter * diameter) * 22/7).toFixed(2))
+        rumusConvert = `π x ${diameter}<sup>2</sup>`
+        initialisasiDiameter = 'jari-jari'
+        if (Number.isInteger(luasPi1)) {
+            luas = luasPi1
+            initialisasiPi = '3,14'
+        } else if (Number.isInteger(luasPi2)){
+            luas = luasPi2
+            initialisasiPi = '22/7'
+        } else {
+            luas = luasPi1
+            initialisasiPi = '3,14'
+        }
+    } else if (switchJari2 === "Diameter") {
+        luasPi1 = parseFloat(((diameter / 2) * (diameter / 2)  * pi).toFixed(2))
+        luasPi2 = parseFloat(((diameter / 2) * (diameter / 2)  * 22/7).toFixed(2))
+        rumusConvert = `π x (${diameter}/2)<sup>2</sup>`
+        initialisasiDiameter = 'Diameter'
+        if (Number.isInteger(luasPi1)) {
+            luas = luasPi1
+            initialisasiPi = '3,14'
+        } else if (Number.isInteger(luasPi2)){
+            luas = luasPi2
+            initialisasiPi = '22/7'
+        } else {
+            luas = luasPi1
+            initialisasiPi = '3,14'
+        }
+    }
+    output3.innerHTML = `<h2>Luas Lingkaran : ${luas}`
+    outputPenjelasan.innerHTML = 'Lihat Penjelasan'
+    output1.innerHTML = `Rumus mencari luas lingkaran adalah π x (d/2)<sup>2</sup> jika diketahui diameternya atau π x r<sup>2</sup> jika tidak diketahui diameternya<br>nilai ${initialisasiDiameter} diatas adalah ${diameter}<br>
+                        Lalu kita masukkan menjadi ke rumus menjadi ${rumusConvert}<br>Nilai π adalah = 3,14 atau 22/7
+                        <br>Jadi jika dijumlahkan berarti ${rumusConvert.replace('π', initialisasiPi)} <br> Maka hasil keliling adalah k = ${luas}`
+
+}
+
+function diameterJari2Lingkaran() {
+    let keliling = document.getElementById('input-keliling-lingkaran').value
+    let switchLuas = document.getElementById('option-luas').value
+    let output3 = document.getElementById('output-lingkaran3')
+    let output1 = document.getElementById('output-lingkaran1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    if (isNaN(keliling) || keliling == 0) {
+        output3.innerHTML = `Error! Masukkan nilai dengan benar`
+        output1.innerHTML = ""
+        outputPenjelasan.innerHTML = ""
+        return
+    }
+
+    let jari2
+    let diameter
+    let jariPi1
+    let jariPi2
+    let pi = 3.14
+    let penjelasan
+
+    if (switchLuas === 'Keliling-lingkaran') {
+        jariPi1 = parseFloat((keliling / pi / 2).toFixed(2))
+        jariPi2 = parseFloat((keliling / 22 * 7 / 2).toFixed(2))
+
+        if (Number.isInteger(jariPi2)) {
+            jari2 = jariPi2
+        } else if (Number.isInteger(jariPi1)){
+            jari2 = jariPi1
+        } else {
+            jari2 = jariPi1
+        }
+        penjelasan = `Maka r = (${keliling} : π) : 2`
+    } else if (switchLuas === 'Luas-lingkaran') {
+        jariPi1 = parseFloat(Math.sqrt((keliling / pi).toFixed(2)))
+        jariPi2 = parseFloat(Math.sqrt((keliling / 22 * 7).toFixed(2)))
+
+        if (Number.isInteger(jariPi2)) {
+            jari2 = jariPi2
+        } else if (Number.isInteger(jariPi1)){
+            jari2 = jariPi1
+        } else {
+            jari2 = jariPi1
+        }
+        penjelasan = `Maka r = √(${keliling} : π)`
+    }
+
+    console.log(jari2)
+
+    diameter = jari2 * 2
+    output3.innerHTML = `<h2>Jari-jari : ${jari2}
+                        <br>Diameter : ${diameter}`
+    outputPenjelasan.innerHTML = 'Lihat Penjelasan'
+    output1.innerHTML = `Untuk mencari jari-jari dan diameter dari keliling yang di ketahui menggunakan rumus r = (keliling : π) : 2
+                        <br>Sedangkan jika luas yang diketahui maka menggunakan rumus r = √ (luas : π)<br>${penjelasan}
+                        <br>r (jari-jari) = ${jari2} <br>diameter = r x 2<br>diameter = ${jari2} x 2<br>diameter = ${diameter}`
+}
+document.addEventListener('DOMContentLoaded', function() {
+    function lingkaranVisibilty() {
+        let switchOption = document.getElementById('opsi-lingkaran').value
+        let inputJari2 = document.querySelector('.input-d-r')
+        let inputKeliling = document.querySelector('.input-k-l')
+        let btnKeliling = document.getElementById('hasil-keliling-lingkaran')
+        let btnLuas = document.getElementById('hasil-luas-lingkaran')
+        let btnJari2 = document.getElementById('hasil-d-r-lingkaran')
+        let output3 = document.getElementById('output-lingkaran3')
+        let output1 = document.getElementById('output-lingkaran1')
+        let outputPenjelasan = document.getElementById('output-penjelasan')
+
+        inputJari2.style.display = 'none'
+        inputKeliling.style.display = 'none'
+        btnKeliling.style.display = 'none'
+        btnLuas.style.display = 'none'
+        btnJari2.style.display = 'none'
+
+        output3.innerHTML = ""
+        outputPenjelasan.innerHTML = ''
+        output1.innerHTML = ''
+
+
+        if (switchOption === 'keliling') {
+            inputJari2.style.display = 'block'
+            btnKeliling.style.display = 'block'
+        } else if (switchOption === 'Luas') {
+            inputJari2.style.display = 'block'
+            btnLuas.style.display = 'block'
+        } else if (switchOption === 'Diameter') {
+            inputKeliling.style.display = 'block'
+            btnJari2.style.display = 'block'
+        }
+    }
+
+    document.getElementById('opsi-lingkaran').addEventListener('change', lingkaranVisibilty)
+    lingkaranVisibilty()
+})
 
 
 
