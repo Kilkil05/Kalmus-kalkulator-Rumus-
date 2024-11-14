@@ -15,7 +15,7 @@
 // }
 
 function formatAngka(angka){
-    return new Intl.NumberFormat('id-ID', {maximumFractionDigits: 2}).format(angka) //format angka dengan titik
+    return new Intl.NumberFormat('id-ID', {maximumFractionDigits: 0}).format(angka) //format angka dengan titik
 }
 
 // function formatInputAngka() {
