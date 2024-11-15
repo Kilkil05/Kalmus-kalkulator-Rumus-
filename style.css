@@ -867,6 +867,7 @@ input::-webkit-inner-spin-button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 #jumlah-penghasilan {
     font-size: 1.5rem;
@@ -893,6 +894,7 @@ input::-webkit-inner-spin-button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 .kambing {
     display: flex;
@@ -956,6 +958,7 @@ input::-webkit-inner-spin-button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 #jenis-panen {
     font-size: 1.5rem;
@@ -1146,6 +1149,140 @@ input::-webkit-inner-spin-button {
     border: 5px solid white;
     filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
 }
+.persegi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
+
+.persegi-menu {
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+#input-sisi-persegi{
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#input-keliling-persegi{
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#hasil-keliling-persegi {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+#hasil-luas-persegi {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+#hasil-sisi-persegi {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+.persegi-output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#bentuk-persegi{
+    width: 300px;
+    height: 300px;
+    border-radius: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* persegi panjang */
+.persegiPanjang-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.persegiPanjang {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
+
+.persegiPanjang-menu {
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+#input-panjang-persegiPanjang { 
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#input-lebar-persegiPanjang {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

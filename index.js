@@ -1131,18 +1131,17 @@ function diameterJari2Lingkaran() {
         jariPi2 = parseFloat(Math.sqrt((keliling / 22 * 7).toFixed(2)))
 
         if (Number.isInteger(jariPi2)) {
-            jari2 = jariPi2
+            jari2 = jariPi2.toFixed(2)
         } else if (Number.isInteger(jariPi1)){
-            jari2 = jariPi1
+            jari2 = jariPi1.toFixed(2)
         } else {
-            jari2 = jariPi1
+            jari2 = jariPi1.toFixed(2)
         }
         penjelasan = `Maka r = √(${keliling} : π)`
     }
 
-    console.log(jari2)
 
-    diameter = jari2 * 2
+    diameter = (jari2 * 2).toFixed(2)
     output3.innerHTML = `<h2>Jari-jari : ${jari2}
                         <br>Diameter : ${diameter}`
     outputPenjelasan.innerHTML = 'Lihat Penjelasan'
@@ -1188,6 +1187,136 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('opsi-lingkaran').addEventListener('change', lingkaranVisibilty)
     lingkaranVisibilty()
 })
+
+function kelilingPersegi() {
+    let sisi = document.getElementById('input-sisi-persegi').value
+    let output3 = document.getElementById('output-persegi3')
+    let output1 = document.getElementById('output-persegi1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    output3.innerHTML = ``
+    output1.innerHTML = ""
+    outputPenjelasan.innerHTML = ""
+
+    if (isNaN(sisi) || sisi == 0) {
+        output3.innerHTML = `Error! Masukkan nilai dengan benar`
+        output1.innerHTML = ""
+        outputPenjelasan.innerHTML = ""
+        return
+    }
+
+    let kelilingPersegi = sisi * 4
+
+    output3.innerHTML = `<h1>Keliling : ${kelilingPersegi}`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML = `Rumus mencari keliling persegi yaitu sisi x 4
+                        <br>Jadi ${sisi} x 4 = ${kelilingPersegi}
+                        <br>Jadi k = ${kelilingPersegi}`
+}
+
+function luasPersegi() {
+    let sisi = document.getElementById('input-sisi-persegi').value
+    let output3 = document.getElementById('output-persegi3')
+    let output1 = document.getElementById('output-persegi1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    output3.innerHTML = ``
+    output1.innerHTML = ""
+    outputPenjelasan.innerHTML = ""
+
+    if (isNaN(sisi) || sisi == 0) {
+        output3.innerHTML = `Error! Masukkan nilai dengan benar`
+        output1.innerHTML = ""
+        outputPenjelasan.innerHTML = ""
+        return
+    }
+
+    let luasPersegi = sisi * sisi
+
+    output3.innerHTML = `<h1>Luas : ${luasPersegi}`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML = `Rumus mencari luas persegi yaitu sisi<sup>2</sup> atau sisi x sisi
+                        <br>Jadi ${sisi}<sup>2</sup>= ${luasPersegi}
+                        <br>Jadi luas = ${luasPersegi}`
+}
+
+function sisiPersegi() {
+    let kelilingLuas = parseFloat(document.getElementById('input-keliling-persegi').value)
+    let switchOption = document.getElementById('option-luas-persegi').value
+    let output3 = document.getElementById('output-persegi3')
+    let output1 = document.getElementById('output-persegi1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    output3.innerHTML = ``
+    output1.innerHTML = ""
+    outputPenjelasan.innerHTML = ""
+
+    if (isNaN(kelilingLuas) || kelilingLuas == 0) {
+        output3.innerHTML = `Error! Masukkan nilai dengan benar`
+        output1.innerHTML = ""
+        outputPenjelasan.innerHTML = ""
+        return
+    }
+
+    let sisi
+    let initialisasiKL
+    let initialisasiRumus
+
+    if (switchOption === 'Keliling-persegi') {
+        sisi = parseFloat((kelilingLuas / 4).toFixed(2))
+        initialisasiKL = 'Keliling'
+        initialisasiRumus = `${kelilingLuas} : 4 = ${sisi}`
+    } else if (switchOption === 'Luas-persegi') {
+        sisi =  parseFloat(Math.sqrt(kelilingLuas).toFixed(2))
+        initialisasiKL = 'Luas'
+        initialisasiRumus = `√${kelilingLuas} = ${sisi}`
+    }
+
+    output3.innerHTML = `<h1>Sisi : ${sisi}`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML = `Cara mencari sisi persegi yang diketahui keliling atau luasnya adalah
+                        <br> s = keliling : 4 jika diketahui kelilingnya atau
+                        <br> s = √luas jika diketahui luasnya<br>karena diatas diketahui ${initialisasiKL} maka <br>${initialisasiRumus}<br>Jadi sisi = ${sisi}`
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    function persegiVisibility() {
+        let switchOption = document.getElementById('opsi-persegi').value
+        let inputSisi = document.querySelector('.input-sisi-persegi')
+        let inputKeliling = document.querySelector('.input-keliling-persegi')
+        let btnKeliling = document.getElementById('hasil-keliling-persegi')
+        let btnLuas = document.getElementById('hasil-luas-persegi')
+        let btnSisi = document.getElementById('hasil-sisi-persegi')
+        let output3 = document.getElementById('output-persegi3')
+        let output1 = document.getElementById('output-persegi1')
+        let outputPenjelasan = document.getElementById('output-penjelasan')
+
+        output3.innerHTML = ""
+        outputPenjelasan.innerHTML = ''
+        output1.innerHTML = ''
+
+        inputSisi.style.display = 'none'
+        inputKeliling.style.display = 'none'
+        btnKeliling.style.display = 'none'
+        btnLuas.style.display = 'none'
+        btnSisi.style.display = 'none'
+
+
+        if (switchOption === 'Keliling') {
+            inputSisi.style.display = 'block'
+            btnKeliling.style.display = 'block'
+        } else if (switchOption === 'Luas') {
+            inputSisi.style.display = 'block'
+            btnLuas.style.display = 'block'
+        } else if (switchOption === 'Sisi') {
+            inputKeliling.style.display = 'block'
+            btnSisi.style.display = 'block'
+        }
+    }
+    document.getElementById('opsi-persegi').addEventListener('change', persegiVisibility)
+    persegiVisibility()
+})
+
 
 
 

@@ -1,7 +1,7 @@
 <html>
     <head>
         <script src="index.js"></script>
-        <title>Lingkaran</title>
+        <title>Persegi Panjang</title>
         <link rel="stylesheet" href="style.css">
         <script src="https://unpkg.com/feather-icons"></script>
 
@@ -20,52 +20,51 @@
             <a class="home" href="bangun-datar.html"><i data-feather="arrow-left"></i>Back</a>
         </nav>
         <h1 class="judul">Kalkulator Rumus<br>
-            <h2 class="perintah">Bangun Lingkaran</h1>
+            <h2 class="perintah">Bangun Persegi Panjang</h1>
         <div class="container">
-            <div class="lingkaran">
+            <div class="PersegiPanjang">
 
                 <p style="font-size: 1.5rem;">Apa yang ingin dicari</p>
-                <select name="opsi-lingkaran" id="opsi-lingkaran" style="font-size: 1.6 rem;">
-                    <option value="keliling">Keliling</option>
+                <select name="opsi-persegiPanjang" id="opsi-persegiPanjang" style="font-size: 1.6 rem;">
+                    <option value="Keliling">Keliling</option>
                     <option value="Luas">Luas</option>
-                    <option value="Diameter">Diameter dan jari-jari</option>
+                    <option value="Panjang">Panjang</option>
+                    <option value="Lebar">Lebar</option>
                 </select>
 
-                <div class="lingkaran-menu">
-                    <div id="bentuk-lingkaran"><img src="asset/lingkaran-keterangan.png" alt="bentuk-lingkaran" width="100%"></div>
+                <div class="persegiPanjang-menu">
+                    <div id="bentuk-persegi"><img src="asset/persegiPanjang-keterangan.png" alt="bentuk-persegi" width="400px"></div>
                 </div>
 
-                <div class="input-d-r">
-                    <h2 style="text-align: center;">Masukkan jari-jari / diameter</h2>
-                    <input id="input-diameter-lingkaran" type="number" placeholder="">
-                    <select name="option-jari2" id="option-jari2">
-                        <option value="Jari2">r (Jari-Jari)</option>
-                        <option value="Diameter">d (Diameter)</option>
-                    </select>
+                <div class="input-sisi-persegiPanjang">
+                    <h2 style="text-align: center;">Masukkan panjang</h2>
+                    <input id="input-panjang-persegiPanjang" type="number" placeholder="">
+                    <h2 style="text-align: center;">Masukkan lebar</h2>
+                    <input id="input-lebar-persegiPanjang" type="number" placeholder="">
                 </div>
-                <div class="input-k-l">
+                <div class="input-keliling-persegiPanjang">
                     <h2 style="text-align: center;">Masukkan keliling / luas</h2>
-                    <input id="input-keliling-lingkaran" type="number" placeholder="">
-                    <select name="option-luas" id="option-luas">
-                        <option value="Keliling-lingkaran">Keliling</option>
-                        <option value="Luas-lingkaran">Luas</option>
+                    <input id="input-keliling-persegiPanjang" type="number" placeholder="">
+                    <select name="option-luas-persegiPanjang" id="option-luas-persegiPanjang">
+                        <option value="Keliling-persegi">Keliling</option>
+                        <option value="Luas-persegi">Luas</option>
                     </select>
                 </div>
 
-                <button id="hasil-keliling-lingkaran" onclick="kelilingLingkaran()">Hasil</button>
-                <button id="hasil-luas-lingkaran" onclick="luasLingkaran()">Hasil</button>
-                <button id="hasil-d-r-lingkaran" onclick="diameterJari2Lingkaran()">Hasil</button>
-                <div class="lingkaran-output">
-                    <h2 id="output-lingkaran3"></h2>
+                <button id="hasil-keliling-persegiPanjang" onclick="kelilingPersegi()">Hasil</button>
+                <button id="hasil-luas-persegiPanjang" onclick="luasPersegi()">Hasil</button>
+                <button id="hasil-sisi-persegiPanjang" onclick="sisiPersegi()">Hasil</button>
+                <div class="persegiPanjang-output">
+                    <h2 id="output-persegiPanjang3"></h2>
                     <h2 id="output-penjelasan" onclick="showText()"></h2>
                     <div id="output-hide">
                         <img class="pin-png" src="asset/pin.png" alt="" width="50px">
-                        <h3 id="output-lingkaran1"></h3>
-                        <h3 id="output-lingkaran2"></h3>
+                        <h3 id="output-persegiPanjang1"></h3>
+                        <h3 id="output-persegiPanjang2"></h3>
                     </div>
 
                 </div>
-                
+
 
             </div>
             <script>
