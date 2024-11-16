@@ -1384,6 +1384,9 @@ function kelilingPersegiPanjang() {
 
     output3.innerHTML = `<h1>Keliling : ${keliling}`
     outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML = `Rumus mencari keliling persegi panjang adalah keliling = 2 x (panjang + lebar)
+                        <br>Jadi keliling = 2 x (${Panjang} + ${Lebar})<br>keliling = 2 x ${Panjang + Lebar}
+                        <br>Keliling = ${keliling}`
 
 }
 
@@ -1409,6 +1412,8 @@ function luasPersegiPanjang() {
 
     output3.innerHTML = `<h1>Luas : ${luas}`
     outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML = `Rumus mencari luas persegi panjang adalah luas = panjang x lebar
+                        <br>Jadi luas = ${Panjang} x ${Lebar}<br>Luas = ${luas}`
 
 }
 
@@ -1438,19 +1443,30 @@ function sisiPersegiPanjang() {
     if (switchLuas === 'Keliling-persegiPanjang' && switchLebar === 'panjang-persegiPanjang') {
         lebar = parseFloat((kelilingLuas / 2 - panjangLebar).toFixed(2))
         panjang = panjangLebar
+        output1.innerHTML = `Rumus mencari lebar persegi panjang yang diketahui keliling dan panjangnya yaitu
+                            <br>lebar = (keliling : 2) - panjang<br> jadi lebar = (${kelilingLuas} : 2) - ${panjangLebar}<br>
+                            lebar = ${kelilingLuas / 2} - ${panjangLebar}<br>Jadi lebar = ${lebar}`
     } else if (switchLuas === 'Keliling-persegiPanjang' && switchLebar === 'lebar-persegiPanjang') {
         panjang = parseFloat((kelilingLuas / 2 - panjangLebar).toFixed(2))
         lebar = panjangLebar
+        output1.innerHTML = `Rumus mencari panjang persegi panjang yang diketahui keliling dan lebarnya yaitu
+                            <br>panjang = (keliling : 2) - lebar<br> jadi panjang = (${kelilingLuas} : 2) - ${panjangLebar}<br>
+                            panjang = ${kelilingLuas / 2} - ${panjangLebar}<br>Jadi panjang = ${panjang}`
     } else if (switchLuas === 'Luas-persegiPanjang' && switchLebar === 'panjang-persegiPanjang') {
         lebar = parseFloat((kelilingLuas / panjangLebar).toFixed(2))
         panjang = panjangLebar
+        output1.innerHTML = `Rumus mencari lebar persegi panjang yang diketahui luas dan panjangnya yaitu
+                            <br>lebar = luas : panjang<br> jadi lebar = ${kelilingLuas} : ${panjangLebar} <br>Jadi lebar = ${lebar}`
     } else if (switchLuas === 'Luas-persegiPanjang' && switchLebar === 'lebar-persegiPanjang') {
         panjang = parseFloat((kelilingLuas / panjangLebar).toFixed(2))
         lebar = panjangLebar
+        output1.innerHTML = `Rumus mencari panjang persegi panjang yang diketahui luas dan lebarnya yaitu
+                            <br>panjang = luas : lebar<br> jadi panjang = ${kelilingLuas} : ${panjangLebar} <br>Jadi panjang = ${panjang}`
     }
 
     output3.innerHTML = `<h1>Panjang : ${panjang}<br>Lebar : ${lebar}`
     outputPenjelasan.innerHTML = `Lihat Penjelasan`
+
 
 }
 
