@@ -1315,7 +1315,145 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     document.getElementById('opsi-persegi').addEventListener('change', persegiVisibility)
     persegiVisibility()
+
 })
+
+
+
+// Persegi Panjang
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    function persegiPanjangVisibility() {
+        let switchOption = document.getElementById('opsi-persegiPanjang').value
+        let inputPanjangLebar = document.querySelector('.input-sisi-persegiPanjang')
+        let inputKeliling = document.querySelector('.input-keliling-persegiPanjang')
+        let btnKeliling = document.getElementById('hasil-keliling-persegiPanjang')
+        let btnLuas = document.getElementById('hasil-luas-persegiPanjang')
+        let btnSisi = document.getElementById('hasil-sisi-persegiPanjang')
+        let output3 = document.getElementById('output-persegiPanjang3')
+        let output1 = document.getElementById('output-persegiPanjang1')
+        let outputPenjelasan = document.getElementById('output-penjelasan')
+    
+        output3.innerHTML = ""
+        outputPenjelasan.innerHTML = ''
+        output1.innerHTML = ''
+    
+        inputPanjangLebar.style.display = 'none'
+        inputKeliling.style.display = 'none'
+        btnKeliling.style.display = 'none'
+        btnLuas.style.display = 'none'
+        btnSisi.style.display = 'none'
+    
+        if (switchOption === 'Keliling') {
+            inputPanjangLebar.style.display = 'block'
+            btnKeliling.style.display = 'block'
+        } else if (switchOption === 'Luas') {
+            inputPanjangLebar.style.display = 'block'
+            btnLuas.style.display = 'block'
+        } else if (switchOption === 'PanjangLebar') {
+            inputKeliling.style.display = 'block'
+            btnSisi.style.display = 'block'
+        }
+    
+    }
+    document.getElementById('opsi-persegiPanjang').addEventListener('change', persegiPanjangVisibility)
+    persegiPanjangVisibility()
+})
+
+
+function kelilingPersegiPanjang() {
+    let Panjang = parseFloat(document.getElementById('input-panjang-persegiPanjang').value)
+    let Lebar = parseFloat(document.getElementById('input-lebar-persegiPanjang').value)
+    let output3 = document.getElementById('output-persegiPanjang3')
+    let output1 = document.getElementById('output-persegiPanjang1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    output3.innerHTML = ""
+    outputPenjelasan.innerHTML = ''
+    output1.innerHTML = ''
+
+    if (isNaN(Panjang) || isNaN(Lebar)) {
+        output3.innerHTML = `Error! Masukkan nilai dengan benar`
+        output1.innerHTML = ""
+        outputPenjelasan.innerHTML = ""
+        return
+    }
+
+    let keliling = 2 * (Panjang + Lebar)
+
+    output3.innerHTML = `<h1>Keliling : ${keliling}`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+
+}
+
+function luasPersegiPanjang() {
+    let Panjang = parseFloat(document.getElementById('input-panjang-persegiPanjang').value)
+    let Lebar = parseFloat(document.getElementById('input-lebar-persegiPanjang').value)
+    let output3 = document.getElementById('output-persegiPanjang3')
+    let output1 = document.getElementById('output-persegiPanjang1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    output3.innerHTML = ""
+    outputPenjelasan.innerHTML = ''
+    output1.innerHTML = ''
+
+    if (isNaN(Panjang) || isNaN(Lebar)) {
+        output3.innerHTML = `Error! Masukkan nilai dengan benar`
+        output1.innerHTML = ""
+        outputPenjelasan.innerHTML = ""
+        return
+    }
+
+    let luas = Panjang * Lebar
+
+    output3.innerHTML = `<h1>Luas : ${luas}`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+
+}
+
+function sisiPersegiPanjang() {
+    let kelilingLuas = document.getElementById('input-keliling-persegiPanjang').value
+    let panjangLebar = document.getElementById('input-p-l-persegiPanjang').value
+    let switchLuas = document.getElementById('option-luas-persegiPanjang').value
+    let switchLebar = document.getElementById('option-p-l-persegiPanjang').value
+    let output3 = document.getElementById('output-persegiPanjang3')
+    let output1 = document.getElementById('output-persegiPanjang1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    output3.innerHTML = ""
+    outputPenjelasan.innerHTML = ''
+    output1.innerHTML = ''
+
+    if (isNaN(kelilingLuas) || isNaN(panjangLebar)) {
+        output3.innerHTML = `Error! Masukkan nilai dengan benar`
+        output1.innerHTML = ""
+        outputPenjelasan.innerHTML = ""
+        return
+    }
+
+    let panjang
+    let lebar
+
+    if (switchLuas === 'Keliling-persegiPanjang' && switchLebar === 'panjang-persegiPanjang') {
+        lebar = parseFloat((kelilingLuas / 2 - panjangLebar).toFixed(2))
+        panjang = panjangLebar
+    } else if (switchLuas === 'Keliling-persegiPanjang' && switchLebar === 'lebar-persegiPanjang') {
+        panjang = parseFloat((kelilingLuas / 2 - panjangLebar).toFixed(2))
+        lebar = panjangLebar
+    } else if (switchLuas === 'Luas-persegiPanjang' && switchLebar === 'panjang-persegiPanjang') {
+        lebar = parseFloat((kelilingLuas / panjangLebar).toFixed(2))
+        panjang = panjangLebar
+    } else if (switchLuas === 'Luas-persegiPanjang' && switchLebar === 'lebar-persegiPanjang') {
+        panjang = parseFloat((kelilingLuas / panjangLebar).toFixed(2))
+        lebar = panjangLebar
+    }
+
+    output3.innerHTML = `<h1>Panjang : ${panjang}<br>Lebar : ${lebar}`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+
+}
+
 
 
 

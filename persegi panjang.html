@@ -28,8 +28,7 @@
                 <select name="opsi-persegiPanjang" id="opsi-persegiPanjang" style="font-size: 1.6 rem;">
                     <option value="Keliling">Keliling</option>
                     <option value="Luas">Luas</option>
-                    <option value="Panjang">Panjang</option>
-                    <option value="Lebar">Lebar</option>
+                    <option value="PanjangLebar">Panjang & Lebar</option>
                 </select>
 
                 <div class="persegiPanjang-menu">
@@ -43,17 +42,23 @@
                     <input id="input-lebar-persegiPanjang" type="number" placeholder="">
                 </div>
                 <div class="input-keliling-persegiPanjang">
-                    <h2 style="text-align: center;">Masukkan keliling / luas</h2>
+                    <h2 style="text-align: center;">Masukkan keliling / luas yang diketahui</h2>
                     <input id="input-keliling-persegiPanjang" type="number" placeholder="">
                     <select name="option-luas-persegiPanjang" id="option-luas-persegiPanjang">
-                        <option value="Keliling-persegi">Keliling</option>
-                        <option value="Luas-persegi">Luas</option>
+                        <option value="Keliling-persegiPanjang">Keliling</option>
+                        <option value="Luas-persegiPanjang">Luas</option>
+                    </select>
+                    <h2 style="text-align: center;">Masukkan Panjang / lebar yang diketahui</h2>
+                    <input id="input-p-l-persegiPanjang" type="number" placeholder="">
+                    <select name="option-p-l-persegiPanjang" id="option-p-l-persegiPanjang">
+                        <option value="panjang-persegiPanjang">Panjang</option>
+                        <option value="lebar-persegiPanjang">Lebar</option>
                     </select>
                 </div>
 
-                <button id="hasil-keliling-persegiPanjang" onclick="kelilingPersegi()">Hasil</button>
-                <button id="hasil-luas-persegiPanjang" onclick="luasPersegi()">Hasil</button>
-                <button id="hasil-sisi-persegiPanjang" onclick="sisiPersegi()">Hasil</button>
+                <button id="hasil-keliling-persegiPanjang" onclick="kelilingPersegiPanjang()">Hasil</button>
+                <button id="hasil-luas-persegiPanjang" onclick="luasPersegiPanjang()">Hasil</button>
+                <button id="hasil-sisi-persegiPanjang" onclick="sisiPersegiPanjang()">Hasil</button>
                 <div class="persegiPanjang-output">
                     <h2 id="output-persegiPanjang3"></h2>
                     <h2 id="output-penjelasan" onclick="showText()"></h2>
@@ -76,6 +81,6 @@
                 <a href="https://www.instagram.com/wasekloer.id/"><img src="image.png" alt="instagram" width="50px"></a>
             </footer>
         </div>
+        <script src="index.js"></script>
     </body>
-    <script src="index.js"></script>
 </html>
