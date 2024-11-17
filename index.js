@@ -1470,7 +1470,34 @@ function sisiPersegiPanjang() {
 
 }
 
+function faktorial(n) {
+    if (n === 0) {
+        return 1
+    }
+    return n * faktorial(n-1)
+}
 
+
+function faktorialAngka() {
+    let angka = parseFloat(document.getElementById('inputfaktorial').value)
+    let output3 = document.getElementById('output-faktorial3')
+    let output1 = document.getElementById('output-faktorial1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    let langkah = []
+    let hasilFaktorial = 1
+    for (let i = angka; i >= 1; i--) {
+        hasilFaktorial *= i
+        langkah.push(i)
+    }
+    let langkahRumus = `${angka}! = ${langkah.join('x')}`
+    
+    output3.innerHTML = `<h1>Hasil ${angka}! = ${formatAngka(hasilFaktorial)}`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML = `Faktorial adalah hasil perkalian semua bilangan bulat positif dari 1 hingga bilangan tersebut.<br>
+                        Rumus mencari faktorial yaitu a! = a x (a-1) x (a-2) x.... hingga a x 1 <br>
+                        Jadi <strong>${langkahRumus}</strong><br> ${angka}! = ${hasilFaktorial}`
+}
 
 
 

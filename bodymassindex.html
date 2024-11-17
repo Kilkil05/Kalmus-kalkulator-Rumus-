@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>body mass index</title>
+        <script src="index.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/feather-icons"></script>
+
+        <!-- kanit -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jura:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oooh+Baby&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        
+        <!-- poppins -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jura:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oooh+Baby&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <a class="home" href="index.html"><i data-feather="arrow-left"></i>Back</a>
+        </nav>
+        <h1 class="judul">Kalkulator Rumus</h1>
+        <div class="container">
+            <div class="bmi">
+                <h2 style="font-family: poppins; width: 70rem; text-align: justify;">Body Mass Index (BMI) adalah indikator pengukuran yang digunakan untuk menentukan kategori berat badan ideal atau tidak.
+                    Melalui hasil perhitungan BMI, Anda akan mengetahui kategori berat badan, yaitu kurus, ideal, berlebihan, atau bahkan obesitas.</h2>
+                <br>
+                <br>
+                <div class="bmi-gender">
+                    <h1>Pilih Gendermu</h1>
+                    <br>
+                    <br>
+                    <div class="gender" style="display: flex; gap: 5rem;">
+                        <img src="asset/gender-pria-bmi.png" alt="bmi-pria" width="200px" onclick="" class="cursor-pointer">
+                        <img src="asset/gender-wanita-bmi.png" alt="bmi-wanita" width="200px" onclick="" class="cursor-pointer">
+                    </div>
+                    <button id="konfirmasi-gender-bmi" onclick= "">Konfirmasi</button>
+                </div>
+                <button id="hasil" onclick="faktorialAngka()">Hasil</button>
+                <div class="faktorial-output">
+                    <h2 id="output-faktorial3" style="word-break: break-all;"></h2>
+                    <h2 id="output-penjelasan" onclick="showText()"></h2>
+                    <div id="output-hide">
+                        <img class="pin-png" src="asset/pin.png" alt="" width="50px">
+                        <h3 id="output-faktorial1" style="word-break: break-all;"></h3>
+                        <h3 id="output-faktorial2"></h3>
+                    </div>
+                </div>
+   
+            </div>
+            <script>
+                feather.replace();
+            </script>
+            <footer>
+                <a href="https://github.com/Kilkil05"><img src="pngwing.com (32).png" alt="github" width="50px"></a>
+                <a href="https://www.instagram.com/wasekloer.id/"><img src="image.png" alt="instagram" width="50px"></a>
+            </footer>
+        </div>
+    </body>
+</html>

@@ -59,7 +59,24 @@ select {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+.kalkulatormatematika {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    max-width: 100rem;
+}
+.kalkulatorsehari {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100rem;
+}
+.cursor-pointer {
+    cursor: pointer;
 }
 .menu {
     gap: 2rem;
@@ -247,6 +264,7 @@ input::-webkit-inner-spin-button {
     width: 20rem;
     justify-self: center;
     text-align: center;
+    
 }
 #output-penjelasan:hover {
     color: rgb(255, 255, 255);
@@ -571,7 +589,36 @@ input::-webkit-inner-spin-button {
     border: 5px solid white;
     filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
 }
-
+.faktorial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
+.faktorial-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#inputfaktorial {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-top: 2rem;
+}
+.faktorial-output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 
 
@@ -1346,6 +1393,34 @@ input::-webkit-inner-spin-button {
 }
 
 
+/* bmi */
+.bmi-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.bmi-gender{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#konfirmasi-gender-bmi {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+    margin-top: 5rem;
+}
 
 
 
