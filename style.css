@@ -59,6 +59,12 @@ select {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+}
+.container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 .kalkulatormatematika {
