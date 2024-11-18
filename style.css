@@ -1418,7 +1418,125 @@ input::-webkit-inner-spin-button {
     align-items: center;
     flex-direction: column;
 }
-#konfirmasi-gender-bmi {
+.bmi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.bmi-pria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5rem;
+    display: none;
+}
+#input-umur-bmi-pria {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#input-tb-bmi-pria {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#input-bb-bmi-pria {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+.bmi-wanita {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5rem;
+    display: none;
+}
+#input-umur-bmi-wanita {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#input-tb-bmi-wanita {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#input-bb-bmi-wanita {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#input-nama-pria {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#input-nama-wanita {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#hasil-bmi-pria {
     font-size: 2.5rem;
     font-family: poppins;
     background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
@@ -1426,6 +1544,45 @@ input::-webkit-inner-spin-button {
     font-weight: 800;
     z-index: 999;
     margin-top: 5rem;
+}
+
+#hasil-bmi-wanita {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+    margin-top: 5rem;
+}
+.bmi-output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5rem;
+    font-family: poppins;
+}
+#output-bmi3 span {
+    color: yellow;
+}
+#bmi-grafik {
+    width: 25rem;
+    height: 3rem;
+    border-radius: 2rem;
+    background: linear-gradient(to right, red 15%, rgb(4, 255, 4) 45%, yellow 60%, red);
+    display: none;
+}
+#bmi-point {
+    background-color: white;
+    width: 10;
+    height: 60;
+    transform: translateX(10rem);
+}
+#bmi-keterangan {
+    position: absolute;
+    transform: translateY(2.5rem) translateX(-0.5rem);
+    font-size: 1.5rem;
 }
 
 

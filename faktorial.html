@@ -42,23 +42,6 @@
             <script>
                 feather.replace();
             </script>
-              <script>
-                const input = document.getElementById('inputfaktorial');
-                const span = document.createElement('span');
-                span.style.visibility = 'hidden';
-                span.style.position = 'absolute';
-                span.style.whiteSpace = 'pre';
-                span.style.font = window.getComputedStyle(input).font;
-                document.body.appendChild(span);
-            
-                function adjustInputWidth() {
-                  span.textContent = input.value || input.placeholder || '';
-                  input.style.width = `${span.offsetWidth + 20}px`;
-                }
-            
-                input.addEventListener('input', adjustInputWidth);
-                adjustInputWidth();
-              </script>
 
             <footer>
                 <a href="https://github.com/Kilkil05"><img src="pngwing.com (32).png" alt="github" width="50px"></a>

@@ -1499,6 +1499,161 @@ function faktorialAngka() {
                         Jadi <strong>${langkahRumus}</strong><br> ${angka}! = ${hasilFaktorial}`
 }
 
+function visibilityBmiGenderPria() {
+    let priaMenu = document.querySelector('.bmi-pria')
+    let wanitaMenu = document.querySelector('.bmi-wanita')
+
+    priaMenu.style.display = 'flex'
+    wanitaMenu.style.display = "none"
+}
+function visibilityBmiGenderWanita() {
+    let priaMenu = document.querySelector('.bmi-pria')
+    let wanitaMenu = document.querySelector('.bmi-wanita')
+
+    priaMenu.style.display = 'none'
+    wanitaMenu.style.display = "flex"
+}
+
+function bmiPria() {
+    let umur = document.getElementById('input-umur-bmi-pria').value
+    let tinggiBadan = document.getElementById('input-tb-bmi-pria').value
+    let beratBadan = document.getElementById('input-bb-bmi-pria').value
+    let nama = document.getElementById('input-nama-pria').value
+    let output3 = document.getElementById('output-bmi3')
+    let output2 = document.getElementById('output-bmi2')
+    let output1 = document.getElementById('output-bmi1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+    let outputBmiKeterangan = document.getElementById('bmi-keterangan')
+    let bmiGrafik = document.getElementById('bmi-grafik')
+    let bmiPoint = document.getElementById('bmi-point')
+    
+    tinggiBadan = tinggiBadan * 0.01
+    let bmi = parseFloat((beratBadan / (tinggiBadan ** 2)).toFixed(1))
+    let underWeight = `Kekurangan Berat Badan`
+    let ideal = `Berat Ideal`
+    let overWeight = `Kelebihan Berat Badan`
+    let obesitas = `Obesitas`
+    let statusKesehatan
+    let bmiPointValue
+    
+    if (isNaN(umur) || isNaN(tinggiBadan) || isNaN(beratBadan) || isNaN(bmi)){
+        output3.innerHTML = `<h2>Masukkan input dengan benar!`
+        outputPenjelasan.innerHTML = ``
+        output1.innerHTML = ``
+        return
+    }
+
+    if (bmi < 18.5) {
+        statusKesehatan = underWeight
+        output2.innerHTML = `Tingkatkan Asupan Kalori dan Nutrisimu !`
+        output1.innerHTML = `Saran:
+                            <br>
+                            Konsultasi dengan Dokter atau Ahli Gizi: Jika anak atau remaja memiliki BMI yang rendah, penting untuk mencari penyebab potensialnya, seperti masalah kesehatan, gangguan makan, atau faktor genetik. Dokter atau ahli gizi dapat memberikan diagnosis yang tepat dan saran untuk meningkatkan berat badan secara sehat.
+                            <br>
+                            <br>
+                            Meningkatkan Asupan Kalori dan Nutrisi: Fokus pada konsumsi makanan yang bergizi dan tinggi kalori, seperti alpukat, kacang-kacangan, keju, dan susu full-fat. Makanan yang kaya akan protein dan lemak sehat (misalnya ikan, ayam, kacang, dan biji-bijian) dapat membantu meningkatkan massa otot dan berat badan secara sehat.
+                            <br>
+                            Peningkatan Frekuensi Makan: Makan lebih sering dengan porsi lebih kecil dapat membantu meningkatkan konsumsi kalori. Cobalah makan 5-6 kali sehari (termasuk camilan sehat).
+                            <br>
+                            <br>
+                            Perhatikan Aktivitas Fisik: Jika anak atau remaja aktif, pastikan latihan fisik mereka mencakup latihan kekuatan dan memperkuat massa otot, karena ini dapat membantu meningkatkan berat badan secara sehat.
+                            <br>
+                            <br>
+                            Peringatan:
+                            <br>
+                            Kekurangan berat badan dapat meningkatkan risiko masalah kesehatan seperti gangguan pertumbuhan, penurunan sistem kekebalan tubuh, dan masalah tulang. Mengatasi masalah ini sangat penting sejak dini untuk mencegah komplikasi lebih lanjut.`
+    } else if (bmi >= 18.5 && bmi < 25) {
+        statusKesehatan = ideal
+        output2.innerHTML = `Pertahankan Pola Makan Sehat dan Seimbangmu !`
+        output1.innerHTML = `Saran:
+                            <br>
+                            Pertahankan Pola Makan Sehat dan Seimbang: Anak atau remaja yang berada dalam kisaran BMI normal sebaiknya menjaga pola makan yang sehat dan beragam, termasuk banyak buah, sayuran, biji-bijian, protein lean (misalnya ayam tanpa kulit, ikan, tahu), dan lemak sehat (misalnya minyak zaitun, alpukat).
+                            <br>
+                            <br>
+                            Aktivitas Fisik Teratur: Berpartisipasi dalam aktivitas fisik yang cukup penting untuk menjaga berat badan dan meningkatkan kesehatan jantung, otot, dan tulang. Rekomendasi dari WHO adalah minimal 1 jam aktivitas fisik per hari yang meliputi olahraga yang meningkatkan daya tahan jantung, fleksibilitas, dan kekuatan.
+                            <br>
+                            <br>
+                            Pantau Perkembangan Secara Berkala: Walaupun BMI berada dalam kategori normal, penting untuk terus memantau berat badan dan kesehatan secara keseluruhan. Pemantauan ini akan membantu mengidentifikasi pergeseran tren kesehatan, apakah menuju kelebihan berat badan atau penurunan berat badan.
+                            <br>
+                            <br>
+                            Hindari Diet Ketat atau Pembatasan Kalori yang Berlebihan: Anak atau remaja dalam kategori normal tidak perlu menjalani diet ketat, tetapi tetap penting untuk fokus pada pola makan yang sehat dan teratur, serta menghindari kebiasaan makan yang buruk seperti makan berlebihan atau sering mengonsumsi makanan cepat saji.
+                            <br>
+                            <br>
+                            Peringatan:
+                            <br>
+                            <br>
+                            Terjaganya BMI normal adalah indikator penting untuk pertumbuhan dan perkembangan yang sehat. Menghindari kebiasaan yang dapat mengarah pada penurunan berat badan yang tidak sehat atau peningkatan berat badan berlebih sangat penting.`
+    } else if (bmi >= 25 && bmi < 30) {
+        statusKesehatan = overWeight
+        output2.innerHTML = `Tingkatkan Aktivitas Fisik dan perbaiki pola Makanmu !`
+        output1.innerHTML = `Saran:
+                           <br>
+                            <br>
+                            Perbaiki Pola Makan: Fokus pada pengurangan konsumsi makanan tinggi kalori dan rendah gizi, seperti makanan cepat saji, makanan olahan, atau camilan manis yang mengandung banyak gula dan lemak tidak sehat. Gantilah dengan makanan yang lebih sehat seperti buah-buahan, sayuran, biji-bijian utuh, dan protein sehat.
+                            <br>
+                            <br>
+                            Tingkatkan Aktivitas Fisik: Aktivitas fisik yang lebih intens, seperti olahraga kardio (lari, bersepeda, berenang) dan latihan kekuatan (ang lifting atau yoga), akan sangat membantu dalam membakar kalori dan meningkatkan metabolisme tubuh.
+                            <br>
+                            <br>
+                            Mencapai Berat Badan Sehat Secara Bertahap: Jika BMI menunjukkan kelebihan berat badan, sebaiknya lakukan perubahan bertahap dalam pola makan dan kebiasaan olahraga. Penurunan berat badan yang sehat adalah sekitar 0.5–1 kg per minggu. Hindari pendekatan yang terlalu drastis atau diet yang tidak berkelanjutan.
+                            <br>
+                            <br>
+                            Buat Tujuan yang Realistis: Tentukan tujuan berat badan yang realistis dan mudah dicapai. Jangan terburu-buru dalam proses penurunan berat badan, karena perubahan yang bertahan lama memerlukan waktu dan konsistensi.
+                            <br>
+                            <br>
+                            Cek Kesehatan Rutin: Pastikan untuk memeriksakan tekanan darah, kadar gula darah, dan kolesterol secara rutin, karena kelebihan berat badan dapat meningkatkan risiko masalah kesehatan lainnya.
+                            <br>
+                            <br>
+                            Peringatan:
+                            <br>
+                            <br>
+                            Kelebihan berat badan dapat meningkatkan risiko beberapa masalah kesehatan, termasuk diabetes tipe 2, penyakit jantung, gangguan tidur, dan gangguan pernapasan. Oleh karena itu, menjaga berat badan yang sehat sangat penting.`
+    } else {
+        statusKesehatan = obesitas
+        output2.innerHTML = `Segera Konsultasi dengan Dokter atau Ahli Gizi !`
+        output1.innerHTML = `Saran:
+                            <br>
+                            <br>
+                            Konsultasi dengan Dokter atau Ahli Gizi: Obesitas pada anak atau remaja dapat meningkatkan risiko berbagai masalah kesehatan serius. Disarankan untuk segera berkonsultasi dengan dokter atau ahli gizi untuk mendapatkan rencana penurunan berat badan yang sehat dan aman. Ini mungkin mencakup perubahan diet yang signifikan, serta rencana olahraga yang lebih terstruktur.
+                            <br>
+                            <br>
+                            Pola Makan yang Sehat dan Terkontrol: Fokus pada pengurangan konsumsi kalori yang berasal dari makanan olahan, makanan cepat saji, dan gula tambahan. Gantilah dengan makanan kaya nutrisi seperti sayuran, buah, biji-bijian, dan protein rendah lemak. Pengurangan porsi makan dan memilih makanan dengan kandungan kalori lebih rendah namun tetap bergizi sangat penting.
+                            <br>
+                            <br>
+                            Olahraga Secara Teratur: Peningkatan aktivitas fisik sangat diperlukan untuk membantu membakar kalori dan menurunkan berat badan. Mulailah dengan aktivitas fisik ringan seperti berjalan kaki atau berenang, kemudian tingkatkan secara bertahap ke latihan yang lebih intens, seperti jogging atau latihan beban.
+                            <br>
+                            <br>
+                            Perubahan Gaya Hidup yang Berkelanjutan: Ciptakan kebiasaan makan sehat dan rutinitas olahraga yang mudah diterapkan dalam kehidupan sehari-hari. Hindari solusi cepat atau diet ketat yang bisa menyebabkan efek samping atau penurunan berat badan yang sementara.
+                            <br>
+                            <br>
+                            Dukungan Psikologis: Kadang-kadang, masalah obesitas berhubungan dengan faktor emosional atau psikologis. Mendapatkan dukungan dari keluarga, teman, atau bahkan konselor dapat membantu menjaga motivasi dan mengatasi tantangan yang muncul selama proses penurunan berat badan.
+                            <br>
+                            <br>
+                            Peringatan:
+                            <br>
+                            <br>
+                            Obesitas dapat menyebabkan berbagai masalah kesehatan serius, seperti diabetes tipe 2, penyakit jantung, stroke, gangguan tidur, dan gangguan sendi. Oleh karena itu, menangani obesitas dengan pendekatan yang sehat dan bertanggung jawab adalah sangat penting.`
+    }
+
+    bmiPointValue = bmi
+    if (bmi > 35) {
+        bmiPointValue = 34.2
+    } else if (bmi < 10) {
+        bmiPointValue = 10.2
+    }
+
+    output3.innerHTML = `<h4>Nama : ${nama}
+                        <br>Umur : ${umur}
+                        <br>BMI : ${bmi}
+                        <br><h2>Status Kesehatanmu :<br><span>${statusKesehatan}<span>`
+    outputBmiKeterangan.innerHTML = `${bmi}`
+    bmiGrafik.style.display = 'block'
+    bmiPoint.style.transform = `translateX(${bmiPointValue - 10}rem)`
+    outputPenjelasan.innerHTML = `Lihat Saran`
+
+
+}
+
 
 
 

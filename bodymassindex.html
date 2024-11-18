@@ -22,28 +22,80 @@
         <h1 class="judul">Kalkulator Rumus</h1>
         <div class="container">
             <div class="bmi">
-                <h2 style="font-family: poppins; width: 70rem; text-align: justify;">Body Mass Index (BMI) adalah indikator pengukuran yang digunakan untuk menentukan kategori berat badan ideal atau tidak.
-                    Melalui hasil perhitungan BMI, Anda akan mengetahui kategori berat badan, yaitu kurus, ideal, berlebihan, atau bahkan obesitas.</h2>
+                <p style="font-family: poppins; max-width: 70rem; text-align: justify; font-size: 1.3rem;">Body Mass Index (BMI) adalah indikator pengukuran yang digunakan untuk menentukan kategori berat badan ideal atau tidak.
+                    Melalui hasil perhitungan BMI, Anda akan mengetahui kategori berat badan, yaitu kurus, ideal, berlebihan, atau bahkan obesitas.</p>
                 <br>
                 <br>
                 <div class="bmi-gender">
-                    <h1>Pilih Gendermu</h1>
+                    <h1 style="font-family: poppins; margin-bottom: 5rem;">Pilih Gendermu</h1>
                     <br>
                     <br>
                     <div class="gender" style="display: flex; gap: 5rem;">
-                        <img src="asset/gender-pria-bmi.png" alt="bmi-pria" width="200px" onclick="" class="cursor-pointer">
-                        <img src="asset/gender-wanita-bmi.png" alt="bmi-wanita" width="200px" onclick="" class="cursor-pointer">
+                        <img src="asset/gender-pria-bmi.png" alt="bmi-pria" width="200px" onclick="visibilityBmiGenderPria()" class="cursor-pointer" id="bmi-pria-gambar">
+                        <img src="asset/gender-wanita-bmi.png" alt="bmi-wanita" width="200px" onclick="visibilityBmiGenderWanita()" class="cursor-pointer" id="bmi-wanita-gambar">
                     </div>
-                    <button id="konfirmasi-gender-bmi" onclick= "">Konfirmasi</button>
                 </div>
-                <button id="hasil" onclick="faktorialAngka()">Hasil</button>
-                <div class="faktorial-output">
-                    <h2 id="output-faktorial3" style="word-break: break-all;"></h2>
+
+                <!-- Pria -->
+                <div class="bmi-pria">
+                    kamu pria
+                    <h1 style="font-family: poppins;">Masukkan Nama</h1>
+                    <input type="text" id="input-nama-pria" placeholder="Opsional">
+                    <h1 style="font-family: poppins;">Berapa Umurmu</h1>
+                    <input type="number" id="input-umur-bmi-pria">
+                    <br>
+                    <br>
+                    <h1 style="font-family: poppins;">Masukkan Tinggi Badan</h1>
+                    <div class="tb-bmi" style="display: flex; justify-content: center; align-items: center; margin: auto; flex-direction: row; gap: 1rem;">
+                        <input type="number" id="input-tb-bmi-pria">
+                        <p style="font-size: 2.5rem; transform: translateY(-1rem);">Cm</p>
+                    </div>
+                    <br>
+                    <br>
+                    <h1 style="font-family: poppins;">Masukkan Berat Badan</h1>
+                    <div class="bb-bmi" style="display: flex; justify-content: center; align-items: center; margin: auto; flex-direction: row; gap: 1rem;">
+                        <input type="number" id="input-bb-bmi-pria">
+                        <p style="font-size: 2.5rem; transform: translateY(-1rem);">Kg</p>
+                    </div>
+                    <button id="hasil-bmi-pria" onclick="bmiPria()">Hasil</button>
+                </div>
+
+                <!-- Wanita -->
+                <div class="bmi-wanita">
+                    kamu wanita
+                    <h1 style="font-family: poppins;">Masukkan Nama</h1>
+                    <input type="text" id="input-nama-wanita" placeholder="Opsional">
+                    <h1 style="font-family: poppins;">Berapa Umurmu</h1>
+                    <input type="number" id="input-umur-bmi-wanita">
+                    <br>
+                    <br>
+                    <h1 style="font-family: poppins;">Masukkan Tinggi Badan</h1>
+                    <div class="tb-bmi" style="display: flex; justify-content: center; align-items: center; margin: auto; flex-direction: row; gap: 1rem;">
+                        <input type="number" id="input-tb-bmi-wanita">
+                        <p style="font-size: 2.5rem; transform: translateY(-1rem);">Cm</p>
+                    </div>
+                    <br>
+                    <br>
+                    <h1 style="font-family: poppins;">Masukkan Berat Badan</h1>
+                    <div class="bb-bmi" style="display: flex; justify-content: center; align-items: center; margin: auto; flex-direction: row; gap: 1rem;">
+                        <input type="number" id="input-bb-bmi-wanita">
+                        <p style="font-size: 2.5rem; transform: translateY(-1rem);">Kg</p>
+                    </div>
+                    <button id="hasil-bmi-wanita" onclick="bmiWanita()">Hasil</button>
+                </div>
+
+            
+                <div class="bmi-output">
+                    <h2 id="output-bmi3" style="word-break: break-all; text-align: center;"></h2>
+                    <div id="bmi-grafik">
+                        <div id="bmi-point"><p id="bmi-keterangan"></p></div>
+                    </div>
+                    <br>
+                    <h2 id="output-bmi2" style="margin-top: 4rem;"></h2>
                     <h2 id="output-penjelasan" onclick="showText()"></h2>
                     <div id="output-hide">
                         <img class="pin-png" src="asset/pin.png" alt="" width="50px">
-                        <h3 id="output-faktorial1" style="word-break: break-all;"></h3>
-                        <h3 id="output-faktorial2"></h3>
+                        <h3 id="output-bmi1" style="word-break:normal;"></h3>
                     </div>
                 </div>
    
