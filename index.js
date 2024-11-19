@@ -1805,6 +1805,57 @@ function bmiWanita() {
 }
 
 
+// segitiga jkw
+document.addEventListener('DOMContentLoaded', function() {
+    function jkwVisibility() {
+        let selectOption = document.getElementById('opsi-jkw').value
+        let jarakMenu = document.querySelector('.jarak-menu')
+        let kecepatanMenu = document.querySelector('.kecepatan-menu')
+        let waktuMenu = document.querySelector('.waktu-menu')
+
+        jarakMenu.style.display = 'none'
+        kecepatanMenu.style.display = 'none'
+        waktuMenu.style.display = 'none'
+
+        if (selectOption === 'jarak') {
+            jarakMenu.style.display = 'flex'
+        } else if (selectOption === 'kecepatan') {
+            kecepatanMenu.style.display = 'flex'
+        } else if (selectOption === 'waktu') {
+            waktuMenu.style.display = 'flex'
+        }   
+    }
+    document.getElementById('opsi-jkw').addEventListener('change', jkwVisibility)
+    jkwVisibility()
+})
+
+function jkwJarak() {
+    let kecepatan = parseFloat(document.getElementById('input-kecepatan-j').value)
+    let waktuJam = parseFloat(document.getElementById('input-jam-j').value)
+    let waktuMenit = parseFloat(document.getElementById('input-menit-j').value)
+    let waktuDetik = parseFloat(document.getElementById('input-detik-j').value)
+    let kecepatanConvert = document.getElementById('kecepatan-option-j').value
+    let output3 = document.getElementById('output-jkw3')
+    let output1 = document.getElementById('output-jkw1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    output3.innerHTML = ``
+    output1.innerHTML = ``
+    outputPenjelasan = ``
+
+    if (isNaN(waktuJam)) {
+        waktuJam = 0
+    }
+    if (isNaN(waktuMenit)) {
+        waktuMenit = 0
+    }
+    if (isNaN(waktuDetik)) {
+        waktuDetik = 0
+    }
+    let waktu = parseFloat((waktuJam * 3600) + (waktuMenit * 60) + waktuDetik)
+    
+
+}
 
 
 

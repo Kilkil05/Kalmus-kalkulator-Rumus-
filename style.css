@@ -1651,7 +1651,13 @@ input::-webkit-inner-spin-button {
     flex-direction: column;
     margin-top: 4rem;
 }
-
+.waktu-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4rem;
+}
 
 
 
