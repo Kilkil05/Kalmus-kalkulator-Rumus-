@@ -1839,9 +1839,12 @@ function jkwJarak() {
     let output1 = document.getElementById('output-jkw1')
     let outputPenjelasan = document.getElementById('output-penjelasan')
 
-    output3.innerHTML = ``
-    output1.innerHTML = ``
-    outputPenjelasan = ``
+    if (isNaN(kecepatan)) {
+        output3.innerHTML = `<h2>Error!!Masukkan input dengan benar!`
+        outputPenjelasan.innerHTML = ``
+        output1.innerHTML = ``
+        return
+    }
 
     if (isNaN(waktuJam)) {
         waktuJam = 0
@@ -1853,8 +1856,25 @@ function jkwJarak() {
         waktuDetik = 0
     }
     let waktu = parseFloat((waktuJam * 3600) + (waktuMenit * 60) + waktuDetik)
-    
 
+    if (kecepatanConvert === 'km/jam') {
+        kecepatan = parseFloat((kecepatan * (1000/3600)).toFixed(4))
+    } else if (kecepatanConvert === 'm/s') {
+        kecepatan = parseFloat(kecepatan.toFixed(4))
+    }
+
+    let jarakCm = parseFloat(Math.round(waktu * kecepatan))
+    let jarakKm = parseFloat((jarakCm / 1000).toFixed(1))
+
+    output3.innerHTML = `<h1>Jarak : ${jarakKm} Km
+                        <br>Atau : ${jarakCm} Cm</h1>`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML = `untuk mencari jarak menggunakan rumus jarak = kecepatan * waktu`
+
+}
+
+function jkwKecepatan() {
+    
 }
 
 

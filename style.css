@@ -1658,6 +1658,14 @@ input::-webkit-inner-spin-button {
     flex-direction: column;
     margin-top: 4rem;
 }
+.jkw-output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    font-family: poppins;
+}
 
 
 
