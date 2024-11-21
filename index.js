@@ -1865,13 +1865,24 @@ function jkwJarak() {
         kecepatan = parseFloat((kecepatan / 60).toFixed(4))
     }
 
+
     let jarakCm = parseFloat(Math.round(waktu * kecepatan))
     let jarakKm = parseFloat((jarakCm / 1000).toFixed(1))
 
     output3.innerHTML = `<h1>Jarak : ${jarakKm} Km
                         <br>Atau : ${jarakCm} m</h1>`
     outputPenjelasan.innerHTML = `Lihat Penjelasan`
-    output1.innerHTML = `untuk mencari jarak menggunakan rumus jarak = kecepatan * waktu`
+    output1.innerHTML = `<p>Untuk mencari jarak, kita menggunakan rumus: <strong>Jarak = Kecepatan × Waktu</strong></p>
+        <p>Pastikan satuan kecepatan dan waktu konsisten atau sama. Misalnya, jika kecepatan dalam km/jam, maka waktu harus dalam jam, atau jika kecepatan dalam m/s, waktu harus dalam detik.</p>
+        <p>Langkah-langkah perhitungan:</p>
+        <ul>
+            <li>Konversi kecepatan ke satuan yang sesuai dengan waktu (misalnya km/jam ke m/s).</li>
+            <li>Hitung jarak dengan mengalikan kecepatan dengan waktu.</li>
+            <li>Jika diperlukan, konversi jarak ke satuan lain, seperti dari meter ke kilometer.</li>
+        </ul>
+        <br><p>Contoh:</p>
+        <p>Jika kecepatan mobil 60 km/jam dan waktu 2 jam, jaraknya adalah: 60 km/jam × 2 jam = 120 km.</p>
+        <p>Jika kecepatan dalam m/s dan waktu dalam detik, cukup kalikan tanpa konversi lebih lanjut.</p>`
 
 }
 
@@ -1910,14 +1921,45 @@ function jkwKecepatan() {
         jarak = jarak
     }
 
-    let kecepatan = jarak / waktu
+    let kecepatan = parseFloat((jarak / waktu).toFixed(2))
     let kecepatanKm = parseFloat((kecepatan * 3.6).toFixed(2))
-    let kecepatanMenit = kecepatan * 60
+    let kecepatanMenit = parseFloat((kecepatan * 60).toFixed(2))
 
     output3.innerHTML = `<h1>Kecepatan : ${kecepatanKm} Km/jam
                         <br>Atau : ${kecepatanMenit} m/menit
                         <br>Atau : ${kecepatan} m/s`
     outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML =`    <h3>Penjelasan tentang Kecepatan:</h3>
+                            <p><strong>Kecepatan</strong> adalah besaran yang menunjukkan seberapa cepat suatu objek bergerak atau berubah posisi dalam waktu tertentu.</p>
+                            <p>Kecepatan dihitung dengan rumus:</p>
+                            <pre><strong>Kecepatan = Jarak / Waktu</strong></pre>
+                            <p>Artinya, untuk menghitung kecepatan, kita perlu mengetahui jarak yang ditempuh dan waktu yang dibutuhkan untuk menempuh jarak tersebut.</p>
+                            
+                            <h4>Contoh 1:</h4>
+                            <p>Jika kamu mengendarai mobil sejauh 100 kilometer dalam waktu 2 jam, maka kecepatan mobilmu adalah:</p>
+                            <pre>Kecepatan = 100 km / 2 jam = 50 km/jam</pre>
+                            <p>Ini berarti mobil bergerak dengan kecepatan 50 kilometer per jam.</p>
+
+                            <h4>Contoh 2:</h4>
+                            <p>Jika kamu berjalan sejauh 500 meter dalam waktu 10 menit, maka kecepatanmu adalah:</p>
+                            <pre>Kecepatan = 500 meter / 10 menit = 50 meter/menit</pre>
+                            <p>Artinya, kamu bergerak dengan kecepatan 50 meter per menit.</p>
+
+                            <h4>Konversi Satuan Kecepatan:</h4>
+                            <p>Kecepatan dapat dinyatakan dalam berbagai satuan, seperti:</p>
+                            <ul>
+                                <li><strong>km/jam</strong> (kilometer per jam) - digunakan untuk kendaraan yang bergerak dalam jarak jauh.</li>
+                                <li><strong>m/s</strong> (meter per detik) - sering digunakan untuk kecepatan objek dalam sains atau fisika.</li>
+                                <li><strong>m/menit</strong> (meter per menit) - digunakan ketika waktu lebih nyaman diukur dalam menit, misalnya kecepatan berjalan atau berlari.</li>
+                            </ul>
+
+                            <h4>Konversi Satuan Kecepatan:</h4>
+                            <p>Jika kamu ingin mengubah satuan kecepatan, berikut adalah cara konversinya:</p>
+                            <ul>
+                                <li>Dari <strong>km/jam</strong> ke <strong>m/s</strong>: kalikan kecepatan dalam km/jam dengan <strong>1000 / 3600</strong> (karena 1 km = 1000 meter dan 1 jam = 3600 detik).</li>
+                                <li>Dari <strong>m/s</strong> ke <strong>km/jam</strong>: kalikan kecepatan dalam m/s dengan <strong>3600 / 1000</strong>.</li>
+                                <li>Dari <strong>m/menit</strong> ke <strong>m/s</strong>: bagi kecepatan dalam m/menit dengan 60.</li>
+                            </ul>`
 
 }
 
@@ -1958,6 +2000,19 @@ function jkwWaktu() {
 
     output3.innerHTML = `<h1>waktu = ${jam} j : ${menit} m : ${detik} s
                         <br>Atau ${waktuDetik} detik`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML =`<p>Untuk menghitung waktu, kita menggunakan rumus: <strong>Waktu = Jarak / Kecepatan</strong></p>
+        <p>Pastikan satuan jarak dan kecepatan konsisten atau sama. Jika kecepatan dalam km/jam, pastikan jarak dalam kilometer. Jika kecepatan dalam m/s, pastikan jarak dalam meter.</p>
+        <p><strong>Langkah-langkah:</strong></p>
+        <ul>
+            <li>Konversi jarak dan kecepatan ke satuan yang konsisten (misalnya, meter dan meter per detik).</li>
+            <li>Hitung waktu dengan membagi jarak dengan kecepatan.</li>
+            <li>Konversi hasil waktu dari detik ke dalam satuan jam, menit, dan detik jika perlu.</li>
+        </ul>
+        <br><p>Contoh:</p>
+        <p>Jika jarak adalah 120 km dan kecepatan mobil adalah 60 km/jam, maka:</p>
+        <p>Waktu = 120 km / 60 km/jam = 2 jam</p>
+        <p>Jika jarak dalam meter (120000 m) dan kecepatan dalam m/s (16.67 m/s), waktu akan dihitung dalam detik, dan hasilnya adalah 7200 detik.</p>`
 }
 
 
