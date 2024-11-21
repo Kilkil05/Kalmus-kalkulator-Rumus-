@@ -1860,21 +1860,104 @@ function jkwJarak() {
     if (kecepatanConvert === 'km/jam') {
         kecepatan = parseFloat((kecepatan * (1000/3600)).toFixed(4))
     } else if (kecepatanConvert === 'm/s') {
-        kecepatan = parseFloat(kecepatan.toFixed(4))
+        kecepatan = kecepatan
+    } else if (kecepatanConvert === 'm/menit') {
+        kecepatan = parseFloat((kecepatan / 60).toFixed(4))
     }
 
     let jarakCm = parseFloat(Math.round(waktu * kecepatan))
     let jarakKm = parseFloat((jarakCm / 1000).toFixed(1))
 
     output3.innerHTML = `<h1>Jarak : ${jarakKm} Km
-                        <br>Atau : ${jarakCm} Cm</h1>`
+                        <br>Atau : ${jarakCm} m</h1>`
     outputPenjelasan.innerHTML = `Lihat Penjelasan`
     output1.innerHTML = `untuk mencari jarak menggunakan rumus jarak = kecepatan * waktu`
 
 }
 
 function jkwKecepatan() {
-    
+    let jarak = parseFloat(document.getElementById('input-jarak-k').value)
+    let jarakConvert = document.getElementById('jarak-option-k').value
+    let waktuJam = parseFloat(document.getElementById('input-jam-k').value)
+    let waktuMenit = parseFloat(document.getElementById('input-menit-k').value)
+    let waktuDetik = parseFloat(document.getElementById('input-detik-k').value)
+    let output3 = document.getElementById('output-jkw3')
+    let output1 = document.getElementById('output-jkw1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    if (isNaN(jarak)) {
+        output3.innerHTML = `<h2>Error!!Masukkan input dengan benar!`
+        outputPenjelasan.innerHTML = ``
+        output1.innerHTML = ``
+        return
+    }
+
+    if (isNaN(waktuJam)) {
+        waktuJam = 0
+    }
+    if (isNaN(waktuMenit)) {
+        waktuMenit = 0
+    }
+    if (isNaN(waktuDetik)) {
+        waktuDetik = 0
+    }
+
+    let waktu = parseFloat((waktuJam * 3600) + (waktuMenit * 60) + waktuDetik)
+
+    if (jarakConvert === 'km') {
+        jarak = parseFloat((jarak * 1000).toFixed(3))
+    } else if (jarakConvert === 'm') {
+        jarak = jarak
+    }
+
+    let kecepatan = jarak / waktu
+    let kecepatanKm = parseFloat((kecepatan * 3.6).toFixed(2))
+    let kecepatanMenit = kecepatan * 60
+
+    output3.innerHTML = `<h1>Kecepatan : ${kecepatanKm} Km/jam
+                        <br>Atau : ${kecepatanMenit} m/menit
+                        <br>Atau : ${kecepatan} m/s`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+
+}
+
+function jkwWaktu() {
+    let jarak = parseFloat(document.getElementById('input-jarak-w').value)
+    let jarakConvert = document.getElementById('jarak-option-w').value
+    let kecepatan = parseFloat(document.getElementById('input-kecepatan-w').value)
+    let kecepatanConvert = document.getElementById('kecepatan-option-w').value
+    let output3 = document.getElementById('output-jkw3')
+    let output1 = document.getElementById('output-jkw1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    if (isNaN(jarak) || isNaN(kecepatan)) {
+        output3.innerHTML = `<h2>Error!!Masukkan input dengan benar!`
+        outputPenjelasan.innerHTML = ``
+        output1.innerHTML = ``
+        return
+    }
+
+    if (jarakConvert === 'km') {
+        jarak = parseFloat((jarak * 1000).toFixed(3))
+    } else if (jarakConvert === 'm') {
+        jarak = jarak
+    }
+
+    if (kecepatanConvert === 'km/jam') {
+        kecepatan = parseFloat((kecepatan * (1000/3600)).toFixed(4))
+    } else if (kecepatanConvert === 'm/s') {
+        kecepatan = kecepatan
+    } else if (kecepatanConvert === 'm/menit') {
+        kecepatan = parseFloat((kecepatan / 60).toFixed(4))
+    }
+
+    let waktuDetik = parseFloat((jarak/kecepatan).toFixed(2))
+    let jam = Math.floor(waktuDetik / 3600)
+    let menit = Math.floor((waktuDetik % 3600) / 60)
+    let detik = Math.round(waktuDetik % 60)
+
+    output3.innerHTML = `<h1>waktu = ${jam} j : ${menit} m : ${detik} s
+                        <br>Atau ${waktuDetik} detik`
 }
 
 
