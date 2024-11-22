@@ -1,0 +1,208 @@
+<html>
+    <head>
+        <script src="index.js"></script>
+        <title>Operasi Bilangan Campuran</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/feather-icons"></script>
+
+        <!-- kanit -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jura:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oooh+Baby&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        
+        <!-- poppins -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jura:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oooh+Baby&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <a class="home" href="index.html"><i data-feather="arrow-left"></i>Back</a>
+        </nav>
+        <h1 class="judul">Kalkulator Rumus<br>
+            <h2 class="perintah">Operasi Bilangan Campuran</h2></h1>
+
+        <div class="container-op">
+
+            <div class="container-operasibilangan">
+                <div class="angka-kiri">
+                    <select name="bilangan" id="bilangan-option-kiri" style="margin-bottom: 2rem;">
+                        <option value="pecahanbiasa">Pecahan Biasa</option>
+                        <option value="pecahancampuran">Pecahan Campuran</option>
+                        <option value="persen">Persen</option>
+                        <option value="desimal">Desimal</option>
+                    </select>
+
+                    <!-- biasa kiri -->
+                    <div class="pecahan-biasa-kiri">
+                        <div class="pecahan-menu">
+                            <div class="pecahan-conten">
+                                <div class="input-angka-atas">
+                                    <input id="inputatas-pecahanbiasa-kiri" class="input-pecahan" type="number" placeholder="pembilang">
+                                </div>
+                            </div>
+        
+                            <div class="pembanding-pecahan"></div>
+        
+                            <div class="pecahan-conten">
+                                <div class="input-angka-bawah">
+                                    <input id="inputbawah-pecahanbiasa-kiri" class="input-pecahan" type="number" placeholder="penyebut">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- campuran kiri -->
+                    <div class="pecahan-campuran-kiri" style="display: flex; justify-content: center; align-items: center; flex-direction: row; gap: 1rem;"> 
+                        <input id="inputbilanganbulat-pecahancampuran-kanan" class="inputbilanganbulat-pecahancampuran" type="number" placeholder="">
+                        <div class="pecahan-menu">
+                            <div class="pecahan-conten">
+                                <div class="input-angka-atas">
+                                    <input id="inputatas-pecahancampuran-kanan" class="input-pecahan" type="number" placeholder="pembilang">
+                                </div>
+                            </div>
+        
+                            <div class="pembanding-pecahan"></div>
+        
+                            <div class="pecahan-conten">
+                                <div class="input-angka-bawah">
+                                    <input id="inputbawah-pecahancampuran-kanan" class="input-pecahan" type="number" placeholder="penyebut">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Persen -->
+                    <div class="persen-kiri">
+                        <input id="input-persen-kanan" type="number" class="input-persen"><p style="font-size: 2rem;">%</p>
+                    </div>
+
+                </div>
+                
+            
+                <select id="operation-select">
+                    <option value="tambah">+</option>
+                    <option value="kurang">-</option>
+                    <option value="kali">x</option>
+                    <option value="bagi">:</option>
+                </select>
+
+                <div class="angka-kanan">
+                    <select name="bilangan" id="bilangan-option-kiri" style="margin-bottom: 2rem;">
+                        <option value="pecahanbiasa">Pecahan Biasa</option>
+                        <option value="pecahancampuran">Pecahan Campuran</option>
+                        <option value="persen">Persen</option>
+                        <option value="desimal">Desimal</option>
+                    </select>
+
+                    <!-- biasa kanan -->
+                    <div class="pecahan-biasa-kanan">
+                        <div class="pecahan-menu">
+                            <div class="pecahan-conten">
+                                <div class="input-angka-atas">
+                                    <input id="inputatas-pecahanbiasa-kanan" class="input-pecahan" type="number" placeholder="pembilang">
+                                </div>
+                            </div>
+        
+                            <div class="pembanding-pecahan"></div>
+        
+                            <div class="pecahan-conten">
+                                <div class="input-angka-bawah">
+                                    <input id="inputbawah-pecahanbiasa-kanan" class="input-pecahan" type="number" placeholder="penyebut">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- campuran kanan -->
+                    <div class="pecahan-campuran-kanan" style="display: flex; justify-content: center; align-items: center; flex-direction: row; gap: 1rem;"> 
+                        <input id="inputbilanganbulat-pecahancampuran-kanan" class="inputbilanganbulat-pecahancampuran" type="number" placeholder="">
+                        <div class="pecahan-menu">
+                            <div class="pecahan-conten">
+                                <div class="input-angka-atas">
+                                    <input id="inputatas-pecahancampuran-kanan" class="input-pecahan" type="number" placeholder="pembilang">
+                                </div>
+                            </div>
+        
+                            <div class="pembanding-pecahan"></div>
+        
+                            <div class="pecahan-conten">
+                                <div class="input-angka-bawah">
+                                    <input id="inputbawah-pecahancampuran-kanan" class="input-pecahan" type="number" placeholder="penyebut">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Persen -->
+                    <div class="persen-kanan">
+                        <input id="input-persen-kanan" type="number" class="input-persen"><p style="font-size: 2rem;">%</p>
+                    </div>
+
+                </div>
+    
+
+            </div>
+
+                <button id="hasil-pecahan-biasa" onclick="penyederhanaanPecahanBiasa()">Hasil</button>
+                <button id="hasil-pecahan-campuran" onclick="penyederhanaanPecahanCampuran()">Hasil</button>
+                <div class="pecahan-output">
+                    <div class="outputbiasa">
+                        <h2 id="output-pecahan3"></h2>
+                        <div id="pecahan-hasil">
+                            <table class="fraction-table">
+                                <tr>
+                                    <td id="angkaatas"></td>
+                                </tr>
+                                <tr>
+                                    <td id="divider"></td>
+                                </tr>
+                                <tr>
+                                    <td id="angkabawah"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="outputcampuran">
+                        <h2 id="output-pecahan4"></h2>
+                        <div id="pecahan-hasil-campuran">
+                            <table class="fraction-table-campuran">
+                                <p id="angkacampuran"></p>
+                                <tr>
+                                    <td id="angkaatascampuran"></td>
+                                </tr>
+                                <tr>
+                                    <td id="divider1"></td>
+                                </tr>
+                                <tr>
+                                    <td id="angkabawahcampuran"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <h2 id="output-pecahan5"></h2>
+
+                    <h2 id="output-penjelasan" onclick="showText()"></h2>
+                    <div id="output-hide">
+                        <img class="pin-png" src="asset/pin.png" alt="" width="50px">
+                        <h3 id="output-pecahan1"></h3>
+                        <h3 id="output-pecahan2"></h3>
+                    </div>
+
+                </div>
+                
+
+            </div>
+            <script>
+                feather.replace();
+            </script>
+            <script src="index.js"></script>
+
+            <footer>
+                <a href="https://github.com/Kilkil05"><img src="pngwing.com (32).png" alt="github" width="50px"></a>
+                <a href="https://www.instagram.com/wasekloer.id/"><img src="image.png" alt="instagram" width="50px"></a>
+            </footer>
+        </div>
+    </body>
+</html>

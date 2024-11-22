@@ -1667,12 +1667,94 @@ input::-webkit-inner-spin-button {
     font-family: poppins;
 }
 
-
-
-
-
-
-
+/* operasi bilangan */
+.operasibilangan-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.inputbilanganbulat-pecahancampuran {
+    font-size: 3rem;
+    height: 100;
+    width: 80;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+.input-pecahan {
+    font-size: 1.5rem;
+    height: 50;
+    width: 150;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+.container-operasibilangan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    column-gap: 5rem;
+}
+.input-pecahancampuran::placeholder{
+    font-size: 0.9rem;
+    word-wrap: normal;
+}
+#operation-select {
+    font-size: 2rem;
+    height: 80;
+    width: 80;
+    background-color: white;
+    color: black;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;  
+}
+.container-op {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.input-persen {
+    font-size: 1.5rem;
+    height: 50;
+    width: 250;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+.persen-kanan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+}
+.persen-kiri {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+}
 
 
 

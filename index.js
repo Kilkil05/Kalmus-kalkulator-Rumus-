@@ -2015,9 +2015,15 @@ function jkwWaktu() {
         <p>Jika jarak dalam meter (120000 m) dan kecepatan dalam m/s (16.67 m/s), waktu akan dihitung dalam detik, dan hasilnya adalah 7200 detik.</p>`
 }
 
+function desimalKePecahan() {
 
+}
 
+let angka = parseFloat((0,889).replace(',', '.'))
 
+let desimal = (angka.toString().split('.')[1] || '').length
+
+console.log(desimal)
 
 
 // yang baca manis 
