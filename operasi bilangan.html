@@ -27,11 +27,17 @@
             <div class="container-operasibilangan">
                 <div class="angka-kiri">
                     <select name="bilangan" id="bilangan-option-kiri" style="margin-bottom: 2rem;">
+                        <option value="" disabled selected>Pilih Jenis Bilangan</option>
+                        <option value="bilanganbulat">Bilangan Bulat</option>
                         <option value="pecahanbiasa">Pecahan Biasa</option>
                         <option value="pecahancampuran">Pecahan Campuran</option>
                         <option value="persen">Persen</option>
                         <option value="desimal">Desimal</option>
                     </select>
+
+                    <div class="bilanganbulat-kiri">
+                        <input id="input-int-kiri" type="number" class="input-int" placeholder="masukkan nilai">
+                    </div>
 
                     <!-- biasa kiri -->
                     <div class="pecahan-biasa-kiri">
@@ -74,8 +80,13 @@
 
                     <!-- Persen -->
                     <div class="persen-kiri">
-                        <input id="input-persen-kanan" type="number" class="input-persen"><p style="font-size: 2rem;">%</p>
+                        <input id="input-persen-kanan" type="number" class="input-persen" placeholder="masukkan nilai"><p style="font-size: 2rem;">%</p>
                     </div>
+
+                     <!-- desimal -->
+                     <div class="desimal-kiri">
+                        <input id="input-desimal-kiri" type="number" class="input-desimal" placeholder="masukkan nilai desimal">
+                     </div>
 
                 </div>
                 
@@ -88,12 +99,18 @@
                 </select>
 
                 <div class="angka-kanan">
-                    <select name="bilangan" id="bilangan-option-kiri" style="margin-bottom: 2rem;">
+                    <select name="bilangan" id="bilangan-option-kanan" style="margin-bottom: 2rem;">
+                        <option value="" disabled selected>Pilih Jenis Bilangan</option>
+                        <option value="bilanganbulat">Bilangan Bulat</option>
                         <option value="pecahanbiasa">Pecahan Biasa</option>
                         <option value="pecahancampuran">Pecahan Campuran</option>
                         <option value="persen">Persen</option>
                         <option value="desimal">Desimal</option>
                     </select>
+
+                    <div class="bilanganbulat-kanan">
+                        <input id="input-int-kanan" type="number" class="input-int" placeholder="masukkan nilai">
+                    </div>
 
                     <!-- biasa kanan -->
                     <div class="pecahan-biasa-kanan">
@@ -136,8 +153,13 @@
 
                     <!-- Persen -->
                     <div class="persen-kanan">
-                        <input id="input-persen-kanan" type="number" class="input-persen"><p style="font-size: 2rem;">%</p>
+                        <input id="input-persen-kanan" type="number" class="input-persen" placeholder="masukkan nilai"><p style="font-size: 2rem;">%</p>
                     </div>
+
+                    <!-- desimal -->
+                     <div class="desimal-kanan">
+                        <input id="input-desimal-kanan" type="number" class="input-desimal" placeholder="masukkan nilai desimal">
+                     </div>
 
                 </div>
     
