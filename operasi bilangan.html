@@ -166,8 +166,7 @@
 
             </div>
 
-                <button id="hasil-pecahan-biasa" onclick="penyederhanaanPecahanBiasa()">Hasil</button>
-                <button id="hasil-pecahan-campuran" onclick="penyederhanaanPecahanCampuran()">Hasil</button>
+                <button id="hasil-operasi-bilangan" class="btn" onclick="operasiBilangan()" style="margin-top: 3rem;">Hasil</button>
                 <div class="pecahan-output">
                     <div class="outputbiasa">
                         <h2 id="output-pecahan3"></h2>
@@ -225,6 +224,67 @@
                 <a href="https://github.com/Kilkil05"><img src="pngwing.com (32).png" alt="github" width="50px"></a>
                 <a href="https://www.instagram.com/wasekloer.id/"><img src="image.png" alt="instagram" width="50px"></a>
             </footer>
+
+            <script>
+            function angkaKiriOperasi() {
+                let angkaOption = document.getElementById('bilangan-option-kiri').value
+                let bilanganBulat = document.querySelector('.bilanganbulat-kiri')
+                let pecahanBiasa = document.querySelector('.pecahan-biasa-kiri')
+                let pecahanCampuran = document.querySelector('.pecahan-campuran-kiri')
+                let persen = document.querySelector('.persen-kiri')
+                let desimal = document.querySelector('.desimal-kiri')
+
+                bilanganBulat.style.display = 'none'
+                pecahanBiasa.style.display = 'none'
+                pecahanCampuran.style.display = 'none'
+                persen.style.display = 'none'
+                desimal.style.display = 'none'
+
+                if(angkaOption === 'bilanganbulat') {
+                    bilanganBulat.style.display = 'flex'
+                } else if (angkaOption === 'pecahanbiasa') {
+                    pecahanBiasa.style.display = 'flex'
+                } else if (angkaOption === 'pecahancampuran') {
+                    pecahanCampuran.style.display = 'flex'
+                } else if (angkaOption === 'persen') {
+                    persen.style.display = 'flex'
+                } else if (angkaOption === 'desimal') {
+                    desimal.style.display = 'flex'
+                }
+            }
+
+            document.getElementById('bilangan-option-kiri').addEventListener('change', angkaKiriOperasi)
+            angkaKiriOperasi()
+
+            function angkananOperasi() {
+                let angkaOption = document.getElementById('bilangan-option-kanan').value
+                let bilanganBulat = document.querySelector('.bilanganbulat-kanan')
+                let pecahanBiasa = document.querySelector('.pecahan-biasa-kanan')
+                let pecahanCampuran = document.querySelector('.pecahan-campuran-kanan')
+                let persen = document.querySelector('.persen-kanan')
+                let desimal = document.querySelector('.desimal-kanan')
+
+                bilanganBulat.style.display = 'none'
+                pecahanBiasa.style.display = 'none'
+                pecahanCampuran.style.display = 'none'
+                persen.style.display = 'none'
+                desimal.style.display = 'none'
+
+                if(angkaOption === 'bilanganbulat') {
+                    bilanganBulat.style.display = 'flex'
+                } else if (angkaOption === 'pecahanbiasa') {
+                    pecahanBiasa.style.display = 'flex'
+                } else if (angkaOption === 'pecahancampuran') {
+                    pecahanCampuran.style.display = 'flex'
+                } else if (angkaOption === 'persen') {
+                    persen.style.display = 'flex'
+                } else if (angkaOption === 'desimal') {
+                    desimal.style.display = 'flex'
+                }
+            }
+            document.getElementById('bilangan-option-kanan').addEventListener('change', angkananOperasi)
+            angkananOperasi()
+            </script>
         </div>
     </body>
 </html>
