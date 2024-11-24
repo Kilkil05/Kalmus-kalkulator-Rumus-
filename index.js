@@ -2014,39 +2014,13 @@ function jkwWaktu() {
         <p>Waktu = 120 km / 60 km/jam = 2 jam</p>
         <p>Jika jarak dalam meter (120000 m) dan kecepatan dalam m/s (16.67 m/s), waktu akan dihitung dalam detik, dan hasilnya adalah 7200 detik.</p>`
 }
-function angkaKiriOperasi() {
-    let angkaOption = document.getElementById('bilangan-option-kiri').value
-    let bilanganBulat = document.querySelector('.bilanganbulat-kiri')
-    let pecahanBiasa = document.querySelector('.pecahan-biasa-kiri')
-    let pecahanCampuran = document.querySelector('.pecahan-campuran-kiri')
-    let persen = document.querySelector('.persen-kiri')
-    let desimal = document.querySelector('.desimal-kiri')
+    
+// function desimalKePecahan(desimal) {
+//     let angka = parseFloat((desimal).replace(',', '.'))
+//     let iniDesimal = (angka.toString().split('.')[1] || '').length
+//     let penyebut = Math.pow(10, iniDesimal)
 
-    bilanganBulat.style.display = 'none'
-    pecahanBiasa.style.display = 'none'
-    pecahanCampuran.style.display = 'none'
-    persen.style.display = 'none'
-    desimal.style.display = 'none'
-
-    if(angkaOption === 'bilanganbulat') {
-        bilanganBulat.style.display = 'block'
-    } else if (angkaOption === 'pecahanbiasa') {
-        pecahanBiasa.style.display = 'block'
-    } else if (angkaOption === 'pecahancampuran') {
-        pecahanCampuran.style.display = 'block'
-    } else if (angkaOption === 'persen') {
-        persen.style.display = 'block'
-    } else if (angkaOption === 'desimal') {
-        desimal.style.display = 'block'
-    }
-}
-function desimalKePecahan() {
-
-}
-
-let angka = parseFloat((0,889).replace(',', '.'))
-
-let desimal = (angka.toString().split('.')[1] || '').length
+// }
 
 console.log(desimal)
 
