@@ -2040,7 +2040,7 @@ function pecahanBiasaSederhana(pembilang, penyebut) { //pecahan biasa ke sederha
 }
 
 function pecahanCampuranSederhana(bulat, pembilang, penyebut) { //pecahan campuran ke sederhana
-    let pembilangBiasa = parseFloat(bulat * penyebut + pembilang)
+    let pembilangBiasa = parseFloat(parseFloat(bulat) * parseFloat(penyebut) + parseFloat(pembilang))
     let penyebutBiasa = penyebut
 
     let fpb = gcd(pembilangBiasa, penyebutBiasa)
@@ -2054,8 +2054,8 @@ function pecahanCampuranSederhana(bulat, pembilang, penyebut) { //pecahan campur
 }
 
 function persenKePecahan(persentase) { //persen ke pecahan
-    let pembilang = persentase
-    let penyebut = 100
+    let pembilang = parseFloat(persentase)
+    let penyebut = parseFloat(100)
 
     return {
         pembilang : pembilang,
@@ -2064,10 +2064,11 @@ function persenKePecahan(persentase) { //persen ke pecahan
 }
 
 function desimalKePecahan(desimal) { //desimal ke pecahan
-    const angka = (desimal.toString()).replace(',', '.')
+    const angka = parseFloat(desimal.replace(',', '.'))
     const iniDesimal = (angka.toString().split('.')[1] || '').length
+    const desimalAngka = parseFloat(angka)
     const penyebut = Math.pow(10, iniDesimal)
-    const pembilang = desimal * penyebut
+    const pembilang = desimalAngka * penyebut
 
     const fpb = gcd(pembilang, penyebut)
     const pembilangSederhana = pembilang / fpb
@@ -2077,6 +2078,49 @@ function desimalKePecahan(desimal) { //desimal ke pecahan
         pembilang : pembilangSederhana,
         penyebut : penyebutSederhana
     }
+}
+
+function operasiBilangan() {
+    let operasi = document.getElementById('operation-select').value
+    let bilanganKiriOption = document.getElementById('bilangan-option-kiri').value
+    let bilanganKiri
+    let bilanganKananOption = document.getElementById('bilangan-option-kanan').value
+    let bilanganKanan
+
+    //Bilangan kanan input
+    switch(bilanganKiriOption) {
+        case 'bilanganbulat':
+            let inputIntKiri = document.getElementById('input-int-kiri').value
+            bilanganKiri = intKePecahan(inputIntKiri)
+            break
+
+        case 'pecahanbiasa':
+            let angkaAtasPecahanKiri = document.getElementById('inputatas-pecahanbiasa-kiri').value
+            let angkaBawahPecahanKiri = document.getElementById('inputbawah-pecahanbiasa-kiri').value
+            bilanganKiri = pecahanBiasaSederhana(angkaAtasPecahanKiri, angkaBawahPecahanKiri)
+            break
+
+        case 'pecahancampuran':
+            let bilanganBulatCampuranKiri = document.getElementById('inputbilanganbulat-pecahancampuran-kiri').value
+            let angkaAtasCampuranKiri = document.getElementById('inputatas-pecahancampuran-kiri').value
+            let angkaBawahCampuranKiri = document.getElementById('inputbawah-pecahancampuran-kiri').value
+            bilanganKiri = pecahanCampuranSederhana(bilanganBulatCampuranKiri, angkaAtasCampuranKiri, angkaBawahCampuranKiri)
+            break
+
+        case 'persen':
+            let inputPersen = document.getElementById('input-persen-kiri').value
+            bilanganKiri = persenKePecahan(inputPersen)
+            break
+
+        case 'desimal':
+            let desimal = document.getElementById('input-desimal-kiri').value
+            bilanganKiri = desimalKePecahan(desimal)
+            break
+
+        default:
+    }
+
+    console.log(bilanganKiri)
 }
 
 
