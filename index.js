@@ -2014,15 +2014,80 @@ function jkwWaktu() {
         <p>Waktu = 120 km / 60 km/jam = 2 jam</p>
         <p>Jika jarak dalam meter (120000 m) dan kecepatan dalam m/s (16.67 m/s), waktu akan dihitung dalam detik, dan hasilnya adalah 7200 detik.</p>`
 }
-    
-// function desimalKePecahan(desimal) {
-//     let angka = parseFloat((desimal).replace(',', '.'))
-//     let iniDesimal = (angka.toString().split('.')[1] || '').length
-//     let penyebut = Math.pow(10, iniDesimal)
 
-// }
 
-console.log(desimal)
+// operasi Bilangan
+
+function intKePecahan(angka) { //Bilangan bulat ke pecahan
+    let pembilang = angka
+    let penyebut = 1
+
+    return {
+        pembilang : pembilang,
+        penyebut : penyebut
+    }
+}
+
+function pecahanBiasaSederhana(pembilang, penyebut) { //pecahan biasa ke sederhana
+    let fpb = gcd(pembilang, penyebut)
+    let pembilangSederhana = pembilang / fpb
+    let penyebutSederhana = penyebut / fpb
+
+    return {
+        pembilang : pembilangSederhana,
+        penyebut : penyebutSederhana
+    }
+}
+
+function pecahanCampuranSederhana(bulat, pembilang, penyebut) { //pecahan campuran ke sederhana
+    let pembilangBiasa = parseFloat(bulat * penyebut + pembilang)
+    let penyebutBiasa = penyebut
+
+    let fpb = gcd(pembilangBiasa, penyebutBiasa)
+    let pembilangSederhana = pembilangBiasa / fpb
+    let penyebutSederhana = penyebutBiasa / fpb
+
+    return {
+        pembilang : pembilangSederhana,
+        penyebut : penyebutSederhana
+    }
+}
+
+function persenKePecahan(persentase) { //persen ke pecahan
+    let pembilang = persentase
+    let penyebut = 100
+
+    return {
+        pembilang : pembilang,
+        penyebut : penyebut
+    }
+}
+
+function desimalKePecahan(desimal) { //desimal ke pecahan
+    const angka = (desimal.toString()).replace(',', '.')
+    const iniDesimal = (angka.toString().split('.')[1] || '').length
+    const penyebut = Math.pow(10, iniDesimal)
+    const pembilang = desimal * penyebut
+
+    const fpb = gcd(pembilang, penyebut)
+    const pembilangSederhana = pembilang / fpb
+    const penyebutSederhana = penyebut / fpb
+
+    return {
+        pembilang : pembilangSederhana,
+        penyebut : penyebutSederhana
+    }
+}
+
+
+let nomer1 = persenKePecahan(100)
+let nomer2 = pecahanBiasaSederhana(2, 3)
+let hasilPembilang = parseFloat(((nomer1.pembilang * nomer2.penyebut) + (nomer1.penyebut * nomer2.pembilang)))
+let hasilPenyebut = parseFloat((nomer1.penyebut * nomer2.penyebut))
+console.log(nomer1)
+console.log(nomer2)
+console.log(hasilPembilang)
+console.log(hasilPenyebut)
 
 
 // yang baca manis 
