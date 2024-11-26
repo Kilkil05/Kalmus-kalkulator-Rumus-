@@ -1784,6 +1784,7 @@ input::-webkit-inner-spin-button {
     flex-direction: column;
     margin-top: 1rem;
     font-family: poppins;
+    margin-bottom: 0;
 }
 
 

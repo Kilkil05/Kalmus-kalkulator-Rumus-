@@ -21,6 +21,7 @@
         </nav>
         <h1 class="judul">Kalkulator Rumus<br>
             <h2 class="perintah">Operasi Bilangan Campuran</h2></h1>
+            <h4 class="perintah">gunakan titik (.) untuk desimal</h2></h1>
 
         <div class="container-op">
 
@@ -85,7 +86,7 @@
 
                      <!-- desimal -->
                      <div class="desimal-kiri">
-                        <input id="input-desimal-kiri" type="teks" class="input-desimal" placeholder="masukkan nilai desimal">
+                        <input id="input-desimal-kiri" type="number" class="input-desimal" placeholder="masukkan nilai desimal">
                      </div>
 
                 </div>
@@ -168,36 +169,19 @@
 
                 <button id="hasil-operasi-bilangan" class="btn" onclick="operasiBilangan()" style="margin-top: 3rem;">Hasil</button>
                 <div class="operasibilangan-output">
-                    <div class="outputbiasa">
-                        <h2 id="output-pecahan3"></h2>
-                        <div id="pecahan-hasil">
-                            <table class="fraction-table">
-                                <tr>
-                                    <td id="angkaatas"></td>
-                                </tr>
-                                <tr>
-                                    <td id="divider"></td>
-                                </tr>
-                                <tr>
-                                    <td id="angkabawah"></td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    
+                    <h2 id="output-operasibilangan3" style="text-align: center; margin-bottom: 0;"></h2>
                     <div class="outputcampuran">
-                        <h2 id="output-pecahan4"></h2>
                         <div id="pecahan-hasil-campuran">
                             <table class="fraction-table-campuran">
-                                <p id="angkacampuran"></p>
+                                <p style="margin-top: 0; margin-bottom: 0;" id="angkacampuran-operasibilangan"></p>
                                 <tr>
-                                    <td id="angkaatascampuran"></td>
+                                    <td id="angkaatascampuran-operasibilangan"></td>
                                 </tr>
                                 <tr>
                                     <td id="divider1"></td>
                                 </tr>
                                 <tr>
-                                    <td id="angkabawahcampuran"></td>
+                                    <td id="angkabawahcampuran-operasibilangan"></td>
                                 </tr>
                             </table>
                         </div>
@@ -207,8 +191,7 @@
                     <h2 id="output-penjelasan" onclick="showText()"></h2>
                     <div id="output-hide">
                         <img class="pin-png" src="asset/pin.png" alt="" width="50px">
-                        <h3 id="output-pecahan1"></h3>
-                        <h3 id="output-pecahan2"></h3>
+                        <h3 id="output-operasibilangan1"></h3>
                     </div>
 
                 </div>
@@ -226,6 +209,8 @@
             </footer>
 
             <script>
+
+            document.getElementById('divider1').style.display = 'none'
             function angkaKiriOperasi() {
                 let angkaOption = document.getElementById('bilangan-option-kiri').value
                 let bilanganBulat = document.querySelector('.bilanganbulat-kiri')

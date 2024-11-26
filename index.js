@@ -2029,9 +2029,8 @@ function intKePecahan(angka) { //Bilangan bulat ke pecahan
 }
 
 function pecahanBiasaSederhana(pembilang, penyebut) { //pecahan biasa ke sederhana
-    let fpb = gcd(pembilang, penyebut)
-    let pembilangSederhana = pembilang / fpb
-    let penyebutSederhana = penyebut / fpb
+    let pembilangSederhana = pembilang
+    let penyebutSederhana = penyebut
 
     return {
         pembilang : pembilangSederhana,
@@ -2039,13 +2038,13 @@ function pecahanBiasaSederhana(pembilang, penyebut) { //pecahan biasa ke sederha
     }
 }
 
+
 function pecahanCampuranSederhana(bulat, pembilang, penyebut) { //pecahan campuran ke sederhana
     let pembilangBiasa = parseFloat(parseFloat(bulat) * parseFloat(penyebut) + parseFloat(pembilang))
     let penyebutBiasa = penyebut
 
-    let fpb = gcd(pembilangBiasa, penyebutBiasa)
-    let pembilangSederhana = pembilangBiasa / fpb
-    let penyebutSederhana = penyebutBiasa / fpb
+    let pembilangSederhana = pembilangBiasa 
+    let penyebutSederhana = penyebutBiasa 
 
     return {
         pembilang : pembilangSederhana,
@@ -2070,9 +2069,8 @@ function desimalKePecahan(desimal) { //desimal ke pecahan
     const penyebut = Math.pow(10, iniDesimal)
     const pembilang = desimalAngka * penyebut
 
-    const fpb = gcd(pembilang, penyebut)
-    const pembilangSederhana = pembilang / fpb
-    const penyebutSederhana = penyebut / fpb
+    const pembilangSederhana = pembilang 
+    const penyebutSederhana = penyebut 
 
     return {
         pembilang : pembilangSederhana,
@@ -2080,12 +2078,44 @@ function desimalKePecahan(desimal) { //desimal ke pecahan
     }
 }
 
+//function untuk mempermudah output
+
+//pecahan biasa ke campuran
+function pecahanKeCampuran(pembilang, penyebut) {
+    let pembilangSederhana = pembilang % penyebut //modulus pembilang dan penyebut digunakan untuk mereprentasikan nilai sederhana pembilang
+    let initBilanganBulat = pembilang - pembilangSederhana // berfungsi untuk mengurangi pembilang asli dengan hasil modulus agar bisa dibagi dengan penyebut
+    let bilanganBulat = initBilanganBulat / penyebut // reprentasi dari bilangan bulat pada campuran
+
+    return {
+        bilanganBulat : bilanganBulat,
+        pembilang : pembilangSederhana,
+        penyebut : penyebut
+    }
+}
+
+//pecahan biasa ke persen
+function pecahanKePersen(pembilang, penyebut) {
+    let hasil = (pembilang / penyebut) * 100
+
+    return parseFloat(hasil.toFixed(2)) + '%'
+}
+
+
+//hasil output
 function operasiBilangan() {
     let operasi = document.getElementById('operation-select').value
     let bilanganKiriOption = document.getElementById('bilangan-option-kiri').value
     let bilanganKiri
     let bilanganKananOption = document.getElementById('bilangan-option-kanan').value
     let bilanganKanan
+    let output3 = document.getElementById('output-operasibilangan3')
+    let outputCampuranInt = document.getElementById('angkacampuran-operasibilangan')
+    let outputCampuranPembilang = document.getElementById('angkaatascampuran-operasibilangan')
+    let outputCampuranPenyebut = document.getElementById('angkabawahcampuran-operasibilangan')
+    let divider = document.getElementById('divider1')
+    let output1 = document.getElementById('output-operasibilangan1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
 
     //Bilangan kanan input
     switch(bilanganKiriOption) {
@@ -2121,6 +2151,110 @@ function operasiBilangan() {
     }
 
     console.log(bilanganKiri)
+
+    switch(bilanganKananOption) {
+        case 'bilanganbulat':
+            let inputIntKanan = document.getElementById('input-int-kanan').value
+            bilanganKanan = intKePecahan(inputIntKanan)
+            break
+
+        case 'pecahanbiasa':
+            let angkaAtasPecahanKanan = document.getElementById('inputatas-pecahanbiasa-kanan').value
+            let angkaBawahPecahanKanan = document.getElementById('inputbawah-pecahanbiasa-kanan').value
+            bilanganKanan = pecahanBiasaSederhana(angkaAtasPecahanKanan, angkaBawahPecahanKanan)
+            break
+
+        case 'pecahancampuran':
+            let bilanganBulatCampuranKanan = document.getElementById('inputbilanganbulat-pecahancampuran-kanan').value
+            let angkaAtasCampuranKanan = document.getElementById('inputatas-pecahancampuran-kanan').value
+            let angkaBawahCampuranKanan = document.getElementById('inputbawah-pecahancampuran-kanan').value
+            bilanganKanan = pecahanCampuranSederhana(bilanganBulatCampuranKanan, angkaAtasCampuranKanan, angkaBawahCampuranKanan)
+            break
+
+        case 'persen':
+            let inputPersen = document.getElementById('input-persen-kanan').value
+            bilanganKanan = persenKePecahan(inputPersen)
+            break
+
+        case 'desimal':
+            let desimal = document.getElementById('input-desimal-kanan').value
+            bilanganKanan = desimalKePecahan(desimal)
+            break
+
+        default:
+    }
+    console.log(bilanganKanan)
+
+    let fpb
+  
+    //hasil ke tipe pecahan proses
+    let pembilangHasil
+    let penyebutHasil
+
+    //output
+    let hasilTambah
+    let hasilKurang
+    let hasilKali
+    let hasilBagi
+
+    //pecahan
+    let pembilang
+    let penyebut
+
+    //campuran
+    let pecahanCampuran
+    let persen
+
+    divider.style.display = 'block'
+    switch(operasi) {
+        case 'tambah':
+            //mengalikan pembilang 1 ke penyebut 2 dan sebaliknya lalu ditambah keduanya
+            pembilangHasil = parseFloat(bilanganKiri.pembilang * bilanganKanan.penyebut) + parseFloat(bilanganKanan.pembilang * bilanganKiri.penyebut)
+            penyebutHasil = bilanganKiri.penyebut * bilanganKanan.penyebut
+            //fpb untuk penyederhanaan
+            fpb = gcd(pembilangHasil, penyebutHasil)
+            //hasil penyederhanaan
+            pembilang = pembilangHasil / fpb
+            penyebut = penyebutHasil / fpb
+            //convert ke campuran dan persen
+            pecahanCampuran = pecahanKeCampuran(pembilang, penyebut)
+            persen = pecahanKePersen(pembilang, penyebut)
+
+            hasilTambah = parseFloat((pembilang / penyebut).toFixed(3))
+
+            output3.innerHTML = `<h1>Hasil = ${hasilTambah}
+                                <br>Jika diubah ke persen = ${persen}
+                                <br>jika diubah ke pecahan paling sederhana =</h1>`
+            outputCampuranInt.innerHTML = pecahanCampuran.bilanganBulat
+            outputCampuranPembilang.innerHTML = pecahanCampuran.pembilang
+            outputCampuranPenyebut.innerHTML = pecahanCampuran.penyebut
+            outputPenjelasan.innerHTML = `Lihat Penjelasan`
+            break
+
+        case 'kurang':
+            let lcm = (bilanganKiri.penyebut * bilanganKanan.penyebut) / gcd(bilanganKiri.penyebut, bilanganKanan.penyebut)
+            let pembilangLcm1 = bilanganKiri.pembilang * (lcm / bilanganKiri.penyebut)
+            let pembilangLcm2 = bilanganKanan.pembilang * (lcm / bilanganKanan.penyebut)
+            pembilangHasil = pembilangLcm1 - pembilangLcm2
+            penyebutHasil = lcm
+
+            fpb = gcd(pembilangHasil, penyebutHasil)
+            pembilang = pembilangHasil / fpb
+            penyebut = penyebutHasil / fpb
+            
+            console.log(pembilangHasil)
+            console.log(penyebutHasil)
+            break
+
+    }
+    console.log(pembilang)
+    console.log(penyebut)
+    console.log(pecahanCampuran)
+    console.log(persen)
+    console.log(hasilTambah)
+
+
+    
 }
 
 
