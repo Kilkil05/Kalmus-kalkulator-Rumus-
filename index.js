@@ -2192,10 +2192,7 @@ function operasiBilangan() {
     let penyebutHasil
 
     //output
-    let hasilTambah
-    let hasilKurang
-    let hasilKali
-    let hasilBagi
+    let hasil
 
     //pecahan
     let pembilang
@@ -2220,15 +2217,7 @@ function operasiBilangan() {
             pecahanCampuran = pecahanKeCampuran(pembilang, penyebut)
             persen = pecahanKePersen(pembilang, penyebut)
 
-            hasilTambah = parseFloat((pembilang / penyebut).toFixed(3))
-
-            output3.innerHTML = `<h1>Hasil = ${hasilTambah}
-                                <br>Jika diubah ke persen = ${persen}
-                                <br>jika diubah ke pecahan paling sederhana =</h1>`
-            outputCampuranInt.innerHTML = pecahanCampuran.bilanganBulat
-            outputCampuranPembilang.innerHTML = pecahanCampuran.pembilang
-            outputCampuranPenyebut.innerHTML = pecahanCampuran.penyebut
-            outputPenjelasan.innerHTML = `Lihat Penjelasan`
+            hasil = parseFloat((pembilang / penyebut).toFixed(3))
             break
 
         case 'kurang':
@@ -2241,17 +2230,57 @@ function operasiBilangan() {
             fpb = gcd(pembilangHasil, penyebutHasil)
             pembilang = pembilangHasil / fpb
             penyebut = penyebutHasil / fpb
-            
-            console.log(pembilangHasil)
-            console.log(penyebutHasil)
+
+            pecahanCampuran = pecahanKeCampuran(pembilang, penyebut)
+            persen = pecahanKePersen(pembilang, penyebut)
+            hasil = parseFloat((pembilang / penyebut).toFixed(3))
             break
+
+        case 'kali':
+            pembilangHasil = (bilanganKiri.pembilang * bilanganKanan.pembilang)
+            penyebutHasil = (bilanganKiri.penyebut * bilanganKanan.penyebut)
+
+            fpb = gcd(pembilangHasil, penyebutHasil)
+            pembilang = pembilangHasil / fpb
+            penyebut = penyebutHasil / fpb
+
+            pecahanCampuran = pecahanKeCampuran(pembilang, penyebut)
+            persen = pecahanKePersen(pembilang, penyebut)
+            hasil = parseFloat((pembilang / penyebut).toFixed(3))
+            break
+
+        case 'bagi':
+            pembilangHasil = (bilanganKiri.pembilang * bilanganKanan.penyebut)
+            penyebutHasil = (bilanganKiri.penyebut * bilanganKanan.pembilang)
+            fpb = gcd(pembilangHasil, penyebutHasil)
+            pembilang = pembilangHasil / fpb
+            penyebut = penyebutHasil / fpb
+
+            pecahanCampuran = pecahanKeCampuran(pembilang, penyebut)
+            persen = pecahanKePersen(pembilang, penyebut)
+            hasil = parseFloat((pembilang / penyebut).toFixed(3))
+            break
+
+        default:
 
     }
     console.log(pembilang)
     console.log(penyebut)
     console.log(pecahanCampuran)
     console.log(persen)
-    console.log(hasilTambah)
+    console.log(hasil)
+
+    output3.innerHTML = `<h1>Hasil = ${hasil}
+                        <br>Jika diubah ke persen = ${persen}
+                        <br>jika diubah ke pecahan paling sederhana =</h1>`
+    if(pecahanCampuran.bilanganBulat === 0) {
+    outputCampuranInt.innerHTML = ''
+    } else{
+    outputCampuranInt.innerHTML = `<h2 style="margin-bottom : 0; margin-top : 0;">${pecahanCampuran.bilanganBulat}</h2>`
+    }
+    outputCampuranPembilang.innerHTML = `<h3 style="margin-bottom : 0;">${pecahanCampuran.pembilang}</h3>`
+    outputCampuranPenyebut.innerHTML = `<h3 style="margin-bottom : 0;">${pecahanCampuran.penyebut}</h3>`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
 
 
     
