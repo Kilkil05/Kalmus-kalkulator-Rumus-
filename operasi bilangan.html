@@ -34,6 +34,7 @@
                         <option value="pecahancampuran">Pecahan Campuran</option>
                         <option value="persen">Persen</option>
                         <option value="desimal">Desimal</option>
+                        <option value="faktorial">Faktorial</option>
                     </select>
 
                     <div class="bilanganbulat-kiri">
@@ -89,6 +90,11 @@
                         <input id="input-desimal-kiri" type="number" class="input-desimal" placeholder="masukkan nilai desimal">
                      </div>
 
+                     <!-- faktorial -->
+                     <div class="faktorial-kiri">
+                        <input id="input-faktorial-kiri" type="number" class="input-faktorial" placeholder="masukkan nilai"><p style="font-size: 3rem;">!</p>
+                    </div>
+
                 </div>
                 
             
@@ -107,6 +113,7 @@
                         <option value="pecahancampuran">Pecahan Campuran</option>
                         <option value="persen">Persen</option>
                         <option value="desimal">Desimal</option>
+                        <option value="faktorial">Faktorial</option>
                     </select>
 
                     <div class="bilanganbulat-kanan">
@@ -161,6 +168,11 @@
                      <div class="desimal-kanan">
                         <input id="input-desimal-kanan" type="number" class="input-desimal" placeholder="masukkan nilai desimal">
                      </div>
+
+                     <!-- faktorial -->
+                     <div class="faktorial-kanan">
+                        <input id="input-faktorial-kanan" type="number" class="input-faktorial" placeholder="masukkan nilai"><p style="font-size: 3rem;">!</p>
+                    </div>
 
                 </div>
     
@@ -218,12 +230,14 @@
                 let pecahanCampuran = document.querySelector('.pecahan-campuran-kiri')
                 let persen = document.querySelector('.persen-kiri')
                 let desimal = document.querySelector('.desimal-kiri')
+                let bilanganFaktorial = document.querySelector('.faktorial-kiri')
 
                 bilanganBulat.style.display = 'none'
                 pecahanBiasa.style.display = 'none'
                 pecahanCampuran.style.display = 'none'
                 persen.style.display = 'none'
                 desimal.style.display = 'none'
+                bilanganFaktorial.style.display = 'none'
 
                 if(angkaOption === 'bilanganbulat') {
                     bilanganBulat.style.display = 'flex'
@@ -235,6 +249,8 @@
                     persen.style.display = 'flex'
                 } else if (angkaOption === 'desimal') {
                     desimal.style.display = 'flex'
+                } else if (angkaOption === 'faktorial') {
+                    bilanganFaktorial.style.display = 'flex'
                 }
             }
 
@@ -248,12 +264,14 @@
                 let pecahanCampuran = document.querySelector('.pecahan-campuran-kanan')
                 let persen = document.querySelector('.persen-kanan')
                 let desimal = document.querySelector('.desimal-kanan')
+                let bilanganFaktorial = document.querySelector('.faktorial-kanan')
 
                 bilanganBulat.style.display = 'none'
                 pecahanBiasa.style.display = 'none'
                 pecahanCampuran.style.display = 'none'
                 persen.style.display = 'none'
                 desimal.style.display = 'none'
+                bilanganFaktorial.style.display = 'none'
 
                 if(angkaOption === 'bilanganbulat') {
                     bilanganBulat.style.display = 'flex'
@@ -265,6 +283,8 @@
                     persen.style.display = 'flex'
                 } else if (angkaOption === 'desimal') {
                     desimal.style.display = 'flex'
+                } else if (angkaOption === 'faktorial') {
+                    bilanganFaktorial.style.display = 'flex'
                 }
             }
             document.getElementById('bilangan-option-kanan').addEventListener('change', angkananOperasi)

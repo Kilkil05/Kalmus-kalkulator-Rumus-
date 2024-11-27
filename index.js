@@ -2078,6 +2078,16 @@ function desimalKePecahan(desimal) { //desimal ke pecahan
     }
 }
 
+function faktorialKePecahan(faktor) {
+    let pembilang = faktorial(faktor)
+    let penyebut = 1
+
+    return {
+        pembilang : pembilang,
+        penyebut : penyebut
+    }
+}
+
 //function untuk mempermudah output
 
 //pecahan biasa ke campuran
@@ -2147,10 +2157,15 @@ function operasiBilangan() {
             bilanganKiri = desimalKePecahan(desimal)
             break
 
+        case 'faktorial':
+            let inputfaktorial = document.getElementById('input-faktorial-kiri').value
+            bilanganKiri = faktorialKePecahan(inputfaktorial)
+            break
+
         default:
+        
     }
 
-    console.log(bilanganKiri)
 
     switch(bilanganKananOption) {
         case 'bilanganbulat':
@@ -2181,8 +2196,14 @@ function operasiBilangan() {
             bilanganKanan = desimalKePecahan(desimal)
             break
 
+        case 'faktorial':
+            let inputfaktorial = document.getElementById('input-faktorial-kanan').value
+            bilanganKanan = faktorialKePecahan(inputfaktorial)
+            break
+
         default:
     }
+    console.log(bilanganKiri)
     console.log(bilanganKanan)
 
     let fpb
@@ -2264,11 +2285,8 @@ function operasiBilangan() {
         default:
 
     }
-    console.log(pembilang)
-    console.log(penyebut)
-    console.log(pecahanCampuran)
-    console.log(persen)
-    console.log(hasil)
+
+    //output
 
     output3.innerHTML = `<h1>Hasil = ${hasil}
                         <br>Jika diubah ke persen = ${persen}
@@ -2282,19 +2300,73 @@ function operasiBilangan() {
     outputCampuranPenyebut.innerHTML = `<h3 style="margin-bottom : 0;">${pecahanCampuran.penyebut}</h3>`
     outputPenjelasan.innerHTML = `Lihat Penjelasan`
 
+    // Output Penjelasan based on bilangan options
+    let penjelasanKiri = '';
+    let penjelasanKanan = '';
 
+    // Penjelasan untuk Bilangan Kiri
+    switch (bilanganKiriOption) {
+        case 'bilanganbulat':
+            penjelasanKiri = 'Bilangan bulat adalah bilangan yang tidak memiliki pecahan atau desimal, seperti 1, 2, 3, dan seterusnya.';
+            break;
+        case 'pecahanbiasa':
+            penjelasanKiri = 'Pecahan biasa adalah pecahan yang ditulis dalam bentuk pembilang dan penyebut, seperti 1/2, 3/4, dsb.';
+            break;
+        case 'pecahancampuran':
+            penjelasanKiri = 'Pecahan campuran adalah gabungan antara bilangan bulat dan pecahan, seperti 2 1/2, 3 3/4, dsb.';
+            break;
+        case 'persen':
+            penjelasanKiri = 'Persen adalah bentuk pecahan yang dinyatakan dalam per seratus, misalnya 50% berarti 50 per 100 atau 1/2.';
+            break;
+        case 'desimal':
+            penjelasanKiri = 'Bilangan desimal adalah bilangan yang menggunakan titik desimal, seperti 0.5, 1.25, dsb.';
+            break;
+        case 'faktorial':
+            penjelasanKiri = 'Faktorial adalah hasil perkalian bilangan bulat positif berturut-turut, seperti 5! = 5 x 4 x 3 x 2 x 1 = 120.';
+            break;
+        default:
+            penjelasanKiri = 'Pilih jenis bilangan kiri.';
+    }
+
+    // Penjelasan untuk Bilangan Kanan
+    switch (bilanganKananOption) {
+        case 'bilanganbulat':
+            penjelasanKanan = 'Bilangan bulat adalah bilangan yang tidak memiliki pecahan atau desimal, seperti 1, 2, 3, dan seterusnya.';
+            break;
+        case 'pecahanbiasa':
+            penjelasanKanan = 'Pecahan biasa adalah pecahan yang ditulis dalam bentuk pembilang dan penyebut, seperti 1/2, 3/4, dsb.';
+            break;
+        case 'pecahancampuran':
+            penjelasanKanan = 'Pecahan campuran adalah gabungan antara bilangan bulat dan pecahan, seperti 2 1/2, 3 3/4, dsb.';
+            break;
+        case 'persen':
+            penjelasanKanan = 'Persen adalah bentuk pecahan yang dinyatakan dalam per seratus, misalnya 50% berarti 50 per 100 atau 1/2.';
+            break;
+        case 'desimal':
+            penjelasanKanan = 'Bilangan desimal adalah bilangan yang menggunakan titik desimal, seperti 0.5, 1.25, dsb.';
+            break;
+        case 'faktorial':
+            penjelasanKanan = 'Faktorial adalah hasil perkalian bilangan bulat positif berturut-turut, seperti 5! = 5 x 4 x 3 x 2 x 1 = 120.';
+            break;
+        default:
+            penjelasanKanan = 'Pilih jenis bilangan kanan.';
+    }
+
+    // Set output penjelasan untuk jenis bilangan
+    output1.innerHTML = `
+        <h3>Penjelasan Operasi:</h3>
+        <p><strong>Jenis Bilangan Kiri:</strong> ${penjelasanKiri}</p>
+        <p><strong>Jenis Bilangan Kanan:</strong> ${penjelasanKanan}</p>
+        <p><strong>Jenis Operasi:</strong> ${operasi === 'tambah' ? 'Penjumlahan' : operasi === 'kurang' ? 'Pengurangan' : operasi === 'kali' ? 'Perkalian' : 'Pembagian'}</p>
+        <p><strong>Deskripsi Operasi:</strong> Pada operasi ini, kita akan melakukan perhitungan berdasarkan jenis bilangan yang dipilih. Misalnya, jika kita menambahkan dua pecahan, kita akan menyamakan penyebutnya terlebih dahulu, dan kemudian menjumlahkan pembilangnya. Setiap jenis bilangan memiliki cara konversi dan perhitungan yang berbeda.</p>
+    `;
     
 }
 
 
-let nomer1 = persenKePecahan(100)
-let nomer2 = pecahanBiasaSederhana(2, 3)
-let hasilPembilang = parseFloat(((nomer1.pembilang * nomer2.penyebut) + (nomer1.penyebut * nomer2.pembilang)))
-let hasilPenyebut = parseFloat((nomer1.penyebut * nomer2.penyebut))
-console.log(nomer1)
-console.log(nomer2)
-console.log(hasilPembilang)
-console.log(hasilPenyebut)
+    
+
+
 
 
 // yang baca manis 

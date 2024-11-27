@@ -1777,6 +1777,17 @@ input::-webkit-inner-spin-button {
     z-index: 2;
     text-align: center;
 }
+.input-faktorial {
+    font-size: 1.5rem;
+    height: 50;
+    width: 250;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
 .operasibilangan-output {
     display: flex;
     justify-content: center;
@@ -1785,6 +1796,20 @@ input::-webkit-inner-spin-button {
     margin-top: 1rem;
     font-family: poppins;
     margin-bottom: 0;
+}
+.faktorial-kiri {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+}
+.faktorial-kanan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
 }
 
 
