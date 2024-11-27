@@ -2205,6 +2205,16 @@ function operasiBilangan() {
     }
     console.log(bilanganKiri)
     console.log(bilanganKanan)
+    if (bilanganKanan.penyebut == 0 || bilanganKiri.penyebut == 0) {
+        output3.innerHTML = `<h1>Tidak terdefinisi`
+        outputCampuranPembilang.innerHTML = ``
+        outputCampuranInt.innerHTML = ``
+        outputCampuranPenyebut.innerHTML = ``
+        outputPenjelasan.innerHTML = ``
+        output1.innerHTML = ``
+        divider.style.display = ''
+        return
+    }
 
     let fpb
   
@@ -2354,12 +2364,34 @@ function operasiBilangan() {
 
     // Set output penjelasan untuk jenis bilangan
     output1.innerHTML = `
-        <h3>Penjelasan Operasi:</h3>
-        <p><strong>Jenis Bilangan Kiri:</strong> ${penjelasanKiri}</p>
-        <p><strong>Jenis Bilangan Kanan:</strong> ${penjelasanKanan}</p>
-        <p><strong>Jenis Operasi:</strong> ${operasi === 'tambah' ? 'Penjumlahan' : operasi === 'kurang' ? 'Pengurangan' : operasi === 'kali' ? 'Perkalian' : 'Pembagian'}</p>
-        <p><strong>Deskripsi Operasi:</strong> Pada operasi ini, kita akan melakukan perhitungan berdasarkan jenis bilangan yang dipilih. Misalnya, jika kita menambahkan dua pecahan, kita akan menyamakan penyebutnya terlebih dahulu, dan kemudian menjumlahkan pembilangnya. Setiap jenis bilangan memiliki cara konversi dan perhitungan yang berbeda.</p>
-    `;
+    <h3>Penjelasan Operasi:</h3>
+    <p><strong>Jenis Bilangan Kiri:</strong> ${penjelasanKiri}</p>
+    <p><strong>Jenis Bilangan Kanan:</strong> ${penjelasanKanan}</p>
+    <p><strong>Jenis Operasi:</strong> ${operasi === 'tambah' ? 'Penjumlahan' : operasi === 'kurang' ? 'Pengurangan' : operasi === 'kali' ? 'Perkalian' : 'Pembagian'}</p>
+    <p><strong>Deskripsi Operasi:</strong> Pada operasi ini, kita akan melakukan perhitungan berdasarkan jenis bilangan yang dipilih. Berikut adalah penjelasan langkah demi langkah:</p>
+
+    <ol>
+        <li><strong>Langkah 1: Menyederhanakan Pecahan</strong> - Sebelum melakukan operasi, pastikan kedua bilangan sudah dalam bentuk pecahan yang paling sederhana, dengan pembilang dan penyebut yang mudah dihitung.</li>
+        <li><strong>Langkah 2: Menyesuaikan Penyebut (untuk Penjumlahan dan Pengurangan)</strong> - Jika operasi yang dipilih adalah penjumlahan atau pengurangan, kita perlu menyamakan penyebut kedua bilangan. Misalnya, jika kita menambahkan dua pecahan, kita mencari **kelipatan persekutuan terkecil (KPK)** dari kedua penyebut untuk membuat penyebutnya sama. Kemudian kita menjumlahkan atau mengurangkan pembilangnya sesuai dengan operasi yang dipilih.</li>
+        <li><strong>Langkah 3: Melakukan Operasi</strong> - Pada operasi penjumlahan atau pengurangan, kita akan menambahkan atau mengurangi pembilang setelah menyesuaikan penyebutnya. Pada operasi perkalian, kita mengalikan pembilang dan penyebut dari kedua pecahan. Sedangkan pada operasi pembagian, kita mengalikan pembilang pertama dengan penyebut kedua, dan penyebut pertama dengan pembilang kedua.</li>
+        <li><strong>Langkah 4: Menyederhanakan Hasil</strong> - Setelah operasi selesai, kita akan mendapatkan pecahan baru. Hasilnya kemudian disederhanakan dengan mencari **Faktor Persekutuan Terbesar (FPB)** antara pembilang dan penyebut, lalu membagi keduanya dengan FPB tersebut untuk mendapatkan bentuk pecahan yang paling sederhana.</li>
+        <li><strong>Langkah 5: Menyajikan Hasil dalam Bentuk Lain</strong> - Hasil operasi bisa diubah menjadi bentuk pecahan campuran jika hasilnya lebih besar dari satu, atau dalam bentuk persen jika diperlukan. Misalnya, hasil 3/4 dapat diubah menjadi 75%.</li>
+    </ol>
+
+    <h4>Contoh:</h4>
+    <p>Jika kita menjumlahkan <strong>1/2 + 2/3</strong>, kita akan mengikuti langkah-langkah di atas:</p>
+    <ol>
+        <li><strong>Langkah 1:</strong> Kedua bilangan sudah dalam bentuk pecahan yang sederhana, yaitu 1/2 dan 2/3.</li>
+        <li><strong>Langkah 2:</strong> Menyamakan penyebut pecahan 1/2 dan 2/3. KPK dari 2 dan 3 adalah 6. Maka, kita ubah pecahan tersebut menjadi 3/6 dan 4/6.</li>
+        <li><strong>Langkah 3:</strong> Sekarang, kita bisa menjumlahkan pembilangnya: 3/6 + 4/6 = 7/6.</li>
+        <li><strong>Langkah 4:</strong> Hasilnya adalah 7/6. Pecahan ini sudah dalam bentuk yang sederhana, tetapi kita bisa mengubahnya menjadi pecahan campuran: 1 1/6.</li>
+        <li><strong>Langkah 5:</strong> Jika kita ingin mengubah 7/6 menjadi persen, kita tinggal mengalikan pembilangnya dengan 100 dan membagi dengan penyebutnya: (7/6) * 100 = 116.67%.</li>
+    </ol>
+
+    <p><strong>Catatan:</strong> Setiap operasi bergantung pada jenis bilangan yang dipilih. Misalnya, pada bilangan desimal, kita harus mengonversinya menjadi pecahan terlebih dahulu sebelum melakukan operasi. Jika salah satu bilangan memiliki penyebut 0, hasilnya tidak terdefinisi karena pembagian dengan nol tidak memungkinkan.</p>
+    <p><strong>Operasi yang Dilakukan:</strong> ${operasi === 'tambah' ? 'Penjumlahan' : operasi === 'kurang' ? 'Pengurangan' : operasi === 'kali' ? 'Perkalian' : 'Pembagian'}.</p>
+`;
+
     
 }
 
