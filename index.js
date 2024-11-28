@@ -2390,10 +2390,10 @@ function operasiBilangan() {
 
     <p><strong>Catatan:</strong> Setiap operasi bergantung pada jenis bilangan yang dipilih. Misalnya, pada bilangan desimal, kita harus mengonversinya menjadi pecahan terlebih dahulu sebelum melakukan operasi. Jika salah satu bilangan memiliki penyebut 0, hasilnya tidak terdefinisi karena pembagian dengan nol tidak memungkinkan.</p>
     <p><strong>Operasi yang Dilakukan:</strong> ${operasi === 'tambah' ? 'Penjumlahan' : operasi === 'kurang' ? 'Pengurangan' : operasi === 'kali' ? 'Perkalian' : 'Pembagian'}.</p>
-`;
-
-    
+` 
 }
+
+
 
 
     
