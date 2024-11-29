@@ -1470,6 +1470,12 @@ function sisiPersegiPanjang() {
 
 }
 
+function kelilingSegitiga() {
+    
+}
+
+// faktorial
+
 function faktorial(n) {
     if (n === 0) {
         return 1
