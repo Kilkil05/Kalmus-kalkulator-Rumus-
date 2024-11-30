@@ -1470,8 +1470,66 @@ function sisiPersegiPanjang() {
 
 }
 
+//bangun segitiga
+
 function kelilingSegitiga() {
-    
+    let sisiA = document.getElementById('input-sisi-a-segitiga').value
+    let sisiB = document.getElementById('input-sisi-b-segitiga').value
+    let sisiC = document.getElementById('input-sisi-c-segitiga').value
+    let output3 = document.getElementById('output-segitiga3')
+    let output1 = document.getElementById('output-segitiga1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    let keliling = Number(sisiA) + Number(sisiB) + Number(sisiC)
+
+    output3.innerHTML = `<h1>Keliling : ${keliling}</h1>`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+}
+
+function luasSegitigaDenganTinggi() {
+    let tinggi = document.getElementById('input-tinggi-segitiga').value
+    let alas = document.getElementById('input-alas-segitiga').value
+    let output3 = document.getElementById('output-segitiga3')
+    let output1 = document.getElementById('output-segitiga1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    let luas = (alas * tinggi) / 2
+
+    output3.innerHTML = `<h1>Luas : ${luas}</h1>`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+}
+
+//rumus heron
+
+function luasSegitigaHeron() {
+    let sisiA = document.getElementById('input-sisi-a-segitiga-x').value
+    let sisiB = document.getElementById('input-sisi-b-segitiga-x').value
+    let sisiC = document.getElementById('input-sisi-c-segitiga-x').value
+    let output3 = document.getElementById('output-segitiga3')
+    let output1 = document.getElementById('output-segitiga1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    let s = (Number(sisiA) + Number(sisiB) + Number(sisiC)) / 2 //setengah keliling segitiga
+    let luas = parseFloat(Math.sqrt(s * (s - sisiA) * (s - sisiB) * (s-sisiC)).toFixed(2))
+
+    output3.innerHTML = `<h1>Luas : ${luas}</h1>`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+}
+
+function tinggiSegitigaHeron() {
+    let sisiA = document.getElementById('input-sisi-a-segitiga-t').value
+    let sisiB = document.getElementById('input-sisi-b-segitiga-t').value
+    let sisiC = document.getElementById('input-sisi-c-segitiga-t').value
+    let output3 = document.getElementById('output-segitiga3')
+    let output1 = document.getElementById('output-segitiga1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    let s = (Number(sisiA) + Number(sisiB) + Number(sisiC)) / 2 //setengah keliling segitiga
+    let luas = parseFloat(Math.sqrt(s * (s - sisiA) * (s - sisiB) * (s-sisiC)).toFixed(2))
+    let tinggi = parseFloat(((2 * luas) / sisiA).toFixed(2))
+
+    output3.innerHTML = `<h1>Tinggi : ${tinggi}</h1>`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
 }
 
 // faktorial

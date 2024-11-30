@@ -54,8 +54,8 @@
                 <div class="input-luas-segitiga" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
                     <!-- opsi keliling dipisah berdasar diketahui tingginya -->
                     <select name="luassegitiga-opsi" id="opsi-luas-segitiga">
-                        <option value="diketahui-tinggi">Diketahui Tingginya</option>
-                        <option value="tidakdiketahui-tinggi">Tidak Diketahui Tingginya</option>
+                        <option value="diketahui-tinggi">Diketahui Tinggi</option>
+                        <option value="tidakdiketahui-tinggi">Tidak Diketahui Tinggi</option>
                     </select>
 
                     <!-- input luas diketahui tingginya -->
@@ -64,6 +64,8 @@
                         <input id="input-tinggi-segitiga" class="input-sisi-segitiga" type="number" placeholder="">
                         <h2 style="text-align: center;">Masukkan alas</h2>
                         <input id="input-alas-segitiga" class="input-sisi-segitiga" type="number" placeholder="">
+                        <!-- button hasil -->
+                        <button id="hasil-luas-segitiga" class="btn" onclick="luasSegitigaDenganTinggi()">Hasil</button>
                     </div>
 
                     <!-- input luas tidak diketahui tingginya -->
@@ -74,29 +76,29 @@
                         <h2 style="text-align: center;">Masukkan sisi b</h2>
                         <input id="input-sisi-b-segitiga-x" class="input-sisi-segitiga" type="number" placeholder="">
                         <h2 style="text-align: center;">Masukkan sisi c</h2>
-                        <input id="input-alas-c-segitiga-x" class="input-sisi-segitiga" type="number" placeholder="">
-                     </div>
+                        <input id="input-sisi-c-segitiga-x" class="input-sisi-segitiga" type="number" placeholder="">
+                        <!-- button hasil -->
+                        <button id="hasil-luas-segitiga" class="btn" onclick="luasSegitigaHeron()">Hasil</button>
+                    </div>
 
-                     <!-- button hasil -->
-                     <button id="hasil-luas-segitiga" class="btn" onclick="luasSegitiga()">Hasil</button>
                 </div>
 
                 <!-- input mencari tinggi -->
                 <div class="input-tinggi-persegi" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
                     <h2 style="text-align: center;">Masukkan sisi a / alas</h2>
-                    <input i="input-sisi-a-segitiga-t" class="input-sisi-segitiga" type="number" placeholder="">
+                    <input id="input-sisi-a-segitiga-t" class="input-sisi-segitiga" type="number" placeholder="">
                     <h2 style="text-align: center;">Masukkan sisi b</h2>
                     <input id="input-sisi-b-segitiga-t" class="input-sisi-segitiga" type="number" placeholder="">
                     <h2 style="text-align: center;">Masukkan sisi c</h2>
                     <input id="input-sisi-c-segitiga-t" class="input-sisi-segitiga" type="number" placeholder="">
                 
                     <!-- button hasil -->
-                    <button id="hasil-sisi-segitiga" class="btn" onclick="tinggiSegitiga()">Hasil</button>
+                    <button id="hasil-sisi-segitiga" class="btn" onclick="tinggiSegitigaHeron()">Hasil</button>
                 </div>
 
                 
 
-                <div class="segitiga-output">
+                <div class="segitiga-output" style="text-align: center;">
                     <h2 id="output-segitiga3"></h2>
                     <h2 id="output-penjelasan" onclick="showText()"></h2>
                     <div id="output-hide">
