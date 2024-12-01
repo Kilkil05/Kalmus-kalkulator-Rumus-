@@ -1484,6 +1484,20 @@ function kelilingSegitiga() {
 
     output3.innerHTML = `<h1>Keliling : ${keliling}</h1>`
     outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML = `
+        <h2>Langkah-langkah Perhitungan:</h2>
+        <p>1. Pertama, kita ambil panjang ketiga sisi segitiga:</p>
+        <ul>
+            <li>Sisi A = ${sisiA}</li>
+            <li>Sisi B = ${sisiB}</li>
+            <li>Sisi C = ${sisiC}</li>
+        </ul>
+        <p>2. Kemudian, kita gunakan rumus keliling segitiga: </p>
+        <pre>Keliling = a + b + c</pre>
+        <p>3. Substitusi nilai sisi ke dalam rumus:</p>
+        <pre>Keliling = ${sisiA} + ${sisiB} + ${sisiC}</pre>
+        <p>4. Hasilnya adalah: <strong>${keliling}</strong></p>
+    `;
 }
 
 function luasSegitigaDenganTinggi() {
@@ -1497,6 +1511,19 @@ function luasSegitigaDenganTinggi() {
 
     output3.innerHTML = `<h1>Luas : ${luas}</h1>`
     outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML = `
+        <h2>Langkah-langkah Perhitungan:</h2>
+        <p>1. Pertama, kita ambil alas dan tinggi segitiga:</p>
+        <ul>
+            <li>Alas = ${alas}</li>
+            <li>Tinggi = ${tinggi}</li>
+        </ul>
+        <p>2. Kemudian, kita gunakan rumus luas segitiga: </p>
+        <pre>Luas = 1/2 * alas * tinggi</pre>
+        <p>3. Substitusi nilai alas dan tinggi ke dalam rumus:</p>
+        <pre>Luas = 1/2 * ${alas} * ${tinggi}</pre>
+        <p>4. Hasilnya adalah: <strong>${luas}</strong></p>
+    `;
 }
 
 //rumus heron
@@ -1514,6 +1541,22 @@ function luasSegitigaHeron() {
 
     output3.innerHTML = `<h1>Luas : ${luas}</h1>`
     outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML = `
+        <h2>Langkah-langkah Perhitungan:</h2>
+        <p>1. Pertama, kita ambil panjang ketiga sisi segitiga:</p>
+        <ul>
+            <li>Sisi A = ${sisiA}</li>
+            <li>Sisi B = ${sisiB}</li>
+            <li>Sisi C = ${sisiC}</li>
+        </ul>
+        <p>2. Hitung setengah keliling segitiga (semiperimeter):</p>
+        <pre>s = (a + b + c) / 2 = (${sisiA} + ${sisiB} + ${sisiC}) / 2 = ${s}</pre>
+        <p>3. Kemudian, hitung luas segitiga dengan rumus Heron:</p>
+        <pre>Luas = √s(s - a)(s - b)(s - c)</pre>
+        <p>4. Substitusi nilai semiperimeter dan sisi ke dalam rumus:</p>
+        <pre>Luas = √${s}(${s} - ${sisiA})(${s} - ${sisiB})(${s} - ${sisiC}) = ${luas.toFixed(2)}</pre>
+        <p>5. Hasilnya adalah: <strong>${luas.toFixed(2)}</strong></p>
+    `;
 }
 
 function tinggiSegitigaHeron() {
@@ -1530,6 +1573,22 @@ function tinggiSegitigaHeron() {
 
     output3.innerHTML = `<h1>Tinggi : ${tinggi}</h1>`
     outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML = `
+        <h2>Langkah-langkah Perhitungan:</h2>
+        <p>1. Pertama, kita ambil panjang ketiga sisi segitiga:</p>
+        <ul>
+            <li>Sisi A = ${sisiA}</li>
+            <li>Sisi B = ${sisiB}</li>
+            <li>Sisi C = ${sisiC}</li>
+        </ul>
+        <p>2. Hitung setengah keliling segitiga (semiperimeter):</p>
+        <pre>s = (a + b + c) / 2 = (${sisiA} + ${sisiB} + ${sisiC}) / 2 = ${s}</pre>
+        <p>3. Hitung luas segitiga menggunakan rumus Heron.</p>
+        <pre>Luas = √s(s - a)(s - b)(s - c) = ${luas.toFixed(2)}</pre>
+        <p>4. Kemudian, hitung tinggi segitiga dengan rumus:</p>
+        <pre>Tinggi = (2 * Luas) / Alas = (2 * ${luas.toFixed(2)}) / ${sisiA}</pre>
+        <p>5. Hasilnya adalah: <strong>${tinggi.toFixed(2)}</strong></p>
+    `;
 }
 
 // faktorial
