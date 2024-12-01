@@ -1146,7 +1146,6 @@ input::-webkit-inner-spin-button {
 
 .lingkaran-menu {
     margin-bottom: 4rem;
-    margin-top: 4rem;
 }
 #bentuk-lingkaran{
     width: 300px;
@@ -1249,7 +1248,6 @@ input::-webkit-inner-spin-button {
 
 .persegi-menu {
     margin-bottom: 4rem;
-    margin-top: 4rem;
 }
 #input-sisi-persegi{
     font-size: 1.5rem;
@@ -1337,7 +1335,6 @@ input::-webkit-inner-spin-button {
 
 .persegiPanjang-menu {
     margin-bottom: 4rem;
-    margin-top: 4rem;
 }
 #input-panjang-persegiPanjang { 
     font-size: 1.5rem;
@@ -1440,7 +1437,6 @@ input::-webkit-inner-spin-button {
 }
 .segitiga-menu {
     margin-bottom: 4rem;
-    margin-top: 4rem;
 }
 #bentuk-segitiga{
     width: 300px;
