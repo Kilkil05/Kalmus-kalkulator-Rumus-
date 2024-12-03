@@ -1591,6 +1591,178 @@ function tinggiSegitigaHeron() {
     `;
 }
 
+// jajar genjang
+
+function kelilingJajarGenjang() {
+    let alas = document.getElementById('input-sisialas-jajargenjang-k').value
+    let miring = document.getElementById('input-sisimiring-jajargenjang-k').value
+    let output3 = document.getElementById('output-jajargenjang3')
+    let output1 = document.getElementById('output-jajargenjang1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    // Validate input values
+    if (isNaN(alas) || isNaN(miring) || alas.trim() === "" || miring.trim() === "") {
+        output3.innerHTML = "<h1>Masukkan nilai yang valid untuk alas dan miring!</h1>"  // Error message
+        outputPenjelasan.innerHTML = ""  // Clear explanation if invalid
+        return
+    }
+
+    let keliling = 2 * (Number(alas) + Number(miring))
+
+    // Output
+    output3.innerHTML = `<h1>Keliling : ${keliling}</h1>`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML = `
+        <h2>Penjelasan:</h2>
+        <p>Keliling jajar genjang dihitung dengan rumus:</p>
+        <pre>Keliling = 2 × (Alas + Miring)</pre>
+        <p>Dengan nilai yang dimasukkan:</p>
+        <ul>
+            <li><strong>Alas</strong>: ${alas}</li>
+            <li><strong>Miring</strong>: ${miring}</li>
+        </ul>
+        <p>Langkah perhitungannya:</p>
+        <ol>
+            <li>Jumlahkan alas dan miring: ${alas} + ${miring} = ${alas + miring}</li>
+            <li>Kali hasilnya dengan 2 jadi ${Number(alas) + Number(miring)} x 2 = ${keliling}</li>
+        </ol>
+        <p>Jadi, keliling jajar genjang ini adalah <strong>${keliling}</strong>.</p>`
+
+}
+
+function luasJajarGenjang() {
+    let alas = document.getElementById('input-alas-jajargenjang-l').value
+    let tinggi = document.getElementById('input-tinggi-jajargenjang-l').value
+    let output3 = document.getElementById('output-jajargenjang3')
+    let output1 = document.getElementById('output-jajargenjang1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    // Validate input values
+    if (isNaN(alas) || isNaN(tinggi) || alas.trim() === "" || tinggi.trim() === "") {
+        output3.innerHTML = "<h1>Masukkan nilai yang valid untuk alas dan tinggi!</h1>"  // Error message
+        outputPenjelasan.innerHTML = ""  // Clear explanation if invalid
+        return
+    }
+
+    let luas = Number(alas) * Number(tinggi)
+
+    // Output
+    output3.innerHTML = `<h1>Luas : ${luas}</h1>`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML = `
+        <h2>Penjelasan:</h2>
+        <p>Luas jajar genjang dihitung dengan rumus:</p>
+        <pre>Luas = Alas × Tinggi</pre>
+        <p>Dengan nilai yang dimasukkan:</p>
+        <ul>
+            <li><strong>Alas</strong>: ${alas}</li>
+            <li><strong>Tinggi</strong>: ${tinggi}</li>
+        </ul>
+        <p>Langkah perhitungannya:</p>
+        <ol>
+            <li>Kali alas dengan tinggi: ${alas} × ${tinggi} = ${luas}</li>
+        </ol>
+        <p>Jadi, luas jajar genjang ini adalah <strong>${luas}</strong> satuan luas.</p>`
+}
+
+function tinggiJajarGenjangDiketLA() { //mencari tinggi jajar genjang dengan luas dan alas
+    let luas = document.getElementById('input-luas-jajargenjang-t').value
+    let alas = document.getElementById('input-alas-jajargenjang-t').value
+    let output3 = document.getElementById('output-jajargenjang3')
+    let output1 = document.getElementById('output-jajargenjang1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    // Validate input values
+    if (isNaN(alas) || isNaN(luas) || alas.trim() === "" || luas.trim() === "") {
+        output3.innerHTML = "<h1>Masukkan nilai yang valid untuk alas dan luas!</h1>"  // Error message
+        outputPenjelasan.innerHTML = ""  // Clear explanation if invalid
+        return
+    }
+
+    let tinggi = parseFloat((Number(luas) / Number(alas)).toFixed(3))
+
+    // Output
+    output3.innerHTML = `<h1>Tinggi : ${tinggi}</h1>`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML = `
+        <h2>Penjelasan:</h2>
+        <p>Tinggi jajar genjang dihitung dengan rumus:</p>
+        <pre>Tinggi = Luas ÷ Alas</pre>
+        <p>Dengan nilai yang dimasukkan:</p>
+        <ul>
+            <li><strong>Luas</strong>: ${luas}</li>
+            <li><strong>Alas</strong>: ${alas}</li>
+        </ul>
+        <p>Langkah perhitungannya:</p>
+        <ol>
+            <li>Bagikan luas dengan alas: ${luas} ÷ ${alas} = ${tinggi}</li>
+        </ol>
+        <p>Jadi, tinggi jajar genjang ini adalah <strong>${tinggi}</strong> satuan panjang.</p>`
+}
+
+function tinggiJajarGenjangDiketSudut() {
+    let opsiSisi = document.getElementById('opsi-sisi-mencaritinggi').value
+    let sisi = document.getElementById('input-sisi-jajargenjang-t').value
+    let sudutDerajat = document.getElementById('input-sudut-jajargenjang-t').value
+    let output3 = document.getElementById('output-jajargenjang3')
+    let output1 = document.getElementById('output-jajargenjang1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    // Validate input values
+    if (isNaN(sisi) || isNaN(sudutDerajat) || sisi.trim() === "" || sudutDerajat.trim() === "") {
+        output3.innerHTML = "<h1>Masukkan nilai yang valid untuk sisi dan Derajat!</h1>"  // Error message
+        outputPenjelasan.innerHTML = ""  // Clear explanation if invalid
+        return
+    }
+
+    let tinggi
+    let sudutRadian = sudutDerajat * (Math.PI / 180)
+
+    switch(opsiSisi) {
+        case 'alas':
+            tinggi = sisi * Math.tan(sudutRadian)
+            output1.innerHTML = `
+            <h2>Penjelasan:</h2>
+            <p>Tinggi jajar genjang dihitung dengan rumus:</p>
+            <pre>Tinggi = Alas × tan(Sudut)</pre>
+            <p>Dengan nilai yang dimasukkan:</p>
+            <ul>
+                <li><strong>Alas</strong>: ${sisi}</li>
+                <li><strong>Sudut</strong>: ${sudutDerajat}°</li>
+            </ul>
+            <p>Langkah perhitungannya:</p>
+            <ol>
+                <li>Konversikan sudut ke radian: ${sudutDerajat}° × (π / 180) = ${sudutRadian.toFixed(3)} radian</li>
+                <li>Hitung tinggi: ${sisi} × tan(${sudutRadian.toFixed(3)}) = ${parseFloat(tinggi.toFixed(3))}</li>
+            </ol>
+            <p>Jadi, tinggi jajar genjang ini adalah <strong>${parseFloat(tinggi.toFixed(3))}</strong> satuan panjang.</p>`
+            break
+        case 'miring':
+            tinggi = sisi * Math.sin(sudutRadian)
+            output1.innerHTML = `
+            <h2>Penjelasan:</h2>
+            <p>Tinggi jajar genjang dihitung dengan rumus:</p>
+            <pre>Tinggi = Sisi Miring × sin(Sudut)</pre>
+            <p>Dengan nilai yang dimasukkan:</p>
+            <ul>
+                <li><strong>Sisi Miring</strong>: ${sisi}</li>
+                <li><strong>Sudut</strong>: ${sudutDerajat}°</li>
+            </ul>
+            <p>Langkah perhitungannya:</p>
+            <ol>
+                <li>Konversikan sudut ke radian: ${sudutDerajat}° × (π / 180) = ${sudutRadian.toFixed(3)} radian</li>
+                <li>Hitung tinggi: ${sisi} × sin(${sudutRadian.toFixed(3)}) = ${parseFloat(tinggi.toFixed(3))}</li>
+            </ol>
+            <p>Jadi, tinggi jajar genjang ini adalah <strong>${parseFloat(tinggi.toFixed(3))}</strong> satuan panjang.</p>`
+            break
+        default:
+            output3.innerHTML = "<h1>Pilih opsi sisi yang benar!</h1>";
+            return;
+    }
+    output3.innerHTML = `<h1>Tinggi : ${parseFloat(tinggi.toFixed(3))}</h1>`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+}
+
 // faktorial
 
 function faktorial(n) {

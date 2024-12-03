@@ -29,7 +29,8 @@
                 <select name="opsi-jajargenjang" id="opsi-jajargenjang" style="font-size: 1.6 rem;">
                     <option value="keliling">Keliling</option>
                     <option value="luas">Luas</option>
-                    <option value="tinggi">TInggi</option>
+                    <option value="tinggi">Tinggi</option>
+                    <option value="alas">Alas</option>
                 </select>
 
                 <!-- gambar jajar genjang ilustrasi -->
@@ -69,27 +70,54 @@
                         <input id="input-luas-jajargenjang-t" class="input-sisi-jajargenjang" type="number" placeholder="">
                         <h2 style="text-align: center;">Masukkan alas</h2>
                         <input id="input-alas-jajargenjang-t" class="input-sisi-jajargenjang" type="number" placeholder="">
-                        <button id="hasil-tinggi-jajargenjang" class="btn" onclick="luasJajarGenjang()">Hasil</button>
+                        <button id="hasil-tinggi-jajargenjang" class="btn" onclick="tinggiJajarGenjangDiketLA()">Hasil</button>
                     </div>
 
                     <!-- input tinggi dengan sisi miring dan sudut -->
                     <div class="input-tinggi-sudut" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
                         <h2 style="text-align: center;">Masukkan sisi</h2>
-
                         <!-- opsi sisi alas atau miring -->
                         <div style="display: flex; flex-direction: row; gap: 0.5rem;">
-                            <select name="opsi-sisi" id="opsi-sisi" style="width: 10rem; height: 3rem;">
+                            <select name="opsi-sisi" id="opsi-sisi-mencaritinggi" style="width: 10rem; height: 3rem;">
                                 <option value="alas">Alas</option>
                                 <option value="miring">Sisi Miring</option>
                             </select>
                             <input id="input-sisi-jajargenjang-t" class="input-sisi-jajargenjang" type="number" placeholder="">
                         </div>
                         <h2 style="text-align: center;">Masukkan besar sudut</h2>
-                        <input id="input-sudut-jajargenjang-t" class="input-sisi-jajargenjang" type="number" placeholder="">
-                        <button id="hasil-tinggi-jajargenjang" class="btn" onclick="luasJajarGenjang()">Hasil</button>
+                        <div style="display: flex; justify-content: center; align-items: center; flex-direction: row;">
+                            <input id="input-sudut-jajargenjang-t" class="input-sisi-jajargenjang" type="number" placeholder="">
+                            <p style="font-size: 2rem; transform: translateY(-2rem);">°<span style="font-size: 0.8rem;">derajat</span></p>
+                        </div>
+                        <button id="hasil-tinggi-jajargenjang" class="btn" onclick="tinggiJajarGenjangDiketSudut()">Hasil</button>
                     </div>
                 </div>
-                
+
+                <!-- input mencari alas -->
+                <div class="input-alas-jajargenjang" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <h2 style="text-align: center;">Masukkan luas / keliling yang diketahui</h2>
+                    <div style="display: flex; flex-direction: row; gap: 0.5rem;">
+                        <select name="opsi-alas" id="opsi-mencarialas" style="width: 10rem; height: 3rem;">
+                            <option value="luas">Luas</option>
+                            <option value="keliling">Keliling</option>
+                        </select>
+                        <input id="input-k/l-jajargenjang-a" class="input-sisi-jajargenjang" type="number" placeholder="">
+                    </div>
+                    <!-- jika keliling yang diketahui maka akan muncul input sisi miring -->
+                    <div class="opsi-alas-keliling" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <h2 style="text-align: center;">Masukkan sisi miring</h2>
+                        <input id="input-miring-jajargenjang-a" class="input-sisi-jajargenjang" type="number" placeholder="">
+                        <button id="hasil-alas-k-jajargenjang" class="btn" onclick="alasDiketahuiKeliling()">Hasil</button>
+                    </div>
+                    <!-- jika luas yang diketahui akan muncul input tinggi -->
+                     <div class="opsi-alas-luas" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <h2 style="text-align: center;">Masukkan tinggi</h2>
+                        <input id="input-tinggi-jajargenjang-a" class="input-sisi-jajargenjang" type="number" placeholder="">
+                        <button id="hasil-alas-l-jajargenjang" class="btn" onclick="alasDiketahuiLuas()">Hasil</button>
+                     </div>
+                </div>
+
+
                 <div class="jajargenjang-output" style="text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column;">
                     <h2 id="output-jajargenjang3"></h2>
                     <h2 id="output-penjelasan" onclick="showText()"></h2>
@@ -118,10 +146,12 @@
                 let inputKeliling = document.querySelector('.input-keliling-jajargenjang')
                 let inputLuas = document.querySelector('.input-luas-jajargenjang')
                 let inputTinggi = document.querySelector('.input-tinggi-jajargenjang')
+                let inputAlas = document.querySelector('.input-alas-jajargenjang')
 
                 inputKeliling.style.display = 'none'
                 inputLuas.style.display = 'none'
                 inputTinggi.style.display = 'none'
+                inputAlas.style.display = 'none'
 
                 switch(opsi) {
                     case 'keliling':
@@ -132,6 +162,9 @@
                         break
                     case 'tinggi':
                         inputTinggi.style.display = 'flex'
+                        break
+                    case 'alas':
+                        inputAlas.style.display = 'flex'
                         break
                     default:
                 }
@@ -159,6 +192,27 @@
             }
             document.getElementById('opsi-tinggi-jajargenjang').addEventListener('change', opsiTinggi)
             opsiTinggi()
+
+            function opsiAlasVisibility() {
+                let opsi = document.getElementById('opsi-mencarialas').value
+                let alasKeliling = document.querySelector('.opsi-alas-keliling')
+                let alasLuas = document.querySelector('.opsi-alas-luas')
+
+                alasKeliling.style.display = 'none'
+                alasLuas.style.display = 'none'
+
+                switch(opsi) {
+                    case 'luas':
+                        alasLuas.style.display = 'flex'
+                        break
+                    case 'keliling':
+                        alasKeliling.style.display = 'flex'
+                        break
+                    default:
+                }
+            }
+            document.getElementById('opsi-mencarialas').addEventListener('change', opsiAlasVisibility)
+            opsiAlasVisibility()
         </script>
     </body>
     <script src="index.js"></script>
