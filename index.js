@@ -1763,6 +1763,61 @@ function tinggiJajarGenjangDiketSudut() {
     outputPenjelasan.innerHTML = `Lihat Penjelasan`
 }
 
+function alasDiketahuiKeliling(keliling, sisi) {
+    const alas = (keliling / 2) - sisi
+    return alas
+}
+
+function alasDiketahuiLuas(luas, tinggi) {
+    const alas = luas / tinggi
+    return alas
+}
+
+function alasJajarGenjang() {
+    let opsi = document.getElementById('opsi-mencarialas').value
+    let inputKL = document.getElementById('input-k/l-jajargenjang-a').value
+    let tinggi = document.getElementById('input-tinggi-jajargenjang-a').value
+    let miring = document.getElementById('input-miring-jajargenjang-a').value
+    let output3 = document.getElementById('output-jajargenjang3')
+    let output1 = document.getElementById('output-jajargenjang1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    if (isNaN(inputKL) || isNaN(tinggi) || isNaN(miring) || inputKL.trim() === "" || tinggi.trim() === "" || miring.trim() === "") {
+        output3.innerHTML = "<h1>Masukkan nilai yang valid!</h1>"  // Error message
+        outputPenjelasan.innerHTML = ""  // Clear explanation if invalid
+        return
+    }
+
+    let alas
+
+    switch(opsi) {
+        case 'luas':
+            let luas = inputKL
+            alas = alasDiketahuiLuas(luas, tinggi)
+            output1.innerHTML = `
+                <h2>Penjelasan Perhitungan:</h2>
+                <p>Rumus yang digunakan: <b>Alas = Luas / Tinggi</b></p>
+                <p>Langkah 1: Masukkan nilai Luas = ${luas} cm² dan Tinggi = ${tinggi} cm.</p>
+                <p>Langkah 2: Hitung alas: ${luas} / ${tinggi} = <b>${alas} cm</b></p>
+                <p>Jadi, panjang alas jajargenjang adalah <b>${alas} cm</b>.</p>`
+            break
+        case 'keliling':
+            let keliling = inputKL
+            alas = alasDiketahuiKeliling(keliling, miring)
+            output1.innerHTML = `
+                <h2>Penjelasan Perhitungan:</h2>
+                <p>Rumus yang digunakan: <b>Alas = (Keliling / 2) - Sisi Miring</b></p>
+                <p>Langkah 1: Masukkan nilai Keliling = ${keliling} cm dan Sisi Miring = ${miring} cm.</p>
+                <p>Langkah 2: Hitung alas: (${keliling} / 2) - ${miring} = (${keliling / 2}) - ${miring} = <b>${alas} cm</b></p>
+                <p>Jadi, panjang alas jajargenjang adalah <b>${alas} cm</b>.</p>`
+            break
+        default:
+    }
+    
+    output3.innerHTML = `<h1>Alas : ${alas}</h1>`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+}
+
 // faktorial
 
 function faktorial(n) {
