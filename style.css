@@ -1883,6 +1883,22 @@ input::-webkit-inner-spin-button {
 }
 
 
+/* kpk-fpb */
+
+.kpk-fpb-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+
+
 
 
 
