@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <script src="index.js"></script>
+        <title>KPK dan FPB</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/feather-icons"></script>
+
+        <!-- kanit -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jura:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oooh+Baby&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        
+        <!-- poppins -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jura:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oooh+Baby&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <a class="home" href="index.html"><i data-feather="arrow-left"></i>Back</a>
+        </nav>
+        <h1 class="judul">Kalkulator Rumus<br>
+            <h2 class="perintah">Mencari KPK dan FPB</h1>
+        <div class="container">
+            <div class="kpk-fpb">
+                <select name="opsi-kpk-fpb" id="opsi-kpk-fpb" style="margin-bottom: 2rem;">
+                    <option value="kpk">KPK</option>
+                    <option value="fpb">FPB</option>
+                </select>
+
+                <h2>Banyak bilangan yang ingin dicari</h2>
+                <input id="jumlahbanyakinput-kpk-fpb" class="input" type="number" placeholder="Masukkan">
+                <button id="jumlah-input-kpk-fpb" class="btn" onclick="inputGenerateKpkFpb()">Konfirmasi</button>
+
+                <div class="inputAngka-kpk-fpb center-column"></div>
+
+                <button id="Hasil-kpk-fpb" class="btn" onclick="hasilKpkFpb()" style="display: none;">Hasil</button>
+
+                <div class="kpk-fpb-output" style="text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <h3 id="output-kpk-fpb2" style="display: flex; justify-content: center; align-items: center; flex-direction: row; gap: 2rem; color: #faff9c; flex-wrap: wrap;"></h3>
+                    <h2 id="output-kpk-fpb3" style="margin: 0;"></h2>
+                    <h2 id="output-penjelasan" onclick="showText()"></h2>
+                    <div id="output-hide">
+                        <img class="pin-png" src="asset/pin.png" alt="" width="50px">
+                        <h3 id="output-kpk-fpb1"></h3>
+                        
+                    </div>
+
+                </div>
+
+
+            </div>
+            <script>
+                feather.replace();
+            </script>
+
+            <footer>
+                <a href="https://github.com/Kilkil05"><img src="pngwing.com (32).png" alt="github" width="50px"></a>
+                <a href="https://www.instagram.com/wasekloer.id/"><img src="image.png" alt="instagram" width="50px"></a>
+            </footer>
+        </div>
+    </body>
+    <script src="index.js"></script>
+</html>

@@ -2743,6 +2743,166 @@ function operasiBilangan() {
 ` 
 }
 
+// kpk-fpb
+
+function fpb(a,b) {
+    while (b !== 0) {
+        let temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+function kpk(a, b) {
+    return (a * b) / fpb(a, b)
+}
+
+let numberKpkFpb = []
+
+function inputGenerateKpkFpb() {
+    let banyakInput = document.getElementById('jumlahbanyakinput-kpk-fpb').value
+    let inputCont = document.querySelector('.inputAngka-kpk-fpb')
+    let output3 = document.getElementById('output-kpk-fpb3')
+    let output1 = document.getElementById('output-kpk-fpb1')
+    let output2 = document.getElementById('output-kpk-fpb2')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    output3.innerHTML = ``
+    output1.innerHTML = ``
+    output2.innerHTML = ``
+    outputPenjelasan.innerHTML = ``
+    document.getElementById('Hasil-kpk-fpb').style.display = 'none'
+
+    if(isNaN(banyakInput) || banyakInput.trim() === '') {
+        output3.innerHTML = `Error!! Masukkan input dengan benar`
+        return
+    }
+
+    inputCont.innerHTML = ''
+    numberKpkFpb = []
+
+    for (let i = 0; i < banyakInput; i++) {
+        // label generate
+        let label = document.createElement('label')
+        label.textContent = `Masukkan bilangan ${i+1}`
+        label.className = "label-input"
+        label.id = `label-input${i+1}`
+
+        // input generate
+        let input = document.createElement('input')
+        input.type = 'number'
+        input.placeholder = `bilangan ${i+1}`
+        input.className = 'input'
+        input.id = `input-kpk-fpb-${i+1}`
+
+        inputCont.appendChild(label)
+        inputCont.appendChild(input)
+        inputCont.appendChild(document.createElement('br'))
+
+        input.addEventListener('input', () => {
+            numberKpkFpb[i] = parseFloat(input.value)
+        })
+
+    }
+
+    document.getElementById('Hasil-kpk-fpb').style.display = 'block'
+
+}
+
+function hasilKpkFpb() {
+    let opsi = document.getElementById('opsi-kpk-fpb').value
+    let banyakInput = document.getElementById('jumlahbanyakinput-kpk-fpb').value
+    let output3 = document.getElementById('output-kpk-fpb3')
+    let output1 = document.getElementById('output-kpk-fpb1')
+    let output2 = document.getElementById('output-kpk-fpb2')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    output1.innerHTML = ``
+    output2.innerHTML = ``
+    output3.innerHTML = ``
+    outputPenjelasan.innerHTML = ``
+    
+    for (let i = 0; i < banyakInput; i++) {
+        let jumlahNilai = document.createElement('h3')
+        jumlahNilai.textContent = `Nilai ke ${i+1} = ${numberKpkFpb[i]}`
+        
+        output2.appendChild(jumlahNilai)
+    }
+
+    let hasilKpk
+    let hasilFpb
+
+    switch(opsi) {
+        case 'kpk':
+            hasilKpk = numberKpkFpb.reduce((total, angka) => kpk(total, angka), numberKpkFpb[0])
+            output3.innerHTML = `<h1>Kpk : ${hasilKpk}</h1>`
+            break
+        case 'fpb':
+            hasilFpb = numberKpkFpb.reduce((total, angka) => fpb(total, angka), numberKpkFpb[0])
+            output3.innerHTML = `<h1>Fpb : ${hasilFpb}</h1>`
+            break
+        default:
+    }
+
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+
+         // Menambahkan penjelasan dinamis berdasarkan hasil
+    if (opsi === 'kpk') {
+        // Penjelasan Dinamis KPK
+        let kpkPenjelasan = `
+            <h2>Penjelasan KPK (Kelipatan Persekutuan Terkecil)</h2>
+            <p><strong>KPK</strong> adalah angka terkecil yang bisa dibagi habis oleh seluruh angka yang dimasukkan.</p>
+            <p><strong>Rumus KPK:</strong> KPK(a, b) = |a × b| / FPB(a, b)</p>
+            <p><strong>Contoh:</strong> Jika kita ingin mencari KPK dari angka-angka yang Anda masukkan, kita akan mencari kelipatan dari masing-masing angka tersebut.</p>
+            <ul>
+        `;
+        
+        // Menampilkan kelipatan dari setiap angka yang dimasukkan
+        for (let i = 0; i < numberKpkFpb.length; i++) {
+            let kelipatan = [];
+            let angka = numberKpkFpb[i];
+            for (let j = 1; j <= 5; j++) {
+                kelipatan.push(angka * j);
+            }
+            kpkPenjelasan += `<li>Kelipatan angka ${angka}: ${kelipatan.join(", ")}</li>`;
+        }
+
+        kpkPenjelasan += `
+            </ul>
+            <p>Kelipatan pertama yang sama adalah <strong>${hasilKpk}</strong>, sehingga KPK dari angka-angka yang Anda masukkan adalah <strong>${hasilKpk}</strong>.</p>
+        `;
+        
+        output1.innerHTML = kpkPenjelasan;
+    } else if (opsi === 'fpb') {
+        // Penjelasan Dinamis FPB
+        let fpbPenjelasan = `
+            <h2>Penjelasan FPB (Faktor Persekutuan Terbesar)</h2>
+            <p><strong>FPB</strong> adalah angka terbesar yang bisa membagi habis seluruh angka yang dimasukkan.</p>
+            <p><strong>Rumus FPB:</strong> FPB(a, b) = bilangan terbesar yang membagi habis kedua angka</p>
+            <p><strong>Contoh:</strong> Jika kita ingin mencari FPB dari angka-angka yang Anda masukkan, kita akan mencari pembagi dari masing-masing angka tersebut.</p>
+            <ul>
+        `;
+        
+        // Menampilkan pembagi dari setiap angka yang dimasukkan
+        for (let i = 0; i < numberKpkFpb.length; i++) {
+            let pembagi = [];
+            let angka = numberKpkFpb[i];
+            for (let j = 1; j <= angka; j++) {
+                if (angka % j === 0) pembagi.push(j);
+            }
+            fpbPenjelasan += `<li>Pembagi angka ${angka}: ${pembagi.join(", ")}</li>`;
+        }
+
+        fpbPenjelasan += `
+            </ul>
+            <p>Pembagi terbesar yang sama dari angka-angka yang Anda masukkan adalah <strong>${hasilFpb}</strong>, sehingga FPB dari angka-angka yang Anda masukkan adalah <strong>${hasilFpb}</strong>.</p>
+        `;
+        
+        output1.innerHTML = fpbPenjelasan;
+    }
+}
+
 
 
 
