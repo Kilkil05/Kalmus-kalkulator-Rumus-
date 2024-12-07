@@ -25,17 +25,38 @@
 
                 <div class="input center-row">
                     <input id="input-konversi-panjang" type="number" class="input" style="margin-bottom: 0;">
-                    <select name="opsi-input" id="opsi-input-type">
+                    <select name="opsi-input" id="opsi-input-konversi-panjang" style="width: 5rem;">
                         <option value="km">Km</option>
                         <option value="hm">Hm</option>
                         <option value="m">m</option>
                         <option value="dm">Dm</option>
                         <option value="cm">Cm</option>
                         <option value="mm">Mm</option>
+                        <option value="mil">Mil</option>
+                        <option value="yard">Yard</option>
+                        <option value="kaki">Kaki</option>
+                        <option value="inci">Inci</option>
                     </select>
                 </div>
 
-                <button id="hasil" onclick="faktorialAngka()">Hasil</button>
+                <p style="font-size: 2rem; margin-top: 1rem; margin-bottom: 2rem;">Hasil Konversi</p>
+
+                <div class="output center-row">
+                    <input id="output-konversi-panjang" type="number" class="input" style="margin-bottom: 0;">
+                    <select name="opsi-output" id="opsi-output-konversi-panjang" style="width: 5rem;">
+                        <option value="km">Km</option>
+                        <option value="hm">Hm</option>
+                        <option value="m">m</option>
+                        <option value="dm">Dm</option>
+                        <option value="cm">Cm</option>
+                        <option value="mm">Mm</option>
+                        <option value="mil">Mil</option>
+                        <option value="yard">Yard</option>
+                        <option value="kaki">Kaki</option>
+                        <option value="inci">Inci</option>
+                    </select>
+                </div>
+
                 <div class="faktorial-output">
                     <h2 id="output-faktorial3" style="word-break: break-all;"></h2>
                     <h2 id="output-penjelasan" onclick="showText()"></h2>
