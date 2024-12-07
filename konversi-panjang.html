@@ -1,19 +1,21 @@
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Konversi Panjang</title>
         <script src="index.js"></script>
         <link rel="stylesheet" href="style.css">
         <script src="https://unpkg.com/feather-icons"></script>
 
-        <!-- kanit -->
+        <!-- kanit font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jura:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oooh+Baby&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap" rel="stylesheet">
         
-        <!-- poppins -->
+        <!-- poppins font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jura:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oooh+Baby&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     </head>
     <body>
         <nav>
@@ -22,9 +24,8 @@
         <h1 class="judul">Kalkulator Rumus</h1>
         <div class="container">
             <div class="konversi-panjang">
-
                 <div class="input center-row">
-                    <input id="input-konversi-panjang" type="number" class="input" style="margin-bottom: 0;">
+                    <input id="input-konversi-panjang" type="number" class="input" placeholder="Masukkan nilai" style="margin-bottom: 0;">
                     <select name="opsi-input" id="opsi-input-konversi-panjang" style="width: 5rem;">
                         <option value="km">Km</option>
                         <option value="hm">Hm</option>
@@ -42,7 +43,7 @@
                 <p style="font-size: 2rem; margin-top: 1rem; margin-bottom: 2rem;">Hasil Konversi</p>
 
                 <div class="output center-row">
-                    <input id="output-konversi-panjang" type="number" class="input" style="margin-bottom: 0;">
+                    <input id="output-konversi-panjang" type="number" class="input" readonly style="margin-bottom: 0;">
                     <select name="opsi-output" id="opsi-output-konversi-panjang" style="width: 5rem;">
                         <option value="km">Km</option>
                         <option value="hm">Hm</option>
@@ -66,10 +67,51 @@
                         <h3 id="output-faktorial2"></h3>
                     </div>
                 </div>
-   
             </div>
+
             <script>
                 feather.replace();
+
+                // Konversi antara unit panjang ke meter
+                const conversionRatesToMeters = {
+                    km: 1000,
+                    hm: 100,
+                    m: 1,
+                    dm: 0.1,
+                    cm: 0.01,
+                    mm: 0.001,
+                    mil: 1609.344,
+                    yard: 0.9144,
+                    kaki: 0.3048,
+                    inci: 0.0254
+                };
+
+                // Fungsi untuk melakukan konversi panjang
+                function convertLength() {
+                    const inputValue = parseFloat(document.getElementById('input-konversi-panjang').value);
+                    const inputUnit = document.getElementById('opsi-input-konversi-panjang').value;
+                    const outputUnit = document.getElementById('opsi-output-konversi-panjang').value;
+
+                    if (isNaN(inputValue)) {
+                        document.getElementById('output-konversi-panjang').value = '';
+                        return;
+                    }
+
+                    // Menghitung nilai dalam meter berdasarkan unit input
+                    const valueInMeters = inputValue * conversionRatesToMeters[inputUnit];
+
+                    // Menghitung hasil konversi ke unit output yang diinginkan
+                    const result = valueInMeters / conversionRatesToMeters[outputUnit];
+
+                    // Menampilkan hasil konversi
+                    document.getElementById('output-konversi-panjang').value = parseFloat(result);
+                }
+                
+
+                // Event listener untuk menangani perubahan input
+                document.getElementById('input-konversi-panjang').addEventListener('input', convertLength);
+                document.getElementById('opsi-input-konversi-panjang').addEventListener('change', convertLength);
+                document.getElementById('opsi-output-konversi-panjang').addEventListener('change', convertLength);
             </script>
 
             <footer>
