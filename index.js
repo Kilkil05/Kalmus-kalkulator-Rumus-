@@ -2903,10 +2903,6 @@ function hasilKpkFpb() {
     }
 }
 
-// konversi panjang
-function konversiPanjang() {
-    
-}
 
 
 

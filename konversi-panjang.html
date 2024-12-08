@@ -29,6 +29,7 @@
                     <select name="opsi-input" id="opsi-input-konversi-panjang" style="width: 5rem;">
                         <option value="km">Km</option>
                         <option value="hm">Hm</option>
+                        <option value="dam">Dam</option>
                         <option value="m">m</option>
                         <option value="dm">Dm</option>
                         <option value="cm">Cm</option>
@@ -47,6 +48,7 @@
                     <select name="opsi-output" id="opsi-output-konversi-panjang" style="width: 5rem;">
                         <option value="km">Km</option>
                         <option value="hm">Hm</option>
+                        <option value="dam">Dam</option>
                         <option value="m">m</option>
                         <option value="dm">Dm</option>
                         <option value="cm">Cm</option>
@@ -58,13 +60,13 @@
                     </select>
                 </div>
 
-                <div class="faktorial-output">
-                    <h2 id="output-faktorial3" style="word-break: break-all;"></h2>
+                <div class="konversi-panjang-output">
+                    <h2 id="output-konversi-panjang3" style="word-break: break-all;"></h2>
                     <h2 id="output-penjelasan" onclick="showText()"></h2>
                     <div id="output-hide">
                         <img class="pin-png" src="asset/pin.png" alt="" width="50px">
-                        <h3 id="output-faktorial1" style="word-break: break-all;"></h3>
-                        <h3 id="output-faktorial2"></h3>
+                        <h3 id="output-konversi-panjang1" style="word-break: break-all;"></h3>
+                        <h3 id="output-konversi-panjang2"></h3>
                     </div>
                 </div>
             </div>
@@ -76,6 +78,7 @@
                 const conversionRatesToMeters = {
                     km: 1000,
                     hm: 100,
+                    dam: 10,
                     m: 1,
                     dm: 0.1,
                     cm: 0.01,
