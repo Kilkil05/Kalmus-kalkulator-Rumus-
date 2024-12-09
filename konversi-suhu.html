@@ -1,0 +1,108 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Konversi Suhu</title>
+        <script src="index.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/feather-icons"></script>
+
+        <!-- kanit font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap" rel="stylesheet">
+        
+        <!-- poppins font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <a class="home" href="index.html"><i data-feather="arrow-left"></i>Back</a>
+        </nav>
+        <h1 class="judul">Kalkulator Rumus</h1>
+        <h2 class="perintah">Konversi Suhu</h1>
+        <div class="container">
+            <div class="konversi-suhu">
+                <div class="input center-row">
+                    <input id="input-konversi-suhu" type="number" class="input" placeholder="Masukkan nilai suhu" style="margin-bottom: 0;">
+                    <select name="opsi-input" id="opsi-input-konversi-suhu" style="width: 12rem;">
+                        <option value="celsius">Celsius</option>
+                        <option value="fahrenheit">Fahrenheit</option>
+                        <option value="kelvin">Kelvin</option>
+                    </select>
+                </div>
+
+                <p style="font-size: 2rem; margin-top: 1rem; margin-bottom: 2rem;">Hasil Konversi</p>
+
+                <div class="output center-row">
+                    <input id="output-konversi-suhu" type="number" class="input" readonly style="margin-bottom: 0;">
+                    <select name="opsi-output" id="opsi-output-konversi-suhu" style="width: 8rem;">
+                        <option value="celsius">Celsius</option>
+                        <option value="fahrenheit">Fahrenheit</option>
+                        <option value="kelvin">Kelvin</option>
+                    </select>
+                </div>
+
+                <div class="konversi-suhu-output">
+                    <h2 id="output-konversi-suhu3" style="word-break: break-all;"></h2>
+                    <h2 id="output-penjelasan"></h2>
+                </div>
+            </div>
+
+            <script>
+                feather.replace();
+
+                // Fungsi konversi suhu
+                function convertTemperature() {
+                    const inputValue = parseFloat(document.getElementById('input-konversi-suhu').value);
+                    const inputUnit = document.getElementById('opsi-input-konversi-suhu').value;
+                    const outputUnit = document.getElementById('opsi-output-konversi-suhu').value;
+
+                    let result;
+
+                    // Konversi suhu berdasarkan input dan output unit
+                    if (inputUnit === "celsius") {
+                        if (outputUnit === "fahrenheit") {
+                            result = (inputValue * 9/5) + 32; // Celsius ke Fahrenheit
+                        } else if (outputUnit === "kelvin") {
+                            result = inputValue + 273.15; // Celsius ke Kelvin
+                        } else {
+                            result = inputValue; // Celsius ke Celsius (output sama)
+                        }
+                    } else if (inputUnit === "fahrenheit") {
+                        if (outputUnit === "celsius") {
+                            result = (inputValue - 32) * 5/9; // Fahrenheit ke Celsius
+                        } else if (outputUnit === "kelvin") {
+                            result = (inputValue - 32) * 5/9 + 273.15; // Fahrenheit ke Kelvin
+                        } else {
+                            result = inputValue; // Fahrenheit ke Fahrenheit (output sama)
+                        }
+                    } else if (inputUnit === "kelvin") {
+                        if (outputUnit === "celsius") {
+                            result = inputValue - 273.15; // Kelvin ke Celsius
+                        } else if (outputUnit === "fahrenheit") {
+                            result = (inputValue - 273.15) * 9/5 + 32; // Kelvin ke Fahrenheit
+                        } else {
+                            result = inputValue; // Kelvin ke Kelvin (output sama)
+                        }
+                    }
+
+                    // Menampilkan hasil konversi
+                    document.getElementById('output-konversi-suhu').value = parseFloat(result);
+                }
+
+                // Event listener untuk menangani perubahan input
+                document.getElementById('input-konversi-suhu').addEventListener('input', convertTemperature);
+                document.getElementById('opsi-input-konversi-suhu').addEventListener('change', convertTemperature);
+                document.getElementById('opsi-output-konversi-suhu').addEventListener('change', convertTemperature);
+            </script>
+
+            <footer>
+                <a href="https://github.com/Kilkil05"><img src="pngwing.com (32).png" alt="github" width="50px"></a>
+                <a href="https://www.instagram.com/wasekloer.id/"><img src="image.png" alt="instagram" width="50px"></a>
+            </footer>
+        </div>
+    </body>
+</html>
