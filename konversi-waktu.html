@@ -1,0 +1,114 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Konversi Waktu</title>
+        <script src="index.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/feather-icons"></script>
+
+        <!-- Kanit font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap" rel="stylesheet">
+        
+        <!-- Poppins font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <a class="home" href="index.html"><i data-feather="arrow-left"></i>Back</a>
+        </nav>
+        <h1 class="judul">Kalkulator Rumus</h1>
+        <h2 class="perintah">Konversi Waktu</h2>
+
+        <div class="container">
+            <div class="konversi-waktu">
+                <div class="input center-row">
+                    <input id="input-konversi-waktu" type="number" class="input" placeholder="Masukkan nilai" style="margin-bottom: 0;">
+                    <select name="opsi-input" id="opsi-input-konversi-waktu" style="width: 12rem;">
+                        <option value="s">Detik (s)</option>
+                        <option value="min">Menit (min)</option>
+                        <option value="hr">Jam (hr)</option>
+                        <option value="day">Hari (day)</option>
+                        <option value="week">Minggu (week)</option>
+                        <option value="month">Bulan (month)</option>
+                        <option value="year">Tahun (year)</option>
+                        <option value="decade">Dekade (decade)</option>
+                        <option value="century">Abad (century)</option>
+                        <option value="millennium">Milenium (millennium)</option>
+                    </select>
+                </div>
+
+                <p style="font-size: 2rem; margin-top: 1rem; margin-bottom: 2rem;">Hasil Konversi</p>
+
+                <div class="output center-row">
+                    <input id="output-konversi-waktu" type="number" class="input" readonly style="margin-bottom: 0;">
+                    <select name="opsi-output" id="opsi-output-konversi-waktu" style="width: 12rem;">
+                        <option value="s">Detik (s)</option>
+                        <option value="min">Menit (min)</option>
+                        <option value="hr">Jam (hr)</option>
+                        <option value="day">Hari (day)</option>
+                        <option value="week">Minggu (week)</option>
+                        <option value="month">Bulan (month)</option>
+                        <option value="year">Tahun (year)</option>
+                        <option value="decade">Dekade (decade)</option>
+                        <option value="century">Abad (century)</option>
+                        <option value="millennium">Milenium (millennium)</option>
+                    </select>
+                </div>
+            </div>
+
+            <script>
+                feather.replace();
+
+                // Konversi waktu ke detik
+                const conversionRatesToSeconds = {
+                    s: 1,
+                    min: 60,
+                    hr: 3600,
+                    day: 86400,
+                    week: 604800,
+                    month: 2592000, // Perkiraan 30 hari
+                    year: 31536000, // 365 hari
+                    decade: 315360000, // 10 tahun
+                    century: 3153600000, // 100 tahun
+                    millennium: 31536000000 // 1000 tahun
+                };
+
+                // Fungsi untuk melakukan konversi waktu
+                function convertTime() {
+                    const inputValue = parseFloat(document.getElementById('input-konversi-waktu').value);
+                    const inputUnit = document.getElementById('opsi-input-konversi-waktu').value;
+                    const outputUnit = document.getElementById('opsi-output-konversi-waktu').value;
+
+                    if (isNaN(inputValue)) {
+                        document.getElementById('output-konversi-waktu').value = '';
+                        return;
+                    }
+
+                    // Menghitung nilai dalam detik berdasarkan unit input
+                    const valueInSeconds = inputValue * conversionRatesToSeconds[inputUnit];
+
+                    // Menghitung hasil konversi ke unit output yang diinginkan
+                    const result = valueInSeconds / conversionRatesToSeconds[outputUnit];
+
+                    // Menampilkan hasil konversi
+                    document.getElementById('output-konversi-waktu').value = parseFloat(result); // Optional rounding
+                }
+
+                // Event listener untuk menangani perubahan input
+                document.getElementById('input-konversi-waktu').addEventListener('input', convertTime);
+                document.getElementById('opsi-input-konversi-waktu').addEventListener('change', convertTime);
+                document.getElementById('opsi-output-konversi-waktu').addEventListener('change', convertTime);
+            </script>
+
+            <footer>
+                <a href="https://github.com/Kilkil05"><img src="pngwing.com (32).png" alt="github" width="50px"></a>
+                <a href="https://www.instagram.com/wasekloer.id/"><img src="image.png" alt="instagram" width="50px"></a>
+            </footer>
+        </div>
+    </body>
+</html>
