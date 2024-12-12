@@ -1,0 +1,109 @@
+<html lang="en">
+    <head>
+        <title>Konversi Tekanan</title>
+        <script src="index.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/feather-icons"></script>
+
+        <!-- Kanit font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap" rel="stylesheet">
+        
+        <!-- Poppins font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <a class="home" href="index.html"><i data-feather="arrow-left"></i>Back</a>
+        </nav>
+        <h1 class="judul">Kalkulator Rumus</h1>
+        <h2 class="perintah">Konversi Tekanan</h2>
+
+        <div class="container">
+            <div class="konversi-tekanan">
+                <div class="input center-row">
+                    <input id="input-konversi-tekanan" type="number" class="input" placeholder="Masukkan nilai tekanan" style="margin-bottom: 0;">
+                    <select name="opsi-input" id="opsi-input-konversi-tekanan" style="width: 12rem;">
+                        <option value="Pa">Pascal (Pa)</option>
+                        <option value="kPa">Kilopascal (kPa)</option>
+                        <option value="hPa">Hectopascal (hPa)</option>
+                        <option value="bar">Bar (bar)</option>
+                        <option value="atm">Atmosfer (atm)</option>
+                        <option value="mmHg">Milimeter air raksa (mmHg)</option>
+                        <option value="torr">Torr (torr)</option>
+                        <option value="psi">Pound per square inch (psi)</option>
+                        <option value="kgf/cm²">Kilogram per sentimeter persegi (kgf/cm²)</option>
+                    </select>
+                </div>
+
+                <p style="font-size: 2rem; margin-top: 1rem; margin-bottom: 2rem;">Hasil Konversi</p>
+
+                <div class="output center-row">
+                    <input id="output-konversi-tekanan" type="number" class="input" readonly style="margin-bottom: 0;">
+                    <select name="opsi-output" id="opsi-output-konversi-tekanan" style="width: 12rem;">
+                        <option value="Pa">Pascal (Pa)</option>
+                        <option value="kPa">Kilopascal (kPa)</option>
+                        <option value="hPa">Hectopascal (hPa)</option>
+                        <option value="bar">Bar (bar)</option>
+                        <option value="atm">Atmosfer (atm)</option>
+                        <option value="mmHg">Milimeter air raksa (mmHg)</option>
+                        <option value="torr">Torr (torr)</option>
+                        <option value="psi">Pound per square inch (psi)</option>
+                        <option value="kgf/cm²">Kilogram per sentimeter persegi (kgf/cm²)</option>
+                    </select>
+                </div>
+            </div>
+
+            <script>
+                feather.replace();
+
+                // Konversi tekanan ke Pascal (Pa)
+                const conversionRatesToPascal = {
+                    'Pa': 1,
+                    'kPa': 1000,
+                    'hPa': 100,  // 1 hPa = 100 Pa
+                    'bar': 100000,
+                    'atm': 101325,
+                    'mmHg': 133.322,
+                    'torr': 133.322,
+                    'psi': 6894.76,
+                    'kgf/cm²': 98066.5
+                };
+
+                // Fungsi untuk melakukan konversi tekanan
+                function convertPressure() {
+                    const inputValue = parseFloat(document.getElementById('input-konversi-tekanan').value);
+                    const inputUnit = document.getElementById('opsi-input-konversi-tekanan').value;
+                    const outputUnit = document.getElementById('opsi-output-konversi-tekanan').value;
+
+                    if (isNaN(inputValue)) {
+                        document.getElementById('output-konversi-tekanan').value = '';
+                        return;
+                    }
+
+                    // Menghitung nilai dalam Pascal berdasarkan unit input
+                    const valueInPascal = inputValue * conversionRatesToPascal[inputUnit];
+
+                    // Menghitung hasil konversi ke unit output yang diinginkan
+                    const result = valueInPascal / conversionRatesToPascal[outputUnit];
+
+                    // Menampilkan hasil konversi
+                    document.getElementById('output-konversi-tekanan').value = parseFloat(result); // Optional rounding
+                }
+
+                // Event listener untuk menangani perubahan input
+                document.getElementById('input-konversi-tekanan').addEventListener('input', convertPressure);
+                document.getElementById('opsi-input-konversi-tekanan').addEventListener('change', convertPressure);
+                document.getElementById('opsi-output-konversi-tekanan').addEventListener('change', convertPressure);
+            </script>
+
+            <footer>
+                <a href="https://github.com/Kilkil05"><img src="pngwing.com (32).png" alt="github" width="50px"></a>
+                <a href="https://www.instagram.com/wasekloer.id/"><img src="image.png" alt="instagram" width="50px"></a>
+            </footer>
+        </div>
+    </body>
+</html>
