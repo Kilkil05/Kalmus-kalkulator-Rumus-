@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <script src="index.js"></script>
+        <title>Segitiga</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/feather-icons"></script>
+
+        <!-- kanit -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jura:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oooh+Baby&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        
+        <!-- poppins -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jura:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oooh+Baby&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <a class="home" href="bangun-datar.html"><i data-feather="arrow-left"></i>Back</a>
+        </nav>
+        <h1 class="judul">Kalkulator Rumus<br>
+            <h2 class="perintah">Bangun Jajar Genjang</h1>
+        <div class="container">
+            <div class="jajargenjang">
+
+                <!-- opsi memilih ingin mencari apa -->
+                <p style="font-size: 1.5rem;">Apa yang ingin dicari</p>
+                <select name="opsi-jajargenjang" id="opsi-jajargenjang" style="font-size: 1.6 rem;">
+                    <option value="keliling">Keliling</option>
+                    <option value="luas">Luas</option>
+                    <option value="tinggi">Tinggi</option>
+                    <option value="alas">Alas</option>
+                </select>
+
+                <!-- gambar trapesium ilustrasi -->
+                <div class="trapesium" style="margin-top: 2rem; margin-bottom: 2rem;">
+                    <div id="bentuk-trapesium"><img src="asset/trapesium-keterangan.png" alt="bentuk-trapesium" width="100%"></div>
+                </div>
+
+                <!-- input keliling trapesium -->
+                <div class="input-keliling-trapesium">
+                    <h2 style="text-align: center;">Masukkan sisi a</h2>
+                    <input id="input-sisi-a-k" class="input-sisi-trapesium" type="number" placeholder="">
+                    <h2 style="text-align: center;">Masukkan sisi b</h2>
+                    <input id="input-sisi-b-k" class="input-sisi-trapesium" type="number" placeholder="">
+                    <h2 style="text-align: center;">Masukkan sisi c</h2>
+                    <input id="input-sisi-c-k" class="input-sisi-trapesium" type="number" placeholder="">
+                    <h2 style="text-align: center;">Masukkan sisi d</h2>
+                    <input id="input-sisi-d-k" class="input-sisi-trapesium" type="number" placeholder="">
+                </div>
+
+
+                <div class="jajargenjang-output" style="text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <h2 id="output-jajargenjang3"></h2>
+                    <h2 id="output-penjelasan" onclick="showText()"></h2>
+                    <div id="output-hide">
+                        <img class="pin-png" src="asset/pin.png" alt="" width="50px">
+                        <h3 id="output-jajargenjang1"></h3>
+                        <h3 id="output-jajargenjang2"></h3>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <script>
+                feather.replace();
+            </script>
+
+            <footer>
+                <a href="https://github.com/Kilkil05"><img src="pngwing.com (32).png" alt="github" width="50px"></a>
+                <a href="https://www.instagram.com/wasekloer.id/"><img src="image.png" alt="instagram" width="50px"></a>
+            </footer>
+        </div>
+        <script>
+        </script>
+    </body>
+    <script src="index.js"></script>
+</html>
