@@ -1536,6 +1536,13 @@ input::-webkit-inner-spin-button {
     text-align: center;
     margin-bottom: 2rem; 
 }
+.trapesium {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
 
 /* bmi */
 .bmi-container {

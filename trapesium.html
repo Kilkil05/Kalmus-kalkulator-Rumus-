@@ -1,7 +1,7 @@
 <html>
     <head>
         <script src="index.js"></script>
-        <title>Segitiga</title>
+        <title>Trapesium</title>
         <link rel="stylesheet" href="style.css">
         <script src="https://unpkg.com/feather-icons"></script>
 
@@ -20,17 +20,16 @@
             <a class="home" href="bangun-datar.html"><i data-feather="arrow-left"></i>Back</a>
         </nav>
         <h1 class="judul">Kalkulator Rumus<br>
-            <h2 class="perintah">Bangun Jajar Genjang</h1>
+            <h2 class="perintah">Bangun Trapesium</h1>
         <div class="container">
-            <div class="jajargenjang">
+            <div class="trapesium">
 
                 <!-- opsi memilih ingin mencari apa -->
                 <p style="font-size: 1.5rem;">Apa yang ingin dicari</p>
-                <select name="opsi-jajargenjang" id="opsi-jajargenjang" style="font-size: 1.6 rem;">
+                <select name="opsi-trapesium" id="opsi-trapesium" style="font-size: 1.6 rem;">
                     <option value="keliling">Keliling</option>
                     <option value="luas">Luas</option>
                     <option value="tinggi">Tinggi</option>
-                    <option value="alas">Alas</option>
                 </select>
 
                 <!-- gambar trapesium ilustrasi -->
@@ -39,43 +38,48 @@
                 </div>
 
                 <!-- input keliling trapesium -->
-                <div class="input-keliling-trapesium">
+                <div class="input-keliling-trapesium" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
                     <h2 style="text-align: center;">Masukkan sisi alas a</h2>
-                    <input id="input-sisi-a-k" class="input-sisi-trapesium" type="number" placeholder="">
-                    <h2 style="text-align: center;">Masukkan sisi miring b</h2>
-                    <input id="input-sisi-b-k" class="input-sisi-trapesium" type="number" placeholder="">
-                    <h2 style="text-align: center;">Masukkan sisi alas c</h2>
-                    <input id="input-sisi-c-k" class="input-sisi-trapesium" type="number" placeholder="">
+                    <input id="input-sisi-trap-a-k" class="input-sisi-trapesium" type="number" placeholder="">
+                    <h2 style="text-align: center;">Masukkan sisi alas b</h2>
+                    <input id="input-sisi-trap-b-k" class="input-sisi-trapesium" type="number" placeholder="">
+                    <h2 style="text-align: center;">Masukkan sisi miring c</h2>
+                    <input id="input-sisi-trap-c-k" class="input-sisi-trapesium" type="number" placeholder="">
                     <h2 style="text-align: center;">Masukkan sisi miring d</h2>
-                    <input id="input-sisi-d-k" class="input-sisi-trapesium" type="number" placeholder="">
+                    <input id="input-sisi-trap-d-k" class="input-sisi-trapesium" type="number" placeholder="">
+                    <!-- button -->
+                    <button id="hasil-keliling-trapesium" class="btn" onclick="">Hasil</button>
                 </div>
 
                 <!-- input luas trapesium -->
-                <div class="input-luas-trapesium">
+                <div class="input-luas-trapesium" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
                     <h2 style="text-align: center;">Masukkan sisi alas a</h2>
-                    <input id="input-sisi-a-l" class="input-sisi-trapesium" type="number" placeholder="">
-                    <h2 style="text-align: center;">Masukkan sisi alas c</h2>
-                    <input id="input-sisi-c-l" class="input-sisi-trapesium" type="number" placeholder="">
+                    <input id="input-sisi-trap-a-l" class="input-sisi-trapesium" type="number" placeholder="">
+                    <h2 style="text-align: center;">Masukkan sisi alas b</h2>
+                    <input id="input-sisi-trap-b-l" class="input-sisi-trapesium" type="number" placeholder="">
                     <h2 style="text-align: center;">Masukkan tinggi</h2>
-                    <input id="input-tinggi-l" class="input-sisi-trapesium" type="number" placeholder="">
+                    <input id="input-tinggi-trap-l" class="input-sisi-trapesium" type="number" placeholder="">
+                    <button id="hasil-luas-trapesium" class="btn" onclick="">Hasil</button>
                 </div>
 
                 <!-- input mencari tinggi trapesium -->
-                <div class="input-tinggi-trapesium">
+                <div class="input-tinggi-trapesium" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
                     <h2 style="text-align: center;">Masukkan sisi alas a</h2>
-                    <input id="input-sisi-a-t" class="input-sisi-trapesium" type="number" placeholder="">
-                    <h2 style="text-align: center;">Masukkan sisi alas c</h2>
-                    <input id="input-sisi-c-t" class="input-sisi-trapesium" type="number" placeholder="">
-                    <h2 style="text-align: center;">Masukkan Luas / keliling</h2>
+                    <input id="input-sisi-trap-a-t" class="input-sisi-trapesium" type="number" placeholder="">
+                    <h2 style="text-align: center;">Masukkan sisi alas b</h2>
+                    <input id="input-sisi-trap-b-t" class="input-sisi-trapesium" type="number" placeholder="">
+                    <h2 style="text-align: center;">Masukkan Luas</h2>
+                    <input id="input-luas-trap-t" class="input-sisi-trapesium" type="number" placeholder="">
+                    <button id="hasil-tinggi-trapesium" class="btn" onclick="">Hasil</button>
                 </div>
 
-                <div class="jajargenjang-output" style="text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                    <h2 id="output-jajargenjang3"></h2>
+                <div class="trapesium-output" style="text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <h2 id="output-trapesium3"></h2>
                     <h2 id="output-penjelasan" onclick="showText()"></h2>
                     <div id="output-hide">
                         <img class="pin-png" src="asset/pin.png" alt="" width="50px">
-                        <h3 id="output-jajargenjang1"></h3>
-                        <h3 id="output-jajargenjang2"></h3>
+                        <h3 id="output-trapesium1"></h3>
+                        <h3 id="output-trapesium2"></h3>
                     </div>
 
                 </div>
@@ -84,6 +88,35 @@
             </div>
             <script>
                 feather.replace();
+            </script>
+
+            <script>
+                function trapesiumVisibility() {
+                    let opsi = document.getElementById('opsi-trapesium').value
+                    let inputKeliling = document.querySelector('.input-keliling-trapesium')
+                    let inputLuas = document.querySelector('.input-luas-trapesium')
+                    let inputTinggi = document.querySelector('.input-tinggi-trapesium')
+
+                    inputKeliling.style.display = 'none'
+                    inputLuas.style.display = 'none'
+                    inputTinggi.style.display = 'none'
+
+                    switch(opsi) {
+                        case 'keliling':
+                            inputKeliling.style.display = 'flex'
+                            break
+                        case 'luas':
+                            inputLuas.style.display = 'flex'
+                            break
+                        case 'tinggi':
+                            inputTinggi.style.display = 'flex'
+                            break
+                        default:
+                    }
+                }
+                document.getElementById('opsi-trapesium').addEventListener('change', trapesiumVisibility)
+                trapesiumVisibility()
+
             </script>
 
             <footer>
