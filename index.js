@@ -1818,6 +1818,46 @@ function alasJajarGenjang() {
     outputPenjelasan.innerHTML = `Lihat Penjelasan`
 }
 
+// bangun trapesium
+function kelilingTrapesium() {
+    let sisiAlasA = parseFloat(document.getElementById('input-sisi-trap-a-k').value)
+    let sisiAlasB = parseFloat(document.getElementById('input-sisi-trap-b-k').value)
+    let sisiMiringC = parseFloat(document.getElementById('input-sisi-trap-c-k').value)
+    let sisiMiringD = parseFloat(document.getElementById('input-sisi-trap-d-k').value)
+    let output3 = document.getElementById('output-trapesium3')
+    let output1 = document.getElementById('output-trapesium1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    if (isNaN(sisiAlasA) || isNaN(sisiAlasB) || isNaN(sisiMiringC) || isNaN(sisiMiringD)) {
+        output3.innerHTML = "<h1>Masukkan nilai yang valid!</h1>"  // Error message
+        outputPenjelasan.innerHTML = ""  // Clear explanation if invalid
+        return
+    }
+
+    let keliling = sisiAlasA + sisiAlasB + sisiMiringC + sisiMiringD
+
+    output3.innerHTML = `<h1>Keliling : ${keliling}</h1>`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML = `
+    <h2>Penjelasan Perhitungan Keliling Trapesium:</h2>
+    <p>Rumus yang digunakan: <b>Keliling = Sisi A + Sisi B + Sisi C + Sisi D</b></p>
+    <p>Langkah 1: Masukkan nilai panjang sisi-sisi trapesium.</p>
+    <ul>
+      <li><b>Sisi A (alas bawah) = ${sisiAlasA} cm</b></li>
+      <li><b>Sisi B (alas atas) = ${sisiAlasB} cm</b></li>
+      <li><b>Sisi C (sisi miring kiri) = ${sisiMiringC} cm</b></li>
+      <li><b>Sisi D (sisi miring kanan) = ${sisiMiringD} cm</b></li>
+    </ul>
+    <p>Langkah 2: Hitung keliling trapesium: <b>${keliling} cm</b></p>
+    <p>Keliling = ${sisiAlasA} + ${sisiAlasB} + ${sisiMiringC} + ${sisiMiringD} = <b>${keliling} cm</b>.</p>
+    <p>Jadi, keliling trapesium tersebut adalah <b>${keliling} cm</b>.</p>
+  `
+}
+
+function luasTrapesium() {
+    
+}
+
 // faktorial
 
 function faktorial(n) {
