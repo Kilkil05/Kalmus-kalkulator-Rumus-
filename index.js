@@ -1855,7 +1855,57 @@ function kelilingTrapesium() {
 }
 
 function luasTrapesium() {
-    
+    let sisiAlasA = parseFloat(document.getElementById('input-sisi-trap-a-l').value)
+    let sisiAlasB = parseFloat(document.getElementById('input-sisi-trap-b-l').value)
+    let tinggi = parseFloat(document.getElementById('input-tinggi-trap-l').value)
+    let output3 = document.getElementById('output-trapesium3')
+    let output1 = document.getElementById('output-trapesium1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    if (isNaN(sisiAlasA) || isNaN(sisiAlasB) || isNaN(tinggi)) {
+        output3.innerHTML = "<h1>Masukkan nilai yang valid!</h1>"  // Error message
+        outputPenjelasan.innerHTML = ""  // Clear explanation if invalid
+        return
+    }
+
+    let luas = (sisiAlasA + sisiAlasB) * tinggi / 2
+
+    output3.innerHTML = `<h1>Luas : ${luas}</h1>`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML = `
+        <p><strong>Rumus Luas Trapesium:</strong></p>
+        <p>Luas = (Sisi Alas A + Sisi Alas B) × Tinggi ÷ 2</p>
+        <p>Dengan memasukkan nilai-nilai berikut:</p>
+        <ul>
+            <li><strong>Sisi Alas A:</strong> ${sisiAlasA} cm</li>
+            <li><strong>Sisi Alas B:</strong> ${sisiAlasB} cm</li>
+            <li><strong>Tinggi:</strong> ${tinggi} cm</li>
+        </ul>
+        <p>Maka luas trapesium dapat dihitung sebagai berikut:</p>
+        <p><strong>Luas = (${sisiAlasA} + ${sisiAlasB}) × ${tinggi} ÷ 2</strong></p>
+        <p><strong>Luas = ${luas} cm²</strong></p>
+    `
+}
+
+
+function tinggiTrapesium() {
+    let sisiAlasA = parseFloat(document.getElementById('input-sisi-trap-a-t').value)
+    let sisiAlasB = parseFloat(document.getElementById('input-sisi-trap-b-t').value)
+    let luas = parseFloat(document.getElementById('input-luas-trap-t').value)
+    let output3 = document.getElementById('output-trapesium3')
+    let output1 = document.getElementById('output-trapesium1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    if (isNaN(sisiAlasA) || isNaN(sisiAlasB) || isNaN(luas)) {
+        output3.innerHTML = "<h1>Masukkan nilai yang valid!</h1>"  // Error message
+        outputPenjelasan.innerHTML = ""  // Clear explanation if invalid
+        return
+    }
+
+    let tinggi  = (luas * 2) / (sisiAlasA + sisiAlasB)
+
+    output3.innerHTML = `<h1>Tinggi : ${tinggi}</h1>`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
 }
 
 // faktorial
