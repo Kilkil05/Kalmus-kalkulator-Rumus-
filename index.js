@@ -1906,6 +1906,22 @@ function tinggiTrapesium() {
 
     output3.innerHTML = `<h1>Tinggi : ${tinggi}</h1>`
     outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1 .innerHTML = `<p>Anda memasukkan:</p>
+        <ul>
+            <li><strong>Sisi Alas A</strong>: ${sisiAlasA} cm</li>
+            <li><strong>Sisi Alas B</strong>: ${sisiAlasB} cm</li>
+            <li><strong>Luas</strong>: ${luas} cm²</li>
+        </ul>
+        <p>Rumus untuk menghitung tinggi trapesium adalah:</p>
+        <p><strong>Tinggi = (2 * Luas) / (Sisi Alas A + Sisi Alas B)</strong></p>
+        <p>Dengan rumus ini, kita dapat menghitung tinggi trapesium jika kita mengetahui panjang kedua sisi alas dan luasnya.</p>
+        <p>Langkah-langkah perhitungannya adalah sebagai berikut:</p>
+        <ol>
+            <li>Kalikan luas trapesium dengan 2: ${luas} * 2 = ${luas * 2}</li>
+            <li>Jumlahkan panjang kedua sisi alas: ${sisiAlasA} + ${sisiAlasB} = ${sisiAlasA + sisiAlasB}</li>
+            <li>Bagi hasil perkalian luas dengan jumlah sisi alas: ${luas * 2} / (${sisiAlasA} + ${sisiAlasB}) = ${tinggi.toFixed(2)}</li>
+        </ol>
+        <p>Jadi, tinggi trapesium adalah ${tinggi.toFixed(2)} cm.</p>`
 }
 
 // faktorial
