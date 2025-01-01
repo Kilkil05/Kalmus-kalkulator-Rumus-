@@ -1565,6 +1565,46 @@ input::-webkit-inner-spin-button {
     border: 5px solid white;
     filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
 }
+.belahketupat-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+#bentuk-belahketupat{
+    width: 400px;
+    height: 400px;
+    border-radius: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    translate: 2rem;
+}
+.input-sisi-belahketupat {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+.belah-ketupat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
 
 /* bmi */
 .bmi-container {
