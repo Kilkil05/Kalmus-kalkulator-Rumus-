@@ -45,9 +45,43 @@
                     <button id="hasil-keliling-belahketupat" class="btn" onclick="kelilingBelahKetupat()">Hasil</button>
                 </div>
 
-                <!-- input luas -->
-               
+                <!-- input luas  -->
+                <div class="luas-belahketupat">
+                    <select name="opsi-luas-belahketupat" id="opsi-luas-belahketupat" style="width: 350px;">
+                        <option value="" disabled selected>Pilih rumus</option>
+                        <option value="diagonal">Menggunakan Diagonal</option>
+                        <option value="sisi">Menggunakan panjang sisi dan tinggi</option>
+                    </select>
 
+                    <!-- input dengan rumus diagonal -->
+                    <div class="luas-rumus-diagonal" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <h2 style="text-align: center;">Masukkan panjang diagonal 1</h2>
+                        <input id="input-diagonal1-belahketupat-l" class="input-sisi-belahketupat" type="number">
+                        <h2 style="text-align: center;">Masukkan panjang diagonal 2</h2>
+                        <input id="input-diagonal2-belahketupat-l" class="input-sisi-belahketupat" type="number">
+                        <button id="hasil-luas-belahketupat" class="btn" onclick="luasRumusDIagonalBelahKetupat()">Hasil</button>
+                    </div>
+
+                    <!-- input dengan rumus a x t -->
+                    <div class="luas-rumus-at" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <h2 style="text-align: center;">Masukkan panjang sisi</h2>
+                        <input id="input-sisi-belahketupat-l" class="input-sisi-belahketupat" type="number">
+                        <h2 style="text-align: center;">Masukkan tinggi</h2>
+                        <input id="input-tinggi-belahketupat-l" class="input-sisi-belahketupat" type="number">
+                        <button id="hasil-luas-belahketupat" class="btn" onclick="luasRumusAtBelahKetupat()">Hasil</button>
+                    </div>
+                </div>
+
+                <!-- input diagonal -->
+                <div class="diagonal-belahketupat" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <h2 style="text-align: center;">Masukkan luas belah ketupat</h2>
+                    <input id="input-luas-belahketupat-d" class="input-sisi-belahketupat" type="number">
+                    <h2 style="text-align: center;">Masukkan diagonal lainnya yang diketahui</h2>
+                    <input id="input-diagonal2-belahketupat-d" class="input-sisi-belahketupat" type="number">
+                    <button id="hasil-diagonal-belahketupat" class="btn" onclick="diagonalBelahKetupat()">Hasil</button>
+                </div>
+
+                
                 <div class="belahketupat-output" style="text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column;">
                     <h2 id="output-belahketupat3"></h2>
                     <h2 id="output-penjelasan" onclick="showText()"></h2>
