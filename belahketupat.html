@@ -29,8 +29,8 @@
                 <select name="opsi-belahketupat" id="opsi-belahketupat" style="font-size: 1.6 rem;">
                     <option value="keliling">Keliling</option>
                     <option value="luas">Luas</option>
+                    <option value="diagonal">Diagonal</option>
                     <option value="tinggi">Tinggi</option>
-                    <option value="alas">Alas</option>
                 </select>
 
                 <!-- gambar jajar genjang ilustrasi -->
@@ -72,14 +72,44 @@
                     </div>
                 </div>
 
-                <!-- input diagonal -->
+                <!-- input diagonal --> 
                 <div class="diagonal-belahketupat" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                    <h2 style="text-align: center;">Masukkan luas belah ketupat</h2>
-                    <input id="input-luas-belahketupat-d" class="input-sisi-belahketupat" type="number">
-                    <h2 style="text-align: center;">Masukkan diagonal lainnya yang diketahui</h2>
-                    <input id="input-diagonal2-belahketupat-d" class="input-sisi-belahketupat" type="number">
-                    <button id="hasil-diagonal-belahketupat" class="btn" onclick="diagonalBelahKetupat()">Hasil</button>
+                    <!-- opsi -->
+                    <select name="opsi-diagonal-belahketupat" id="opsi-diagonal-belahketupat">
+                        <option value="" disabled selected>Pilih rumus</option>
+                        <option value="luas">Menggunakan luas yang diketahui</option>
+                        <option value="sisi">Menggunakan theorema pythagoras</option>
+                    </select>
+
+                    <!-- diagonal dengan luas -->
+                    <div class="diagonal-belahketupat-rumusluas-d" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <h2 style="text-align: center;">Masukkan luas belah ketupat</h2>
+                        <input id="input-luas-belahketupat-d" class="input-sisi-belahketupat" type="number">
+                        <h2 style="text-align: center;">Masukkan diagonal lainnya yang diketahui</h2>
+                        <input id="input-diagonal2l-belahketupat-d" class="input-sisi-belahketupat" type="number">
+                        <button id="hasil-diagonal-belahketupat" class="btn" onclick="diagonalRumusLuasBelahKetupat()">Hasil</button>
+                    </div>
+
+                    <!-- diagonal dengan sisi -->
+                     <div class="diagonal-belahketupat-rumussisi-d" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <h2 style="text-align: center;">Masukkan sisi belah ketupat</h2>
+                        <input id="input-sisi-belahketupat-d" class="input-sisi-belahketupat" type="number">
+                        <h2 style="text-align: center;">Masukkan diagonal lainnya yang diketahui</h2>
+                        <input id="input-diagonal2s-belahketupat-d" class="input-sisi-belahketupat" type="number">
+                        <button id="hasil-diagonal-belahketupat" class="btn" onclick="diagonalRumusSisiBelahKetupat()">Hasil</button>
+                     </div>
                 </div>
+
+                <!-- input tinggi -->
+                <div class="tinggi-belahketupaat" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <h2 style="text-align: center;">Masukkan diagonal 1</h2>
+                    <input id="input-diagonal1-belahketupat-t" class="input-sisi-belahketupat" type="number">
+                    <h2 style="text-align: center;">Masukkan diagonal 2</h2>
+                    <input id="input-diagonal2-belahketupat-t" class="input-sisi-belahketupat" type="number">
+                    <h2 style="text-align: center;">Masukkan sisi</h2>
+                    <input id="input-sisi-belahketupat-t" class="input-sisi-belahketupat" type="number">
+                </div>
+
 
                 
                 <div class="belahketupat-output" style="text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column;">
