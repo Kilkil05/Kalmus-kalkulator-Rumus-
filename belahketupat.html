@@ -46,7 +46,7 @@
                 </div>
 
                 <!-- input luas  -->
-                <div class="luas-belahketupat">
+                <div class="luas-belahketupat" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
                     <select name="opsi-luas-belahketupat" id="opsi-luas-belahketupat" style="width: 350px;">
                         <option value="" disabled selected>Pilih rumus</option>
                         <option value="diagonal">Menggunakan Diagonal</option>
@@ -101,13 +101,14 @@
                 </div>
 
                 <!-- input tinggi -->
-                <div class="tinggi-belahketupaat" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                <div class="tinggi-belahketupat" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
                     <h2 style="text-align: center;">Masukkan diagonal 1</h2>
                     <input id="input-diagonal1-belahketupat-t" class="input-sisi-belahketupat" type="number">
                     <h2 style="text-align: center;">Masukkan diagonal 2</h2>
                     <input id="input-diagonal2-belahketupat-t" class="input-sisi-belahketupat" type="number">
                     <h2 style="text-align: center;">Masukkan sisi</h2>
                     <input id="input-sisi-belahketupat-t" class="input-sisi-belahketupat" type="number">
+                    <button id="hasil-tinggi-belahketupat" class="btn" onclick="tinggiBelahKetupat()">Hasil</button>
                 </div>
 
 
@@ -127,6 +128,82 @@
             </div>
             <script>
                 feather.replace();
+            </script>
+
+            <script>
+                function belahKetupatVisibility() {
+                    let opsi = document.getElementById('opsi-belahketupat').value
+                    let keliling = document.querySelector('.keliling-belahketupat')
+                    let luas = document.querySelector('.luas-belahketupat')
+                    let diagonal = document.querySelector('.diagonal-belahketupat')
+                    let tinggi = document.querySelector('.tinggi-belahketupat')
+
+                    keliling.style.display = 'none'
+                    luas.style.display = 'none'
+                    diagonal.style.display = 'none'
+                    tinggi.style.display = 'none'
+
+                    switch(opsi) {
+                        case 'keliling':
+                            keliling.style.display = 'flex'
+                            break
+                        case 'luas':
+                            luas.style.display = 'flex'
+                            break
+                        case 'diagonal':
+                            diagonal.style.display = 'flex'
+                            break
+                        case 'tinggi':
+                            tinggi.style.display = 'flex'
+                            break
+                        default:
+                    }
+                }
+                document.getElementById('opsi-belahketupat').addEventListener('change', belahKetupatVisibility)
+                belahKetupatVisibility()
+
+                function luasVisibility() {
+                    let opsi = document.getElementById('opsi-luas-belahketupat').value
+                    let rumusDiagonal = document.querySelector('.luas-rumus-diagonal')
+                    let rumusAlasTinggi = document.querySelector('.luas-rumus-at')
+
+                    rumusDiagonal.style.display = 'none'
+                    rumusAlasTinggi.style.display = 'none'
+
+                    switch(opsi) {
+                        case 'diagonal':
+                            rumusDiagonal.style.display = 'flex'
+                            break
+                        case 'sisi':
+                            rumusAlasTinggi.style.display = 'flex'
+                            break
+                        default:
+                    }
+                }
+                document.getElementById('opsi-luas-belahketupat').addEventListener('change', luasVisibility)
+                luasVisibility()
+
+                function diagonalVisibility() {
+                    let opsi = document.getElementById('opsi-diagonal-belahketupat').value
+                    let diagonalRumusLuas = document.querySelector('.diagonal-belahketupat-rumusluas-d')
+                    let diagonalRumusSisi = document.querySelector('.diagonal-belahketupat-rumussisi-d')
+
+                    diagonalRumusLuas.style.display = 'none'
+                    diagonalRumusSisi.style.display = 'none'
+
+                    switch(opsi) {
+                        case 'luas':
+                            diagonalRumusLuas.style.display = 'flex'
+                            break
+                        case 'sisi':
+                            diagonalRumusSisi.style.display = 'flex'
+                            break
+                        default:
+                    }
+                }
+                document.getElementById('opsi-diagonal-belahketupat').addEventListener('change', diagonalVisibility)
+                diagonalVisibility()
+
             </script>
 
             <footer>
