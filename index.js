@@ -1924,6 +1924,39 @@ function tinggiTrapesium() {
         <p>Jadi, tinggi trapesium adalah ${tinggi.toFixed(2)} cm.</p>`
 }
 
+// belah ketupat
+
+function kelilingBelahKetupat() {
+    let sisi = parseFloat(document.getElementById('input-sisi-belahketupat-k').value)
+    let output3 = document.getElementById('output-belahketupat3')
+    let output1 = document.getElementById('output-belahketupat1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    if(isNaN(sisi) || sisi.trim === '') {
+        output3.innerHTML = "<h1>Masukkan nilai yang valid!</h1>"  // Error message
+        outputPenjelasan.innerHTML = ""  // Clear explanation if invalid
+        return
+    }
+
+    let keliling = sisi * 4
+
+    output3.innerHTML = `<h1>keliling : ${keliling}</h1>`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML = `
+        <h3>Penjelasan:</h3>
+        Keliling belah ketupat dapat dihitung dengan rumus:
+        <pre><strong>Keliling = 4 × sisi</strong></pre>
+        Di mana "sisi" adalah panjang salah satu sisi belah ketupat.
+        <br><br>
+        Contoh: Jika panjang sisi belah ketupat adalah 5 cm, maka kelilingnya adalah:
+        <pre>Keliling = 4 × 5 = 20 cm</pre>
+        Jadi, keliling belah ketupat dengan sisi 5 cm adalah 20 cm.`
+}
+
+function luasBelahKetupat() {
+    
+}
+
 // faktorial
 
 function faktorial(n) {
