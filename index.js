@@ -1953,8 +1953,71 @@ function kelilingBelahKetupat() {
         Jadi, keliling belah ketupat dengan sisi 5 cm adalah 20 cm.`
 }
 
-function luasBelahKetupat() {
-    
+function luasRumusDIagonalBelahKetupat() {
+    let diagonal1 = parseFloat(document.getElementById('input-diagonal1-belahketupat-l').value)
+    let diagonal2 = parseFloat(document.getElementById('input-diagonal2-belahketupat-l').value)
+    let output3 = document.getElementById('output-belahketupat3')
+    let output1 = document.getElementById('output-belahketupat1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    if(isNaN(diagonal1) || isNaN(diagonal2)) {
+        output3.innerHTML = "<h1>Masukkan nilai yang valid!</h1>"  // Error message
+        outputPenjelasan.innerHTML = ""  // Clear explanation if invalid
+        return
+    }
+
+    let luas = diagonal1 * diagonal2 / 2
+
+    output3.innerHTML = `<h1>Luas : ${luas}`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML = `
+        <h3>Penjelasan:</h3>
+        <p>Untuk menghitung luas belah ketupat, kita menggunakan rumus:</p>
+        <p><strong>Luas = (diagonal 1 × diagonal 2) : 2</strong></p>
+        <p>Dengan nilai-nilai berikut:</p>
+        <ul>
+            <li><strong>Diagonal 1</strong>: ${diagonal1}</li>
+            <li><strong>Diagonal 2</strong>: ${diagonal2}</li>
+        </ul>
+        <p>Sehingga, luas belah ketupat adalah: ${diagonal1} × ${diagonal2} : 2 = ${luas}</p>
+    `;
+
+}
+
+function luasRumusAtBelahKetupat() {
+    let sisi = parseFloat(document.getElementById('input-sisi-belahketupat-l').value)
+    let tinggi = parseFloat(document.getElementById('input-tinggi-belahketupat-l').value)
+    let output3 = document.getElementById('output-belahketupat3')
+    let output1 = document.getElementById('output-belahketupat1')
+    let outputPenjelasan = document.getElementById('output-penjelasan')
+
+    if(isNaN(sisi) || isNaN(tinggi)) {
+        output3.innerHTML = "<h1>Masukkan nilai yang valid!</h1>"  // Error message
+        outputPenjelasan.innerHTML = ""  // Clear explanation if invalid
+        return
+    }
+
+    let luas = sisi * tinggi
+
+    output3.innerHTML = `<h1>Luas : ${luas}`
+    outputPenjelasan.innerHTML = `Lihat Penjelasan`
+    output1.innerHTML = `
+        <h3>Penjelasan:</h3>
+        <p>Untuk menghitung luas belah ketupat dengan panjang sisi dan tinggi, kita menggunakan rumus:</p>
+        <p><strong>Luas = sisi × tinggi</strong></p>
+        <p>Dengan nilai-nilai berikut:</p>
+        <ul>
+            <li><strong>Sisi</strong>: ${sisi} </li>
+            <li><strong>Tinggi</strong>: ${tinggi} </li>
+        </ul>
+        <p>Proses perhitungan:</p>
+        <ol>
+            <li>Gunakan rumus <strong>Luas = sisi × tinggi</strong>.</li>
+            <li>Masukkan nilai sisi = ${sisi} dan tinggi = ${tinggi} ke dalam rumus.</li>
+            <li>Perhitungan: <strong>${sisi} × ${tinggi} = ${luas}</strong>.</li>
+        </ol>
+        <p>Sehingga, luas belah ketupat adalah: ${luas}</p>
+    `;
 }
 
 // faktorial

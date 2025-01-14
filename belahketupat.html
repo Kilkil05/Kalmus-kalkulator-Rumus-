@@ -157,6 +157,10 @@
                             tinggi.style.display = 'flex'
                             break
                         default:
+                            keliling.style.display = 'none'
+                            luas.style.display = 'none'
+                            diagonal.style.display = 'none'
+                            tinggi.style.display = 'none'
                     }
                 }
                 document.getElementById('opsi-belahketupat').addEventListener('change', belahKetupatVisibility)
@@ -165,7 +169,7 @@
                 function luasVisibility() {
                     let opsi = document.getElementById('opsi-luas-belahketupat').value
                     let rumusDiagonal = document.querySelector('.luas-rumus-diagonal')
-                    let rumusAlasTinggi = document.querySelector('.luas-ru mus-at')
+                    let rumusAlasTinggi = document.querySelector('.luas-rumus-at')
 
                     rumusDiagonal.style.display = 'none'
                     rumusAlasTinggi.style.display = 'none'
@@ -178,6 +182,8 @@
                             rumusAlasTinggi.style.display = 'flex'
                             break
                         default:
+                            rumusDiagonal.style.display = 'none'
+                            rumusAlasTinggi.style.display = 'none'
                     }
                 }
                 document.getElementById('opsi-luas-belahketupat').addEventListener('change', luasVisibility)
@@ -199,6 +205,8 @@
                             diagonalRumusSisi.style.display = 'flex'
                             break
                         default:
+                            diagonalRumusLuas.style.display = 'none'
+                            diagonalRumusSisi.style.display = 'none'
                     }
                 }
                 document.getElementById('opsi-diagonal-belahketupat').addEventListener('change', diagonalVisibility)
