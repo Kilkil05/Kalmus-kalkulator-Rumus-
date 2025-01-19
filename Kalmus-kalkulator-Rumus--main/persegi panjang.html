@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <script src="index.js"></script>
+        <title>Persegi Panjang</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/feather-icons"></script>
+
+        <!-- kanit -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jura:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oooh+Baby&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        
+        <!-- poppins -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jura:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oooh+Baby&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <a class="home" href="bangun-datar.html"><i data-feather="arrow-left"></i>Back</a>
+        </nav>
+        <h1 class="judul">Kalkulator Rumus<br>
+            <h2 class="perintah">Bangun Persegi Panjang</h1>
+        <div class="container">
+            <div class="PersegiPanjang">
+
+                <p style="font-size: 1.5rem;">Apa yang ingin dicari</p>
+                <select name="opsi-persegiPanjang" id="opsi-persegiPanjang" style="font-size: 1.6 rem;">
+                    <option value="Keliling">Keliling</option>
+                    <option value="Luas">Luas</option>
+                    <option value="PanjangLebar">Panjang & Lebar</option>
+                </select>
+
+                <div class="persegiPanjang-menu" style="margin-top: 2rem; margin-bottom: 2rem;">
+                    <div id="bentuk-persegi"><img src="asset/persegiPanjang-keterangan.png" alt="bentuk-persegi" width="400px"></div>
+                </div>
+
+                <div class="input-sisi-persegiPanjang">
+                    <h2 style="text-align: center;">Masukkan panjang</h2>
+                    <input id="input-panjang-persegiPanjang" type="number" placeholder="">
+                    <h2 style="text-align: center;">Masukkan lebar</h2>
+                    <input id="input-lebar-persegiPanjang" type="number" placeholder="">
+                </div>
+                <div class="input-keliling-persegiPanjang">
+                    <h2 style="text-align: center;">Masukkan keliling / luas yang diketahui</h2>
+                    <input id="input-keliling-persegiPanjang" type="number" placeholder="">
+                    <select name="option-luas-persegiPanjang" id="option-luas-persegiPanjang">
+                        <option value="Keliling-persegiPanjang">Keliling</option>
+                        <option value="Luas-persegiPanjang">Luas</option>
+                    </select>
+                    <h2 style="text-align: center;">Masukkan Panjang / lebar yang diketahui</h2>
+                    <input id="input-p-l-persegiPanjang" type="number" placeholder="">
+                    <select name="option-p-l-persegiPanjang" id="option-p-l-persegiPanjang">
+                        <option value="panjang-persegiPanjang">Panjang</option>
+                        <option value="lebar-persegiPanjang">Lebar</option>
+                    </select>
+                </div>
+
+                <button id="hasil-keliling-persegiPanjang" onclick="kelilingPersegiPanjang()">Hasil</button>
+                <button id="hasil-luas-persegiPanjang" onclick="luasPersegiPanjang()">Hasil</button>
+                <button id="hasil-sisi-persegiPanjang" onclick="sisiPersegiPanjang()">Hasil</button>
+                <div class="persegiPanjang-output">
+                    <h2 id="output-persegiPanjang3"></h2>
+                    <h2 id="output-penjelasan" onclick="showText()"></h2>
+                    <div id="output-hide">
+                        <img class="pin-png" src="asset/pin.png" alt="" width="50px">
+                        <h3 id="output-persegiPanjang1"></h3>
+                        <h3 id="output-persegiPanjang2"></h3>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <script>
+                feather.replace();
+            </script>
+
+            <footer>
+                <a href="https://github.com/Kilkil05"><img src="pngwing.com (32).png" alt="github" width="50px"></a>
+                <a href="https://www.instagram.com/wasekloer.id/"><img src="image.png" alt="instagram" width="50px"></a>
+            </footer>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>

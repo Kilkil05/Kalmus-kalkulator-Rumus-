@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <script src="index.js"></script>
+        <title>jarak, kecepatan, waktu</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/feather-icons"></script>
+
+        <!-- kanit -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jura:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oooh+Baby&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        
+        <!-- poppins -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jura:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oooh+Baby&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <a class="home" href="index.html"><i data-feather="arrow-left"></i>Back</a>
+        </nav>
+        <h1 class="judul">Kalkulator Rumus<br>
+            <h2 class="perintah">Mencari jarak, kecepatan, dan waktu</h1>
+        <div class="container">
+            <div class="jkw">
+
+                <p style="font-size: 1.5rem;">Apa yang ingin dicari</p>
+                <select name="opsi-jkw" id="opsi-jkw" style="font-size: 1.6 rem;">
+                    <option value="" disabled selected>Pilih</option>
+                    <option value="jarak">Jarak</option>
+                    <option value="kecepatan">Kecepatan</option>
+                    <option value="waktu">Waktu</option>
+                </select>
+
+                <div class="jarak-menu">
+                    Mencari Jarak
+                    <p style="font-size: 1.5rem;">Masukkan Kecepatan</p>
+                    <div class="kecepatan-j">
+                        <input type="number" id="input-kecepatan-j" class="input">
+                        <select name="kecepatan-option-j" id="kecepatan-option-j">
+                            <option value="km/jam">km/jam</option>
+                            <option value="m/menit">m/menit</option>
+                            <option value="m/s">m/s</option>
+                        </select>
+                    </div>
+
+                    <p style="font-size: 1.5rem;">Masukkan Waktu</p>
+                    <div class="waktu" style="gap: 1rem; display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                        <div class="jam"><input id="input-jam-j" type="number" class="waktu-input" placeholder="jam"></div>
+                        <p style="font-family: poppins; font-size: 2rem; transform: translateY(-1rem);">:</p>
+                        <div class="menit"><input id="input-menit-j" type="number" class="waktu-input" placeholder="menit"></div>
+                        <p style="font-family: poppins; font-size: 2rem; transform: translateY(-1rem);">:</p>
+                        <div class="detik"><input id="input-detik-j" type="number" class="waktu-input" placeholder="detik"></div>
+                    </div>
+                    <button id="hasil-jarak-jkw" class="btn" onclick="jkwJarak()">Hasil</button>
+                </div>
+
+                <div class="kecepatan-menu">
+                    Mencari Kecepatan
+                    <p style="font-size: 1.5rem;">Masukkan Jarak</p>
+                    <div class="jarak-k">
+                        <input type="number" id="input-jarak-k" class="input">
+                        <select name="jarak-option-k" id="jarak-option-k">
+                            <option value="km">km</option>
+                            <option value="m">m</option>
+                        </select>
+                    </div>
+
+                    <p style="font-size: 1.5rem;">Masukkan Waktu</p>
+                    <div class="waktu" style="gap: 1rem; display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                        <div class="jam"><input id="input-jam-k" type="number" class="waktu-input" placeholder="jam"></div>
+                        <p style="font-family: poppins; font-size: 2rem; transform: translateY(-1rem);">:</p>
+                        <div class="menit"><input id="input-menit-k" type="number" class="waktu-input" placeholder="menit"></div>
+                        <p style="font-family: poppins; font-size: 2rem; transform: translateY(-1rem);">:</p>
+                        <div class="detik"><input id="input-detik-k" type="number" class="waktu-input" placeholder="detik"></div>
+                    </div>
+                    <button id="hasil-kecepatan-jkw" class="btn" onclick="jkwKecepatan()">Hasil</button>
+                </div>
+
+                <div class="waktu-menu">
+                    Mencari Waktu
+                    <p style="font-size: 1.5rem;">Masukkan Jarak</p>
+                    <div class="jarak">
+                        <input type="number" id="input-jarak-w" class="input">
+                        <select name="jarak-option-w" id="jarak-option-w">
+                            <option value="km">km</option>
+                            <option value="m">m</option>
+                        </select>
+                    </div>
+
+                    <p style="font-size: 1.5rem;">Masukkan Kecepatan</p>
+                    <div class="kecepatan">
+                        <input type="number" id="input-kecepatan-w" class="input">
+                        <select name="kecepatan-option-w" id="kecepatan-option-w">
+                            <option value="km/jam">km/jam</option>
+                            <option value="m/menit">m/menit</option>
+                            <option value="m/s">m/s</option>
+                        </select>
+                    </div>
+                    <button id="hasil-waktu-jkw" class="btn" onclick="jkwWaktu()">Hasil</button>
+                </div>
+
+                <div class="jkw-output">
+                    <h2 style="text-align: center;" id="output-jkw3"></h2>
+                    <h2 id="output-penjelasan" onclick="showText()"></h2>
+                    <div id="output-hide">
+                        <img class="pin-png" src="asset/pin.png" alt="" width="50px">
+                        <h3 id="output-jkw1"></h3>
+                        <h3 id="output-jkw2"></h3>
+                    </div>
+
+                </div>
+                
+
+            </div>
+            <script>
+                feather.replace();
+            </script>
+
+            <footer>
+                <a href="https://github.com/Kilkil05"><img src="pngwing.com (32).png" alt="github" width="50px"></a>
+                <a href="https://www.instagram.com/wasekloer.id/"><img src="image.png" alt="instagram" width="50px"></a>
+            </footer>
+        </div>
+
+    </body>
+    <script src="index.js"></script>
+</html>

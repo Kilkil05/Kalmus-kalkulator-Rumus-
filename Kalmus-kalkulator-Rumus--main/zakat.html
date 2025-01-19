@@ -1,0 +1,160 @@
+<html>
+    <head>
+
+        <script src="autoNumeric.min.js" type="text/javascript"></script>
+        <!-- ...or, you may also directly use a CDN :-->
+        <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.8.1"></script>
+        <!-- ...or -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/autonumeric/4.8.1/autoNumeric.min.js"></script>
+        <!-- ...or -->
+        <script src="https://unpkg.com/autonumeric"></script>
+        <!-- ...or any other CDN. -->
+
+        <script src="index.js"></script>
+        <title>Kalkulator Zakat</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/feather-icons"></script>
+
+        <!-- kanit -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jura:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oooh+Baby&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        
+        <!-- poppins -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jura:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oooh+Baby&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <a class="home" href="index.html"><i data-feather="arrow-left"></i>Back</a>
+        </nav>
+        <div class="judul-content">
+            <h1 class="judul">Kalkulator Rumus<br>
+                <h2 class="perintah">Kalkulator penghitung zakat</h2>
+                <h4 class="perintah1">Note: Kalkulator ini hanya sebagai hitungan awal dan tidak dijadikan acuan sah atau tidaknya zakat. Untuk kepastian lebih lanjut, konsultasikan dengan pihak yang berwenang.</h4>
+            </h1>
+        </div>
+
+        <div class="container">
+            <div class="zakat">
+                <h3>Pilih harta yang ingin dizakatkan</h3>
+                <select id="zakat-nisab" name="zakat-nisab">
+                    <option value="" disabled selected>Pilih Harta</option>
+                    <option value="penghasilan">Penghasilan</option>
+                    <option value="Hewan-Ternak">Hewan Ternak</option>
+                    <option value="Hasil-panen">Hasil Panen</option>
+                </select>
+                 <br>
+                <div class="penghasilan">
+                    <h3>Masukkan Penghasilan Bersih Selama 1 Bulan</h3>
+                    <div class="inputdiskon-div">
+                        <h1>Rp.</h1>
+                        <input id="jumlah-penghasilan" type="text" placeholder="Masukkan penghasilan" autocomplete="off">
+                    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            new AutoNumeric('#jumlah-penghasilan', {
+                                digitGroupSeparator: '.',      // Pemisah ribuan
+                                decimalCharacter: ',',         // Karakter desimal
+                                decimalPlaces: 0,              // Jumlah angka desimal
+                                maximumValue: '999999999999999999'
+                            });
+                        });
+    
+                    </script>
+                    <button id="konfirmasi-penghasilan" onclick= "zakatPenghasilan()">Konfirmasi</button>
+                </div>
+
+                <div class="hewan-ternak">
+                    <p>Syarat-syarat zakat hewan ternak sebagai berikut :
+                        <br>1. Hewan Ternak Dikembangbiakan untuk Dimanfaatkan Susu, Daging dan Minyaknya.
+                        <br>2. Tergolong Hewan Sa-Imah (hewan ternak yang digembalakan di padang rumput / tempat umum)
+                        <br>3. Telah Mencapai Haul dan Nisabnya.</p>
+                    <br>
+                    <h3>Pilih Hewan Ternak</h3>
+                    <select name="hewan-ternak-select" id="hewan-ternak-select">
+                        <option value="" disabled selected>Pilih Hewan</option>
+                        <option value="Kambing">Kambing / Domba</option>
+                        <option value="Sapi">Sapi / kerbau</option>
+                        <option value="Unta">Unta</option>
+                    </select>
+                    <div class="kambing">
+                        <h3>Jumlah Kambing yang sudah haul 1 tahun</h3>
+                        <input id="jumlah-kambing" type="number">
+                        <button id="konfirmasi-penghasilan" onclick= "zakatHewanKambing()">Konfirmasi</button>
+                    </div>
+                    <div class="sapi">
+                        <h3>Jumlah Sapi / Kerbau yang sudah haul 1 tahun</h3>
+                        <input id="jumlah-sapi" type="number">
+                        <button id="konfirmasi-penghasilan" onclick= "zakatHewanSapi()">Konfirmasi</button>
+                    </div>
+                    <div class="unta">
+                        <h3>Jumlah Unta yang sudah haul 1 tahun</h3>
+                        <input id="jumlah-unta" type="number">
+                        <button id="konfirmasi-penghasilan" onclick= "zakatHewanUnta()">Konfirmasi</button>
+                    </div>
+                    
+                </div>
+
+                <div class="hasil-panen">
+                    <p>Persyaratan yang harus dipenuhi untuk mengeluarkan zakat pertanian, antara lain :
+                        <br>1. Tanaman yang ditanam haruslah untuk dijual atau untuk dijadikan bahan pokok.
+                        <br>2. Tanaman tersebut harus tumbuh dengan sendirinya tanpa perlu disiram atau diberi pupuk secara rutin.
+                        <br>3. Tanaman tersebut harus ditanam pada lahan yang dimiliki sendiri dan bukan tanah milik orang lain.</p>
+                        <div class="jenis-panen">
+                            <br><h3>Masukkan jenis panen</h3>
+                            <input id="jenis-panen" type="text" placeholder="contoh: Padi, Jagung, Gandum, dan lain-lain">
+                            <button id="konfirmasi-jenis-panen" onclick="jenisPanenClick()">Konfirmasi</button>
+                        </div>
+                        <div class="berat-panen">
+                            <br>
+                            <br><h3>Masukkan berat bersih panen</h3>
+                            <div class="input-berat-panen-div">
+                                <input id="input-berat-panen" type="text" placeholder="masukkan berat bersih">
+                                <select name="satuan-berat" id="satuan-berat">
+                                    <option value="Kg">Kg</option>
+                                    <option value="Kuintal">Kuintal</option>
+                                    <option value="Ton">Ton</option>
+                                </select>
+                            </div>
+                            <br>
+                            <br><h3>Pilih jenis irigasi</h3>
+                            <select name="irigasi-select" id="irigasi-select">
+                                <option value="berbayar">Irigasi Berbayar</option>
+                                <option value="gratis">Irigasi Gratis (air hujan,sungai,dll)</option>
+                            </select>
+                            <button id="konfirmasi-berat-panen" onclick="zakatHasilPanen()">Konfirmasi</button>
+                           
+                        </div>
+
+                </div>
+
+                <div class="zakat-output">
+                    <h3 id="output-zakat4"></h3>
+                    <h2 id="output-zakat3"></h2>
+                    <h2 id="output-penjelasan" onclick="showText()"></h2>
+                    <div id="output-hide">
+                        <img class="pin-png" src="asset/pin.png" alt="" width="50px">
+                        <h3 id="output-zakat1"></h3>
+                        <h3 id="output-zakat2"></h3>
+                    </div>
+
+                </div>
+                
+
+            </div>
+            <script>
+                feather.replace();
+            </script>
+
+            <footer>
+                <a href="https://github.com/Kilkil05"><img src="pngwing.com (32).png" alt="github" width="50px"></a>
+                <a href="https://www.instagram.com/wasekloer.id/"><img src="image.png" alt="instagram" width="50px"></a>
+            </footer>
+        </div>
+
+    </body>
+    <script src="index.js"></script>
+</html>

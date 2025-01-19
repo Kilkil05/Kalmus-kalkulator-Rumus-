@@ -1,0 +1,2195 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(freepik__candid-image-photography-natural-textures-highly-r__64638.jpeg);
+}
+a {
+    text-decoration: none;
+}
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    color: white;
+    text-align: left;
+    padding: 10px;
+}
+nav{
+    cursor: pointer;
+    color: white;
+    position: fixed;
+}
+p {
+    font-family: poppins;
+    font-weight: 600;
+}
+
+select {
+    width: 15rem;
+    padding: 10px;
+    border: 2px solid #007bff; /* Biru */
+    border-radius: 5px;
+    background-color: #f8f9fa; /* Abu terang */
+    color: #333;
+    font-size: 16px;
+    font-family: poppins;
+}
+.home {
+    font-family: poppins;
+    font-size: 2rem;
+    color: white;
+    background: linear-gradient(to bottom, rgba(255, 174, 0, 0.582), rgb(243, 158, 0.5));
+    border-radius: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+
+}
+.home:hover {
+    color: rgb(199, 179, 0);
+}
+.judul {
+    font-family: kanit;
+    text-align: center;
+    font-size: 5rem;
+  
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.kalkulatormatematika {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100rem;
+}
+.kalkulatorsehari {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100rem;
+}
+.kalkulator-konversi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100rem;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.menu {
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+.perintah {
+    font-family: poppins;
+}
+.perintah1 {
+    font-family: poppins;
+    text-align: center;
+    width: 30rem;
+    justify-self: center;
+    background-color: rgb(221, 0, 0);
+}
+.judul-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.btn {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+.input {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem;  
+}
+.center-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.center-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* menu */
+.penyederhanaanAkar-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.teks {
+    color: rgb(255, 255, 255);
+    font-family: poppins;
+    font-size: 1.6rem;
+    text-align: center;
+    border-radius: 1rem;
+    padding: 0.2rem;
+    text-decoration: none;
+    height: 3rem;
+}
+
+/* akar */
+.akar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
+.akar-preview {
+    font-size: 2rem;
+}
+.perintah {
+    translate: 0 -2rem;
+    text-align: center;
+}
+.akar-png {
+    translate: -3rem;
+    z-index: -3;
+}
+#inputakar {
+    font-size: 1.5rem;
+    height: 50;
+    width: 250;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    translate: 0 -4rem;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#hasil {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+.akar-output {
+    line-height: 3rem;
+    text-align: center;
+    margin-top: 3rem;
+
+}
+#output {
+    text-align: center;
+    font-weight: 200;
+    font-size: 1rem;
+}
+
+
+/* diskon */
+.diskon-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.diskon-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+.pembatas {
+    height: 10rem;
+    width: 0.5rem;
+    background-color: white;
+}
+.diskon-conten {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.diskon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
+#inputharga {
+    font-size: 1.5rem;
+    height: 50;
+    width: 250;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+}
+#inputdiskon {
+    font-size: 1.5rem;
+    height: 50;
+    width: 250;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+.inputdiskon-div {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+#hasil-diskon {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+.diskon-output {
+    line-height: 3rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+#output-penjelasan {
+    cursor: pointer;
+    color: rgb(255, 251, 0);
+    background-color: rgba(152, 1, 172, 0.555);
+    border-radius: 1rem;
+    width: 20rem;
+    justify-self: center;
+    text-align: center;
+    
+}
+#output-penjelasan:hover {
+    color: rgb(255, 255, 255);
+}
+
+#output-hide {
+    visibility: hidden;
+    background-color: rgba(255, 255, 255, 0.774);
+    color: black;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    text-align: left;
+    max-width: 70rem;
+    font-size: 1rem;
+
+}
+.pin-png {
+    align-self: flex-end;
+    margin-top: 0;
+}
+
+
+
+
+
+/* penyederhanaan rasio */
+.rasio-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.rasio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
+.rasio-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.pembanding {
+    width: 5rem;
+    text-align: center;
+    translate: 0 2.5rem;
+    font-size: 2rem;
+}
+.rasio-conten {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#inputkiri {
+    font-size: 1.5rem;
+    height: 50;
+    width: 250;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+#inputkanan {
+    font-size: 1.5rem;
+    height: 50;
+    width: 250;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+#hasil-rasio {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+.rasio-output {
+    text-align: center;
+}
+
+
+
+
+/* Penyederhanaan Pecahan */
+.pecahan-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.pembanding-pecahan {
+    width: 7rem;
+    height: 0.5rem;
+    background-color: rgb(255, 255, 255);
+}
+.pecahan-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+#inputatas {
+    font-size: 1.5rem;
+    height: 50;
+    width: 150;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+#inputbawah {
+    font-size: 1.5rem;
+    height: 50;
+    width: 150;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+.pecahan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+    row-gap: 1rem;
+}
+.opsi-campuran {
+    font-family: poppins;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 9rem;
+    margin-bottom: 2rem;
+    margin-top: -2rem;
+    cursor: pointer;
+}
+.campuran {
+    display: flex;
+    flex-direction: row;
+}
+#campuran-opsi-click {
+    color: white;
+    background-color: transparent;
+    border-radius: 1rem;
+    width: 10rem;
+    text-align: center;
+}
+
+#biasa-opsi-click {
+    color: yellow;
+    background-color: rgba(255, 255, 255, 0.349);
+    border-radius: 1rem;
+    width: 5rem;
+    text-align: center;
+}
+
+.pecahan-campuran {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    translate: -3rem;
+}
+#inputcampuran {
+    font-size: 3rem;
+    height: 100;
+    width: 80;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    visibility: hidden;
+}
+#hasil-pecahan-biasa {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+#hasil-pecahan-campuran {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 217, 1), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+    display: none;
+}
+#output-pecahan3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+#pecahan-hasil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+}
+#angkacampuran {
+    font-weight: 500;
+    font-size: 3rem;
+}
+.pecahan-output {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    
+}
+.outputbiasa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.outputcampuran {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+}
+.fraction-table {
+    display: flex;
+    text-align: center;
+    border-collapse: collapse;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    gap: 2rem;
+    max-width: 2rem; 
+}
+.fraction-table td {
+    padding: 0;
+}
+#divider {
+    min-width: 3rem;
+    width: 100%;
+    background-color: white;
+    height: 0.5rem;
+    display: none;
+}
+#divider1 {
+    min-width: 3rem;
+    width: 100%;
+    background-color: white;
+    height: 0.5rem;
+    display: none;
+}
+#pecahan-hasil-campuran {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+}
+.fraction-table-campuran {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-collapse: collapse;
+    font-size: 2rem;
+    gap: 2rem;  
+}
+.fraction-table-campuran td {
+    padding: 0;
+}
+
+/* faktorial */
+.faktorial-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.faktorial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
+.faktorial-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#inputfaktorial {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-top: 2rem;
+}
+.faktorial-output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+/* hipotenusa */
+.hipotenusa-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.hipotenusa {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
+.hipotenusa-menu {
+    margin-bottom: 4rem;
+}
+.segitiga-hipotenusa {
+    width: 0;
+    height: 0;
+    border-right: 15rem solid transparent;
+    border-bottom: 15rem solid yellow;
+}
+#segitiga-hipotenusa1{
+    width: 0;
+    height: 0;
+    border-right: 15rem solid transparent;
+    border-bottom: 15rem solid yellow;
+    display: none;
+}
+#inputA {
+    font-size: 1.5rem;
+    height: 50;
+    width: 150;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-top: 2rem;
+}
+#inputB {
+    font-size: 1.5rem;
+    height: 50;
+    width: 150;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-left: -11rem;
+    translate: 0 10rem;
+    
+}
+
+#inputC {
+    font-size: 1.5rem;
+    height: 50;
+    width: 150;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    rotate: 45deg;
+    translate: 8rem 8rem;
+}
+#hasil-hipotenusa {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+    margin-bottom: 5rem;
+}
+.segitiga-hipotenusa-output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.segitiga-hipotenusa-output-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+}
+.hipotenusa-output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+#output-hipotenusa-kiri {
+    translate: -20rem;
+    position: absolute;
+    width: 20rem;
+    direction: rtl;
+    word-wrap: break-word;
+
+}
+#output-hipotenusa-kanan {
+    translate: 8rem 4rem;
+    rotate: 45deg;
+    position: absolute;
+    width: 20rem;
+    word-wrap: break-word;
+}
+.output-hipotenusa-kanan {
+    display: flex;
+    flex-direction: column-reverse;
+}
+#output-hipotenusa-bawah {
+    transform: translateX(-3rem);
+    max-width: 50rem;
+    word-wrap: break-word;
+}
+
+
+/* Average */
+
+.average-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.average {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+    row-gap: 1rem;
+}
+#jumlahbanyakinput {
+    font-size: 1.5rem;
+    height: 50;
+    width: 150;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+#jumlah-input {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+#hasil-average {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+    display: none;
+}
+#input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.label-input {
+    font-family: poppins;
+}
+.input-nilai {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+#output-average {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    width: 50rem;
+}
+.average-output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#output-average3{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+
+/* Kode Morse */
+
+.morse-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.morse {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+    row-gap: 1rem;
+}
+#input-morse {
+    font-size: 1.5rem;
+    height: 20rem;
+    width: 50rem;
+    background-color: white;
+    color: black;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: left;
+    word-wrap: break-word;
+    padding: 1rem;
+}
+#hasil-morse {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+.morse-output{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#output-morse-container {
+    font-size: 1.5rem;
+    min-height: 20rem;
+    width: 50rem;
+    background-color: white;
+    color: black;
+    border-radius: 0.5rem;
+    word-wrap: break-word;
+    padding: 1rem;
+    font-family: monospace;
+}
+
+/* kalkulator zakat */
+.zakat-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.zakat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+    row-gap: 1rem;
+}
+.penghasilan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+#jumlah-penghasilan {
+    font-size: 1.5rem;
+    height: 50;
+    width: 400;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: left;
+}
+#konfirmasi-penghasilan{
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+    justify-self: center;
+}
+.hewan-ternak {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.kambing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2rem;
+}
+#jumlah-kambing {
+    font-size: 1.5rem;
+    height: 50;
+    width: 400;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.sapi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2rem;
+}
+#jumlah-sapi {
+    font-size: 1.5rem;
+    height: 50;
+    width: 400;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.unta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2rem;
+}
+#jumlah-unta {
+    font-size: 1.5rem;
+    height: 50;
+    width: 400;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.hasil-panen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+#jenis-panen {
+    font-size: 1.5rem;
+    height: 50;
+    width: 500;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#konfirmasi-jenis-panen{
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+.jenis-panen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.berat-panen {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#input-berat-panen {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#satuan-berat {
+    width: 100;
+}
+#konfirmasi-berat-panen {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+    margin-top: 3rem;
+}
+
+
+/* bangun datar */
+.bangunDatar-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+
+
+/* Lingkaran */
+.lingkaran-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.lingkaran {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
+
+#bentuk-lingkaran{
+    width: 300px;
+    height: 300px;
+    border-radius: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#keteranganjari2{
+    width: 10;
+    height: 200;
+    background-color: black;
+    border-radius: 50rem;
+    transform: translateX(9rem) translateY(-6rem);
+}
+#keterangandiameter {
+    width: 700;
+    height: 10;
+    background-color: red;
+    
+}
+#input-diameter-lingkaran{
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#input-keliling-lingkaran{
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#hasil-keliling-lingkaran {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+#hasil-luas-lingkaran {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+#hasil-d-r-lingkaran {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+.lingkaran-output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+/* persegi */
+.persegi-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.persegi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
+
+#input-sisi-persegi{
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#input-keliling-persegi{
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#hasil-keliling-persegi {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+#hasil-luas-persegi {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+#hasil-sisi-persegi {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+.persegi-output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#bentuk-persegi{
+    width: 300px;
+    height: 300px;
+    border-radius: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* persegi panjang */
+.persegiPanjang-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.persegiPanjang {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
+
+#input-panjang-persegiPanjang { 
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#input-lebar-persegiPanjang {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#input-keliling-persegiPanjang {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#input-p-l-persegiPanjang {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#hasil-keliling-persegiPanjang {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+#hasil-luas-persegiPanjang {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+#hasil-sisi-persegiPanjang {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+}
+.persegiPanjang-output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* segitiga */
+.segitiga-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.segitiga {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
+#bentuk-segitiga{
+    width: 300px;
+    height: 300px;
+    border-radius: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-sisi-segitiga {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+
+/* jajar genjang */
+.jajargenjang-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+#bentuk-jajargenjang{
+    width: 400px;
+    height: 400px;
+    border-radius: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.jajargenjang {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
+.input-sisi-jajargenjang {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+
+/* Trapesium */
+.trapesium-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+#bentuk-trapesium{
+    width: 400px;
+    height: 400px;
+    border-radius: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-sisi-trapesium {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+.trapesium {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
+
+/* Belah ketupat */
+.belahketupat-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.belahketupat-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+#bentuk-belahketupat{
+    width: 400px;
+    height: 400px;
+    border-radius: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    translate: 2rem;
+}
+.input-sisi-belahketupat {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+.belah-ketupat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
+
+/* bmi */
+.bmi-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.bmi-gender{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.bmi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.bmi-pria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5rem;
+    display: none;
+}
+#input-umur-bmi-pria {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#input-tb-bmi-pria {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#input-bb-bmi-pria {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+.bmi-wanita {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5rem;
+    display: none;
+}
+#input-umur-bmi-wanita {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#input-tb-bmi-wanita {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#input-bb-bmi-wanita {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#input-nama-pria {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#input-nama-wanita {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+#hasil-bmi-pria {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+    margin-top: 5rem;
+}
+
+#hasil-bmi-wanita {
+    font-size: 2.5rem;
+    font-family: poppins;
+    background: linear-gradient(to bottom, rgb(255, 208, 0), rgb(243, 158, 0));
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    z-index: 999;
+    margin-top: 5rem;
+}
+.bmi-output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5rem;
+    font-family: poppins;
+}
+#output-bmi3 span {
+    color: yellow;
+}
+#bmi-grafik {
+    width: 25rem;
+    height: 3rem;
+    border-radius: 2rem;
+    background: linear-gradient(to right, red 15%, rgb(4, 255, 4) 45%, yellow 60%, red);
+    display: none;
+}
+#bmi-point {
+    background-color: white;
+    width: 10;
+    height: 60;
+    transform: translateX(10rem);
+}
+#bmi-keterangan {
+    position: absolute;
+    transform: translateY(2.5rem) translateX(-0.5rem);
+    font-size: 1.5rem;
+}
+
+
+/* segitiga jkw */
+.jkw-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.jkw {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.jarak-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4rem;
+}
+.waktu-input {
+    font-size: 1.5rem;
+    height: 50;
+    width: 150;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+.kecepatan-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4rem;
+}
+.waktu-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4rem;
+}
+.jkw-output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    font-family: poppins;
+}
+
+/* operasi bilangan */
+.operasibilangan-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.inputbilanganbulat-pecahancampuran {
+    font-size: 3rem;
+    height: 100;
+    width: 80;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+.input-pecahan {
+    font-size: 1.5rem;
+    height: 50;
+    width: 150;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+.container-operasibilangan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    column-gap: 5rem;
+}
+.input-pecahancampuran::placeholder{
+    font-size: 0.9rem;
+    word-wrap: normal;
+}
+#operation-select {
+    font-size: 2rem;
+    height: 80;
+    width: 80;
+    background-color: white;
+    color: black;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;  
+}
+.container-op {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.input-persen {
+    font-size: 1.5rem;
+    height: 50;
+    width: 250;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+.persen-kanan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+}
+.persen-kiri {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+}
+.input-desimal {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+.input-int {
+    font-size: 1.5rem;
+    height: 50;
+    width: 300;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+.input-faktorial {
+    font-size: 1.5rem;
+    height: 50;
+    width: 250;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+.operasibilangan-output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    font-family: poppins;
+    margin-bottom: 0;
+}
+.faktorial-kiri {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+}
+.faktorial-kanan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+
+/* kpk-fpb */
+
+.kpk-fpb-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.kpk-fpb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: poppins;
+}
+
+/* konversi */
+
+/* konversi panjang */
+
+.konversi-panjang-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.konversi-panjang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.input-konversi {
+    font-size: 1.5rem;
+    text-align: right; /* Agar angka tampil rapi di kanan */
+    padding-right: 10px;
+    width: auto;
+    min-width: 10rem; /* Ukuran minimum */
+    max-width: 100%; /* Agar tidak melebihi lebar container */
+    border: 2px solid #ccc;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+/* konversi massa */
+.konversi-massa-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.konversi-massa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.input-konversi {
+    font-size: 1.5rem;
+    text-align: right; /* Agar angka tampil rapi di kanan */
+    padding-right: 10px;
+    width: auto;
+    min-width: 10rem; /* Ukuran minimum */
+    max-width: 100%; /* Agar tidak melebihi lebar container */
+    border: 2px solid #ccc;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+
+/* Konversi suhu */
+.konversi-suhu-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.konversi-suhu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* Konversi Waktu */
+.konversi-waktu-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.konversi-waktu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* konversi kecepatan */
+.konversi-kecepatan-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.konversi-kecepatan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Konversi Tekanan */
+.konversi-tekanan-container {
+    width: 18rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    border: 5px solid white;
+    filter: drop-shadow(5px 5px 3px rgba(255, 251, 21, 0.466));
+}
+.konversi-tekanan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media screen and (max-width: 600px) {
+
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media screen and (min-width: 600px) {
+ 
+
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

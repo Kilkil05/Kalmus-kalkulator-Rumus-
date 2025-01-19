@@ -1,0 +1,173 @@
+<html>
+    <head>
+        <script src="index.js"></script>
+        <title>Segitiga</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/feather-icons"></script>
+
+        <!-- kanit -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jura:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oooh+Baby&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        
+        <!-- poppins -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jura:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oooh+Baby&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <a class="home" href="bangun-datar.html"><i data-feather="arrow-left"></i>Back</a>
+        </nav>
+        <h1 class="judul">Kalkulator Rumus<br>
+            <h2 class="perintah">Bangun Segitiga</h1>
+        <div class="container">
+            <div class="segitiga">
+
+                <!-- opsi memilih ingin mencari apa -->
+                <p style="font-size: 1.5rem;">Apa yang ingin dicari</p>
+                <select name="opsi-persegi" id="opsi-segitiga" style="font-size: 1.6 rem;">
+                    <option value="keliling">Keliling</option>
+                    <option value="luas">Luas</option>
+                    <option value="tinggi">TInggi</option>
+                </select>
+
+                <!-- gambar segitiga ilustrasi -->
+                <div class="segitiga-menu" style="margin-top: 2rem; margin-bottom: 2rem;">
+                    <div id="bentuk-segitiga"><img src="asset/segitiga-keterangan.png" alt="bentuk-segitiga" width="100%"></div>
+                </div>
+
+                <!-- input keliling -->
+                <div class="input-keliling-segitiga" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <h2 style="text-align: center;">Masukkan sisi a / alas</h2>
+                    <input id="input-sisi-a-segitiga" class="input-sisi-segitiga" type="number" placeholder="">
+                    <h2 style="text-align: center;">Masukkan sisi b</h2>
+                    <input id="input-sisi-b-segitiga" class="input-sisi-segitiga" type="number" placeholder="">
+                    <h2 style="text-align: center;">Masukkan sisi c</h2>
+                    <input id="input-sisi-c-segitiga" class="input-sisi-segitiga" type="number" placeholder="">
+                    
+                    <!-- button hasil -->
+                    <button id="hasil-keliling-segitiga" class="btn" onclick="kelilingSegitiga()">Hasil</button>
+                </div>
+
+                <!-- input luas -->
+                <div class="input-luas-segitiga" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <!-- opsi keliling dipisah berdasar diketahui tingginya -->
+                    <select name="luassegitiga-opsi" id="opsi-luas-segitiga">
+                        <option value="diketahui-tinggi">Diketahui Tinggi</option>
+                        <option value="tidakdiketahui-tinggi">Tidak Diketahui Tinggi</option>
+                    </select>
+
+                    <!-- input luas diketahui tingginya -->
+                    <div class="luas-segitiga-diketahui-t" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <h2 style="text-align: center;">Masukkan tinggi</h2>
+                        <input id="input-tinggi-segitiga" class="input-sisi-segitiga" type="number" placeholder="">
+                        <h2 style="text-align: center;">Masukkan alas</h2>
+                        <input id="input-alas-segitiga" class="input-sisi-segitiga" type="number" placeholder="">
+                        <!-- button hasil -->
+                        <button id="hasil-luas-segitiga" class="btn" onclick="luasSegitigaDenganTinggi()">Hasil</button>
+                    </div>
+
+                    <!-- input luas tidak diketahui tingginya -->
+                     <!-- x = tidak diketahui / unknown -->
+                     <div class="luas-segitiga-tidakdiketahui-t" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <h2 style="text-align: center;">Masukkan alas</h2>
+                        <input id="input-sisi-a-segitiga-x" class="input-sisi-segitiga" type="number" placeholder="">
+                        <h2 style="text-align: center;">Masukkan sisi b</h2>
+                        <input id="input-sisi-b-segitiga-x" class="input-sisi-segitiga" type="number" placeholder="">
+                        <h2 style="text-align: center;">Masukkan sisi c</h2>
+                        <input id="input-sisi-c-segitiga-x" class="input-sisi-segitiga" type="number" placeholder="">
+                        <!-- button hasil -->
+                        <button id="hasil-luas-segitiga" class="btn" onclick="luasSegitigaHeron()">Hasil</button>
+                    </div>
+
+                </div>
+
+                <!-- input mencari tinggi -->
+                <div class="input-tinggi-persegi" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <h2 style="text-align: center;">Masukkan sisi a / alas</h2>
+                    <input id="input-sisi-a-segitiga-t" class="input-sisi-segitiga" type="number" placeholder="">
+                    <h2 style="text-align: center;">Masukkan sisi b</h2>
+                    <input id="input-sisi-b-segitiga-t" class="input-sisi-segitiga" type="number" placeholder="">
+                    <h2 style="text-align: center;">Masukkan sisi c</h2>
+                    <input id="input-sisi-c-segitiga-t" class="input-sisi-segitiga" type="number" placeholder="">
+                
+                    <!-- button hasil -->
+                    <button id="hasil-sisi-segitiga" class="btn" onclick="tinggiSegitigaHeron()">Hasil</button>
+                </div>
+
+                
+
+                <div class="segitiga-output" style="text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <h2 id="output-segitiga3"></h2>
+                    <h2 id="output-penjelasan" onclick="showText()"></h2>
+                    <div id="output-hide">
+                        <img class="pin-png" src="asset/pin.png" alt="" width="50px">
+                        <h3 id="output-segitiga1"></h3>
+                        <h3 id="output-segitiga2"></h3>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <script>
+                feather.replace();
+            </script>
+
+            <footer>
+                <a href="https://github.com/Kilkil05"><img src="pngwing.com (32).png" alt="github" width="50px"></a>
+                <a href="https://www.instagram.com/wasekloer.id/"><img src="image.png" alt="instagram" width="50px"></a>
+            </footer>
+        </div>
+        <script>
+            function segitigaVisibility() {
+                let opsiSegitiga = document.getElementById('opsi-segitiga').value
+                let inputKeliling = document.querySelector('.input-keliling-segitiga')
+                let inputLuas = document.querySelector('.input-luas-segitiga')
+                let inputTinggi = document.querySelector('.input-tinggi-persegi')
+
+                inputKeliling.style.display = 'none'
+                inputLuas.style.display = 'none'
+                inputTinggi.style.display = 'none'
+
+                switch(opsiSegitiga) {
+                    case 'keliling':
+                        inputKeliling.style.display = 'flex'
+                        break
+                    case 'luas':
+                        inputLuas.style.display = 'flex'
+                        break
+                    case 'tinggi':
+                        inputTinggi.style.display = 'flex'
+                        break
+                    default:
+                }
+            }
+            document.getElementById('opsi-segitiga').addEventListener('change', segitigaVisibility)
+            segitigaVisibility()
+
+            function luasSegitigaVisibility() {
+                let opsi = document.getElementById('opsi-luas-segitiga').value
+                let luasDiketTinggi = document.querySelector('.luas-segitiga-diketahui-t')
+                let luasTidakDiketTinggi = document.querySelector('.luas-segitiga-tidakdiketahui-t')
+
+                luasDiketTinggi.style.display = 'none'
+                luasTidakDiketTinggi.style.display = 'none'
+
+                switch(opsi) {
+                    case 'diketahui-tinggi':
+                        luasDiketTinggi.style.display = 'flex'
+                        break
+                    case 'tidakdiketahui-tinggi':
+                        luasTidakDiketTinggi.style.display = 'flex'
+                        break
+                    default:
+                }
+            }
+            document.getElementById('opsi-luas-segitiga').addEventListener('change', luasSegitigaVisibility)
+            luasSegitigaVisibility()
+        </script>
+    </body>
+    <script src="index.js"></script>
+</html>

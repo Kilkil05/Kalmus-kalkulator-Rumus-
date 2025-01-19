@@ -1,0 +1,227 @@
+<html>
+    <head>
+        <script src="index.js"></script>
+        <title>Belah Ketupat</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/feather-icons"></script>
+
+        <!-- kanit -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jura:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oooh+Baby&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        
+        <!-- poppins -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Jura:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oooh+Baby&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <a class="home" href="bangun-datar.html"><i data-feather="arrow-left"></i>Back</a>
+        </nav>
+        <h1 class="judul">Kalkulator Rumus<br>
+            <h2 class="perintah">Bangun Belah Ketupat</h1>
+        <div class="container">
+            <div class="belah-ketupat">
+
+                <!-- opsi memilih ingin mencari apa -->
+                <p style="font-size: 1.5rem;">Apa yang ingin dicari</p>
+                <select name="opsi-belahketupat" id="opsi-belahketupat" style="font-size: 1.6 rem;">
+                    <option value="keliling">Keliling</option>
+                    <option value="luas">Luas</option>
+                    <option value="diagonal">Diagonal</option>
+                    <option value="tinggi">Tinggi</option>
+                </select>
+
+                <!-- gambar jajar genjang ilustrasi -->
+                <div class="belahketupat" style="margin-top: 2rem; margin-bottom: 2rem;">
+                    <div id="bentuk-belahketupat"><img src="asset/belahketupat-keterangan.png" alt="bentuk-belahketupat" width="100%"></div>
+                </div>
+
+                <!-- Input Keliling -->
+                <div class="keliling-belahketupat" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <h2 style="text-align: center;">Masukkan panjang semua sisi</h2>
+                    <input id="input-sisi-belahketupat-k" class="input-sisi-belahketupat" type="number">
+                    <button id="hasil-keliling-belahketupat" class="btn" onclick="kelilingBelahKetupat()">Hasil</button>
+                </div>
+
+                <!-- input luas  -->
+                <div class="luas-belahketupat" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <select name="opsi-luas-belahketupat" id="opsi-luas-belahketupat" style="width: 350px;">
+                        <option value="" disabled selected>Pilih rumus</option>
+                        <option value="diagonal">Menggunakan Diagonal</option>
+                        <option value="sisi">Menggunakan panjang sisi dan tinggi</option>
+                    </select>
+
+                    <!-- input dengan rumus diagonal -->
+                    <div class="luas-rumus-diagonal" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <h2 style="text-align: center;">Masukkan panjang diagonal 1</h2>
+                        <input id="input-diagonal1-belahketupat-l" class="input-sisi-belahketupat" type="number">
+                        <h2 style="text-align: center;">Masukkan panjang diagonal 2</h2>
+                        <input id="input-diagonal2-belahketupat-l" class="input-sisi-belahketupat" type="number">
+                        <button id="hasil-luas-belahketupat" class="btn" onclick="luasRumusDIagonalBelahKetupat()">Hasil</button>
+                    </div>
+
+                    <!-- input dengan rumus a x t -->
+                    <div class="luas-rumus-at" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <h2 style="text-align: center;">Masukkan panjang sisi</h2>
+                        <input id="input-sisi-belahketupat-l" class="input-sisi-belahketupat" type="number">
+                        <h2 style="text-align: center;">Masukkan tinggi</h2>
+                        <input id="input-tinggi-belahketupat-l" class="input-sisi-belahketupat" type="number">
+                        <button id="hasil-luas-belahketupat" class="btn" onclick="luasRumusAtBelahKetupat()">Hasil</button>
+                    </div>
+                </div>
+
+                <!-- input diagonal --> 
+                <div class="diagonal-belahketupat" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <!-- opsi -->
+                    <select name="opsi-diagonal-belahketupat" id="opsi-diagonal-belahketupat">
+                        <option value="" disabled selected>Pilih rumus</option>
+                        <option value="luas">Menggunakan luas yang diketahui</option>
+                        <option value="sisi">Menggunakan theorema pythagoras</option>
+                    </select>
+
+                    <!-- diagonal dengan luas -->
+                    <div class="diagonal-belahketupat-rumusluas-d" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <h2 style="text-align: center;">Masukkan luas belah ketupat</h2>
+                        <input id="input-luas-belahketupat-d" class="input-sisi-belahketupat" type="number">
+                        <h2 style="text-align: center;">Masukkan diagonal lainnya yang diketahui</h2>
+                        <input id="input-diagonal2l-belahketupat-d" class="input-sisi-belahketupat" type="number">
+                        <button id="hasil-diagonal-belahketupat" class="btn" onclick="diagonalRumusLuasBelahKetupat()">Hasil</button>
+                    </div>
+
+                    <!-- diagonal dengan sisi -->
+                     <div class="diagonal-belahketupat-rumussisi-d" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <h2 style="text-align: center;">Masukkan sisi belah ketupat</h2>
+                        <input id="input-sisi-belahketupat-d" class="input-sisi-belahketupat" type="number">
+                        <h2 style="text-align: center;">Masukkan diagonal lainnya yang diketahui</h2>
+                        <input id="input-diagonal2s-belahketupat-d" class="input-sisi-belahketupat" type="number">
+                        <button id="hasil-diagonal-belahketupat" class="btn" onclick="diagonalRumusSisiBelahKetupat()">Hasil</button>
+                     </div>
+                </div>
+
+                <!-- input tinggi -->
+                <div class="tinggi-belahketupat" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <h2 style="text-align: center;">Masukkan diagonal 1</h2>
+                    <input id="input-diagonal1-belahketupat-t" class="input-sisi-belahketupat" type="number">
+                    <h2 style="text-align: center;">Masukkan diagonal 2</h2>
+                    <input id="input-diagonal2-belahketupat-t" class="input-sisi-belahketupat" type="number">
+                    <h2 style="text-align: center;">Masukkan sisi</h2>
+                    <input id="input-sisi-belahketupat-t" class="input-sisi-belahketupat" type="number">
+                    <button id="hasil-tinggi-belahketupat" class="btn" onclick="tinggiBelahKetupat()">Hasil</button>
+                </div>
+
+
+                
+                <div class="belahketupat-output" style="text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <h2 id="output-belahketupat3"></h2>
+                    <h2 id="output-penjelasan" onclick="showText()"></h2>
+                    <div id="output-hide">
+                        <img class="pin-png" src="asset/pin.png" alt="" width="50px">
+                        <h3 id="output-belahketupat1"></h3>
+                        <h3 id="output-belahketupat2"></h3>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <script>
+                feather.replace();
+            </script>
+
+            <script>
+                function belahKetupatVisibility() {
+                    let opsi = document.getElementById('opsi-belahketupat').value
+                    let keliling = document.querySelector('.keliling-belahketupat')
+                    let luas = document.querySelector('.luas-belahketupat')
+                    let diagonal = document.querySelector('.diagonal-belahketupat')
+                    let tinggi = document.querySelector('.tinggi-belahketupat')
+
+                    keliling.style.display = 'none'
+                    luas.style.display = 'none'
+                    diagonal.style.display = 'none'
+                    tinggi.style.display = 'none'
+
+                    switch(opsi) {
+                        case 'keliling':
+                            keliling.style.display = 'flex'
+                            break
+                        case 'luas':
+                            luas.style.display = 'flex'
+                            break
+                        case 'diagonal':
+                            diagonal.style.display = 'flex'
+                            break
+                        case 'tinggi':
+                            tinggi.style.display = 'flex'
+                            break
+                        default:
+                            keliling.style.display = 'none'
+                            luas.style.display = 'none'
+                            diagonal.style.display = 'none'
+                            tinggi.style.display = 'none'
+                    }
+                }
+                document.getElementById('opsi-belahketupat').addEventListener('change', belahKetupatVisibility)
+                belahKetupatVisibility()
+
+                function luasVisibility() {
+                    let opsi = document.getElementById('opsi-luas-belahketupat').value
+                    let rumusDiagonal = document.querySelector('.luas-rumus-diagonal')
+                    let rumusAlasTinggi = document.querySelector('.luas-rumus-at')
+
+                    rumusDiagonal.style.display = 'none'
+                    rumusAlasTinggi.style.display = 'none'
+
+                    switch(opsi) {
+                        case 'diagonal':
+                            rumusDiagonal.style.display = 'flex'
+                            break
+                        case 'sisi':
+                            rumusAlasTinggi.style.display = 'flex'
+                            break
+                        default:
+                            rumusDiagonal.style.display = 'none'
+                            rumusAlasTinggi.style.display = 'none'
+                    }
+                }
+                document.getElementById('opsi-luas-belahketupat').addEventListener('change', luasVisibility)
+                luasVisibility()
+
+                function diagonalVisibility() {
+                    let opsi = document.getElementById('opsi-diagonal-belahketupat').value
+                    let diagonalRumusLuas = document.querySelector('.diagonal-belahketupat-rumusluas-d')
+                    let diagonalRumusSisi = document.querySelector('.diagonal-belahketupat-rumussisi-d')
+
+                    diagonalRumusLuas.style.display = 'none'
+                    diagonalRumusSisi.style.display = 'none'
+
+                    switch(opsi) {
+                        case 'luas':
+                            diagonalRumusLuas.style.display = 'flex'
+                            break
+                        case 'sisi':
+                            diagonalRumusSisi.style.display = 'flex'
+                            break
+                        default:
+                            diagonalRumusLuas.style.display = 'none'
+                            diagonalRumusSisi.style.display = 'none'
+                    }
+                }
+                document.getElementById('opsi-diagonal-belahketupat').addEventListener('change', diagonalVisibility)
+                diagonalVisibility()
+
+            </script>
+
+            <footer>
+                <a href="https://github.com/Kilkil05"><img src="pngwing.com (32).png" alt="github" width="50px"></a>
+                <a href="https://www.instagram.com/wasekloer.id/"><img src="image.png" alt="instagram" width="50px"></a>
+            </footer>
+        </div>
+        <script>
+
+        </script>
+    </body>
+    <script src="index.js"></script>
+</html>

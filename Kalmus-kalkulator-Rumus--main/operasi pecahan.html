@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Pecahan dan Desimal</title>
+    <style>
+        /* Global Style */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #27ae60;
+        }
+
+        #input-container {
+            width: 100%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 15px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: space-between;
+            width: auto;
+            max-width: 300px;
+        }
+
+        .input-group label {
+            font-size: 16px;
+            color: #34495e;
+        }
+
+        .input-value, .input-type, .operation-select, button, .remove-input {
+            padding: 8px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            outline: none;
+        }
+
+        .input-value {
+            width: 100px;
+            text-align: right;
+        }
+
+        .remove-input {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .remove-input:hover {
+            background-color: #c0392b;
+        }
+
+        #add-input, #calculate {
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 15px;
+        }
+
+        #add-input:hover, #calculate:hover {
+            background-color: #2980b9;
+        }
+
+        #result {
+            font-size: 32px;
+            color: #e74c3c;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        select {
+            width: 120px;
+        }
+
+        .operation-select {
+            margin-left: 10px;
+        }
+
+        .fraction-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .fraction-container input {
+            width: 50px;
+            margin-bottom: 5px;
+        }
+        
+        .fraction-container .fraction-divider {
+            border-top: 1px solid #34495e;
+            width: 50px;
+            margin-bottom: 5px;
+        }
+
+        .fraction-container .fraction-group {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Kalkulator Pecahan dan Desimal</h1>
+    
+    <div id="input-container">
+        <!-- Input pertama -->
+        <div class="input-group">
+            <label>Pilih Jenis Input:</label>
+            <select class="input-type">
+                <option value="decimal">Desimal</option>
+                <option value="fraction">Pecahan Biasa</option>
+                <option value="mixedFraction">Pecahan Campuran</option>
+                <option value="percent">Persen</option>
+            </select>
+            <div class="fraction-container">
+                <input type="text" class="input-value" placeholder="Masukkan nilai">
+            </div>
+            <select class="operation-select">
+                <option value="add">+</option>
+                <option value="subtract">-</option>
+                <option value="multiply">*</option>
+                <option value="divide">/</option>
+            </select>
+            <button class="remove-input">Hapus</button>
+        </div>
+    </div>
+
+    <button id="add-input">Tambah Input</button>
+    <button id="calculate">Hitung</button>
+
+    <h2>Hasil: <span id="result">0</span></h2>
+
+    <script>
+        document.getElementById('add-input').addEventListener('click', function() {
+            const container = document.getElementById('input-container');
+            const inputGroup = document.createElement('div');
+            inputGroup.classList.add('input-group');
+            inputGroup.innerHTML = `
+                <label>Pilih Jenis Input:</label>
+                <select class="input-type">
+                    <option value="decimal">Desimal</option>
+                    <option value="fraction">Pecahan Biasa</option>
+                    <option value="mixedFraction">Pecahan Campuran</option>
+                    <option value="percent">Persen</option>
+                </select>
+                <div class="fraction-container">
+                    <input type="text" class="input-value" placeholder="Masukkan nilai">
+                </div>
+                <select class="operation-select">
+                    <option value="add">+</option>
+                    <option value="subtract">-</option>
+                    <option value="multiply">*</option>
+                    <option value="divide">/</option>
+                </select>
+                <button class="remove-input">Hapus</button>
+            `;
+            container.appendChild(inputGroup);
+
+            // Menambah event listener untuk tombol hapus
+            inputGroup.querySelector('.remove-input').addEventListener('click', function() {
+                inputGroup.remove();
+            });
+        });
+
+        document.getElementById('calculate').addEventListener('click', function() {
+            const inputs = document.querySelectorAll('.input-group');
+            let result = parseFloat(0);
+            let lastOperation = 'add'; // Default operation if no operation is selected
+
+            inputs.forEach(inputGroup => {
+                const value = inputGroup.querySelector('.input-value').value;
+                const type = inputGroup.querySelector('.input-type').value;
+                const operation = inputGroup.querySelector('.operation-select').value;
+                
+                let parsedValue = 0;
+                
+                // Menghitung berdasarkan jenis input
+                if (type === 'decimal') {
+                    parsedValue = parseFloat(value);
+                } else if (type === 'fraction') {
+                    parsedValue = parseFraction(value);
+                } else if (type === 'mixedFraction') {
+                    parsedValue = parseMixedFraction(value);
+                } else if (type === 'percent') {
+                    parsedValue = parsePercent(value);
+                }
+
+                // Operasi sesuai pilihan
+                switch (lastOperation) {
+                    case 'add':
+                        result += parsedValue;
+                        break;
+                    case 'subtract':
+                        result -= parsedValue;
+                        break;
+                    case 'multiply':
+                        result *= parsedValue;
+                        break;
+                    case 'divide':
+                        if (parsedValue === 0) {
+                            result = 'Error: Pembagian dengan Nol';
+                        } else {
+                            result /= parsedValue;
+                        }
+                        break;
+                }
+
+                // Update operasi untuk perhitungan berikutnya
+                lastOperation = operation;
+            });
+
+            // Menampilkan hasil
+            document.getElementById('result').textContent = result;
+        });
+
+        // Fungsi untuk mengkonversi pecahan biasa (misalnya 3/4)
+        function parseFraction(fraction) {
+            const [numerator, denominator] = fraction.split('/');
+            if (denominator) {
+                return parseFloat(numerator) / parseFloat(denominator);
+            } else {
+                return parseFloat(fraction);
+            }
+        }
+
+        // Fungsi untuk mengkonversi pecahan campuran (misalnya 1 1/2)
+        function parseMixedFraction(mixedFraction) {
+            const [whole, fraction] = mixedFraction.split(' ');
+            const [numerator, denominator] = fraction.split('/');
+            const wholePart = parseInt(whole) || 0;
+            const fractionalPart = parseFloat(numerator) / parseFloat(denominator);
+            return wholePart + fractionalPart;
+        }
+
+        // Fungsi untuk mengkonversi persen
+        function parsePercent(percent) {
+            return parseFloat(percent) / 100;
+        }
+    </script>
+
+</body>
+</html>
